@@ -13,5 +13,8 @@ information present at http://en.wikipedia.org/wiki/BMP_file_format
 Currently the library supports the 24-bit 8.8.8.0.0 format and only
 writes to file.
 
+Documentation:
+	Use Doxygen. Just do it.
+
 TODO:
 So much...
