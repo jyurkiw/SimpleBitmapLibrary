@@ -1,0 +1,17 @@
+Simple Bitmap Library
+by Jeffrey Yurkiw
+Version: 0.1
+
+A simple C++ library for writing bitmap images to file.
+
+All the useful stuff is in src/bmp.h and src/bmp.cpp.
+src/writeBitmap.cpp is good for a basic use example, but not much else.
+
+All code in this project is based off of the bitmap file format
+information present at http://en.wikipedia.org/wiki/BMP_file_format
+
+Currently the library supports the 24-bit 8.8.8.0.0 format and only
+writes to file.
+
+TODO:
+So much...
