@@ -6,7 +6,7 @@
  *  @version 0.1
  */
 
-#include "pixel_24.h"
+#include "Pixel_24.h"
 #include "PixelData.h"
 #include <memory>
 

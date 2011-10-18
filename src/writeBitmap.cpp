@@ -13,7 +13,8 @@
 #include <boost/cstdint.hpp>
 
 //#include "bmp.h"
-#include "pixel_24.h"
+#include "PixelArray.h"
+#include "Pixel_24.h"
 
 using namespace std;
 
@@ -62,10 +63,12 @@ int test_old()
 
 int test_new()
 {
-	pixel24 pix(0x01, 0x6F, 0x5A);
-	printPixelCharArray(pix.pack_pixel(), pix.write_length);
+	//pixel24 pix(0x01, 0x6F, 0x5A);
+	//printPixelCharArray(pix.pack_pixel(), pix.write_length);
 
 	//printPixelCharArray(data, 3);
+
+	PixelArray pa;
 
 	return 0;
 }

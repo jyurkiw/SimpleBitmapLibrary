@@ -22,7 +22,7 @@ public:
 	 * The length of the packed pixel data returned by the pack_pixel()
 	 * function.
 	 */
-	const int write_length;
+	int write_length;
 
 	/*!
 	 * Base constructor. Sets write_length.
