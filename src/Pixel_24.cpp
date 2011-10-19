@@ -31,9 +31,18 @@ bool PixelData_24_Bit::operator !=(const pixel24 &rhs)
 
 char* PixelData_24_Bit::pack_pixel()
 {
-	packed_pixel_data[0] = blue;
-	packed_pixel_data[1] = green;
-	packed_pixel_data[2] = red;
+	if (!is_packed)
+	{
+		packed_pixel_data[0] = blue;
+		packed_pixel_data[1] = green;
+		packed_pixel_data[2] = red;
+		is_packed = true;
+	}
 
 	return packed_pixel_data;
+}
+
+void PixelData_24_Bit::repack_pixel()
+{
+	is_packed = false;
 }

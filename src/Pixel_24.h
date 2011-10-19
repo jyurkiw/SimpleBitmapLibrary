@@ -37,14 +37,15 @@ public:
 	 * Empty constructor. Defaults red, green, and blue to 0x00, and
 	 * write_length to 24.
 	 */
-	PixelData_24_Bit(): PixelData(3), blue(0x00), green(0x00), red(0x00) { }
+	PixelData_24_Bit(): PixelData(3), blue(0x00), green(0x00), red(0x00),
+			is_packed(false) { }
 
 	/*!
 	 * Constructor. Defaults red, green, and blue to passed values and
 	 * write_length to 24.
 	 */
 	PixelData_24_Bit(char b, char g, char r): PixelData(3), blue(b), green(g),
-			red(r) { }
+			red(r), is_packed(false) { }
 
 	/*!
 	 * Set this pixel24 equal to another pixel24.
@@ -79,8 +80,14 @@ public:
 	 */
 	char* pack_pixel();
 
+	/*!
+	 * Repack the pixel data.
+	 */
+	void repack_pixel();
+
 private:
 	char packed_pixel_data[3];
+	bool is_packed;
 };
 
 typedef PixelData_24_Bit pixel24;

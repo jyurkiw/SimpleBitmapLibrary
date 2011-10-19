@@ -97,6 +97,7 @@ private:
 
 	//Get the position of a pixel in the data array based on it's
 	//cartesian coordinates.
+	//int height/row, int width/column
 	int get_pixel_position(int, int);
 
 	//initialize the pixel data array to zeros
