@@ -76,7 +76,7 @@ int test_new()
 	pa.set(2, 2, &black);
 	pa.set(3, 3, &black);
 
-	char *sp = pa.packed_pixel_array(&white);
+	char *sp = pa.pack_pixel_array(&white);
 
 	for (int x = 0; x < pa.packed_array_length; x++)
 		printf("i = %d => %x", x, sp[x]);
@@ -84,7 +84,7 @@ int test_new()
 	return 0;
 }
 
-int main()
+int m()
 {
 	//return test_old();
 	return test_new();
