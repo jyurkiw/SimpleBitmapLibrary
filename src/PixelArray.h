@@ -78,6 +78,11 @@ public:
 	 */
 	int columns;
 
+	/*!
+	 * The length of the packed pixel array.
+	 */
+	int packed_array_length;
+
 private:
 	//Space at the end of every row that needs to be packed with
 	//empty pixels.
@@ -86,8 +91,8 @@ private:
 	//pointer for a character array used to return packed pixel data
 	char* packed_pixel_array;
 
-	//length of the packed array
-	int packed_array_length;
+	//flag to tell if the pixel array data has been packed.
+	bool pixel_array_is_packed;
 
 	//pixel data array
 	std::vector<pixel*> pixel_data_array;

@@ -16,6 +16,7 @@ PixelArray::PixelArray()
 	row_padding = 0;
 	packed_pixel_array = 0;
 	packed_array_length = 0;
+	pixel_array_is_packed = false;
 }
 
 PixelArray::PixelArray(int height, int width)
@@ -36,6 +37,7 @@ void PixelArray::Resize_PixelArray(int height, int width)
 
 	packed_array_length = 0;
 	packed_pixel_array = 0;
+	pixel_array_is_packed = false;
 
 	init_pixel_data_array();
 	row_offsets.reserve(rows);
@@ -49,47 +51,60 @@ pixel* PixelArray::get(int row, int col)
 void PixelArray::set(int row, int col, pixel *p)
 {
 	*pixel_data_array[get_pixel_position(row, col)] = *p;
+	if (pixel_array_is_packed) pixel_array_is_packed = false;
 }
 
 char* PixelArray::pack_pixel_array(pixel *empty)
 {
-	int pixel_len = empty->write_length;
-	char *packed_pixel = 0;
-
-	packed_array_length = (columns + row_padding) * rows * pixel_len;
-	packed_pixel_array = new char[packed_array_length];
-
-	int packed_array_i;
-	int bmp_i = 0;
-	int px_i;
-	int current_row = 0;
-	int current_column;
-
-	while(current_row < rows)
+	if (!pixel_array_is_packed)
 	{
-		current_column = 0;
-		do
-		{
-			packed_array_i = get_pixel_position(current_row, current_column);
-			if (pixel_data_array[packed_array_i] != 0)
-				packed_pixel = pixel_data_array[packed_array_i]->pack_pixel();
-			else
-				packed_pixel = empty->pack_pixel();
+		int pixel_len = empty->write_length;
+		char *packed_pixel = 0;
 
-			px_i = 0;
+		packed_array_length = (columns + row_padding) * rows * pixel_len;
+		packed_pixel_array = new char[packed_array_length];
+
+		int packed_array_i;
+		int bmp_i = 0;
+		int px_i;
+		int current_row = 0;
+		int current_column;
+
+		while(current_row < rows)
+		{
+			//for every row
+			current_column = 0;
 			do
 			{
-				if (bmp_i < packed_array_length)
-					packed_pixel_array[bmp_i] = packed_pixel[px_i];
-				px_i++;
-				bmp_i++;
-			} while (px_i < pixel_len);
-		} while (current_column < columns);
+				//step through every column of data
+				packed_array_i = get_pixel_position(current_row, current_column);
 
+				//if there is no valid data in the pixel data array,
+				//use the empty pixel data instead
+				if (pixel_data_array[packed_array_i] != 0)
+					packed_pixel = pixel_data_array[packed_array_i]->pack_pixel();
+				else
+					packed_pixel = empty->pack_pixel();
+
+				px_i = 0;
+				do
+				{
+					if (bmp_i < packed_array_length)
+						packed_pixel_array[bmp_i] = packed_pixel[px_i];
+					px_i++;
+					bmp_i++;
+				} while (px_i < pixel_len);
+			} while (current_column < columns);
+
+			//at the end of the row, add empty row padding
+			packed_pixel = empty->pack_pixel();
+
+			for(int padding_i = 0; padding_i < pixel_len; padding_i++, bmp_i++)
+				packed_pixel_array[bmp_i] = packed_pixel[padding_i];
+		}
+
+		pixel_array_is_packed = true;
 	}
-
-	delete[] packed_pixel;
-
 	return packed_pixel_array;
 }
 

@@ -68,7 +68,18 @@ int test_new()
 
 	//printPixelCharArray(data, 3);
 
-	PixelArray pa;
+	PixelArray pa(4, 4);
+	pixel24 black(0x00, 0x00, 0x00), white(0xFF, 0xFF, 0xFF);
+
+	pa.set(0, 0, &black);
+	pa.set(1, 1, &black);
+	pa.set(2, 2, &black);
+	pa.set(3, 3, &black);
+
+	char *sp = pa.packed_pixel_array(&white);
+
+	for (int x = 0; x < pa.packed_array_length; x++)
+		printf("i = %d => %x", x, sp[x]);
 
 	return 0;
 }
