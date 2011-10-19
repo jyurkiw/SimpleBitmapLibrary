@@ -46,3 +46,10 @@ void PixelData_24_Bit::repack_pixel()
 {
 	is_packed = false;
 }
+
+void PixelData_24_Bit::set(char red, char green, char blue)
+{
+	this->red = red;
+	this->green = green;
+	this->blue = blue;
+}

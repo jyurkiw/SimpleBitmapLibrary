@@ -85,6 +85,15 @@ public:
 	 */
 	void repack_pixel();
 
+	/*!
+	 * Set the color data of the pixel.
+	 *
+	 * @param red The red value of the pixel in hex.
+	 * @param green The green value of the pixel in hex.
+	 * @param blue The blue value of the pixel in hex.
+	 */
+	void set(char, char, char);
+
 private:
 	char packed_pixel_data[3];
 	bool is_packed;
