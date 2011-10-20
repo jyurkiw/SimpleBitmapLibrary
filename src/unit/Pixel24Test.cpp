@@ -8,7 +8,7 @@
 
 #include "cppunit/extensions/HelperMacros.h"
 #include "Pixel24Test.h"
-#include "../src/Pixel_24.h"
+#include "Pixel_24.h"
 
 using namespace CppUnit;
 

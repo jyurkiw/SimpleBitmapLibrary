@@ -8,7 +8,7 @@
 #ifndef PIXEL24TEST_H_
 #define PIXEL24TEST_H_
 
-#include "../src/Pixel_24.h"
+#include "Pixel_24.h"
 #include "cppunit/TestFixture.h"
 #include "cppunit/extensions/HelperMacros.h"
 
