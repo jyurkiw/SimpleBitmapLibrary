@@ -42,8 +42,6 @@ UNITEXE = RunUnitTests
 #MAKE ALL
 all: ${P24}.o ${P24T}.o ${RUT}.o
 	${CPPC} ${P24O} ${P24TO} ${RUTO} ${CPPUNITLIB} -o ${BINDIR}/${UNITEXE}
-	make docs
-	${BINDIR}/${UNITEXE}
 
 #MAKE Pixel_24.o
 Pixel_24.o: ${P24CPP}
