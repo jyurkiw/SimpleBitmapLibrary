@@ -16,5 +16,16 @@ writes to file.
 Documentation:
 	Use Doxygen. Just do it.
 
+ECLIPSE:
+	The makefile doesn't create a binary that is compatable with default eclipse behavior.
+Unless you want to run it manually do the following...
+	Right-click on the project in the project explorer OR go to Project -> Properties
+	Go to the Run/Debug Settings menu in the properties dialog
+	Delete the auto-generated SimpleBitmapLibrary entry
+	Click on the New... button
+	It should auto-populate based on your makefile. If it doesn't, browse to the
+		binary in the project's bin directory (you'll need to build it)
+	Click "Okay"
+
 TODO:
 So much...
