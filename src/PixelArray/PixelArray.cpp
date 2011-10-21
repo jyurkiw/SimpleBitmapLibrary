@@ -112,6 +112,7 @@ PixelArray::~PixelArray()
 {
 	if (packed_pixel_array != 0)
 		delete[] packed_pixel_array;
+	un_init_pixel_data_array();
 }
 
 /* PRIVATE */
@@ -125,6 +126,13 @@ void PixelArray::init_pixel_data_array()
 	int length = columns * rows;
 	pixel_data_array.reserve(length);
 	for (int i = 0; i < length; i++) pixel_data_array[i] = 0;
+}
+
+void PixelArray::un_init_pixel_data_array()
+{
+	for (int i = 0, si = pixel_data_array.size(); i < si; i++)
+		if (pixel_data_array[i] != 0) delete pixel_data_array[i];
+	pixel_data_array.clear();
 }
 
 void PixelArray::calculate_offsets()

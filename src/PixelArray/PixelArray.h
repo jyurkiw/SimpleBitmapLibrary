@@ -108,6 +108,10 @@ private:
 	//initialize the pixel data array to zeros
 	void init_pixel_data_array();
 
+	//de-initialize the pixel data array.
+	//delete all pixel objects and clear the vector
+	void un_init_pixel_data_array();
+
 	//calculate the contents of the offsets vector
 	void calculate_offsets();
 };
