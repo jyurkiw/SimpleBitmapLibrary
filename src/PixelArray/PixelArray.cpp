@@ -6,6 +6,8 @@
  *  @version 0.1
  */
 #include "PixelArray.h"
+#include <utility>
+#include <vector>
 
 /* PUBLIC */
 PixelArray::PixelArray()
@@ -16,12 +18,14 @@ PixelArray::PixelArray()
 	row_padding = 0;
 	packed_pixel_array = 0;
 	packed_array_length = 0;
+	empty = 0;
 	pixel_array_is_packed = false;
 }
 
-PixelArray::PixelArray(int height, int width)
+PixelArray::PixelArray(int height, int width, pixel *empty)
 {
 	Resize_PixelArray(height, width);
+	setEmpty(empty);
 }
 
 void PixelArray::Resize_PixelArray(int height, int width)
@@ -51,10 +55,16 @@ pixel* PixelArray::get(int row, int col)
 void PixelArray::set(int row, int col, pixel *p)
 {
 	*pixel_data_array[get_pixel_position(row, col)] = *p;
-	if (pixel_array_is_packed) pixel_array_is_packed = false;
+	pixel_array_is_packed = false;
 }
 
-char* PixelArray::pack_pixel_array(pixel *empty)
+void PixelArray::setEmpty(pixel *new_empty)
+{
+	empty = new_empty;
+	pixel_array_is_packed = false;
+}
+
+char* PixelArray::pack_pixel_array()
 {
 	if (!pixel_array_is_packed)
 	{
@@ -64,43 +74,18 @@ char* PixelArray::pack_pixel_array(pixel *empty)
 		packed_array_length = (columns + row_padding) * rows * pixel_len;
 		packed_pixel_array = new char[packed_array_length];
 
-		int packed_array_i;
-		int bmp_i = 0;
-		int px_i;
-		int current_row = 0;
-		int current_column;
+		pair<int,int> coords;
+		int row, col;
 
-		while(current_row < rows)
+		for (int packed_i = 0; packed_i < packed_array_length; packed_i += pixel_len)
 		{
-			//for every row
-			current_column = 0;
-			do
-			{
-				//step through every column of data
-				packed_array_i = get_pixel_position(current_row, current_column);
+			coords = calc_pixel_coords_by_packed_index(packed_i);
+			row = coords.first;
+			col = coords.second;
 
-				//if there is no valid data in the pixel data array,
-				//use the empty pixel data instead
-				if (pixel_data_array[packed_array_i] != 0)
-					packed_pixel = pixel_data_array[packed_array_i]->pack_pixel();
-				else
-					packed_pixel = empty->pack_pixel();
+			packed_pixel = col < columns ? get(row, col)->pack_pixel() : empty->pack_pixel();
 
-				px_i = 0;
-				do
-				{
-					if (bmp_i < packed_array_length)
-						packed_pixel_array[bmp_i] = packed_pixel[px_i];
-					px_i++;
-					bmp_i++;
-				} while (px_i < pixel_len);
-			} while (current_column < columns);
-
-			//at the end of the row, add empty row padding
-			packed_pixel = empty->pack_pixel();
-
-			for(int padding_i = 0; padding_i < pixel_len; padding_i++, bmp_i++)
-				packed_pixel_array[bmp_i] = packed_pixel[padding_i];
+			move_data_into_packed_array(packed_pixel, packed_i, pixel_len);
 		}
 
 		pixel_array_is_packed = true;
@@ -116,6 +101,14 @@ PixelArray::~PixelArray()
 }
 
 /* PRIVATE */
+pair<int,int> PixelArray::calc_pixel_coords_by_packed_index(int pack_i)
+{
+	pair<int,int> coords(pack_i / (columns + row_padding),
+			pack_i % (columns + row_padding));
+
+	return coords;
+}
+
 int PixelArray::get_pixel_position(int row, int col)
 {
 	return row_offsets[row] + col;
@@ -141,4 +134,10 @@ void PixelArray::calculate_offsets()
 		rowCount < rows;
 		offset = rowCount * columns, rowCount++)
 		row_offsets[rowCount] = offset;
+}
+
+void PixelArray::move_data_into_packed_array(char *data, int packed_i, int pixel_len)
+{
+	for (int i = 0; i < pixel_len; i++)
+		packed_pixel_array[packed_i + i] = data[i];
 }

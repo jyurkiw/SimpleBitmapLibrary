@@ -9,6 +9,7 @@
 #define PIXELARRAY_H_
 
 #include <vector>
+#include <utility>
 #include "PixelData.h"
 
 using namespace std;
@@ -27,13 +28,14 @@ public:
 	 * @param height The height of the bitmap in pixels
 	 * @param width The width of the bitmap in pixels
 	 */
-	PixelArray(int, int);
+	PixelArray(int, int, pixel*);
 
 	/*!
 	 * Resize the PixelArray to a new size.
 	 *
 	 * @param height The height of the bitmap in pixels
 	 * @param width The width of the bitmap in pixels
+	 * @param empty Empty pixel data
 	 */
 	void Resize_PixelArray(int, int);
 
@@ -53,7 +55,14 @@ public:
 	 * @param col The column position of the requested pixel data
 	 * @param p The pixel data to set
 	 */
-	void set (int, int, pixel*);
+	void set(int, int, pixel*);
+
+	/*!
+	 * Set the empty pixel data.
+	 *
+	 * @param new_empty The empty pixel data
+	 */
+	void setEmpty(pixel*);
 
 	/*!
 	 * Pack and return the Pixel Array data
@@ -61,7 +70,7 @@ public:
 	 * @param empty Default empty pixel data
 	 * @return The packed pixel array
 	 */
-	char* pack_pixel_array(pixel*);
+	char* pack_pixel_array();
 
 	/*!
 	 * Destroys packed_pixel_array.
@@ -89,13 +98,29 @@ private:
 	int row_padding;
 
 	//pointer for a character array used to return packed pixel data
-	char* packed_pixel_array;
+	char *packed_pixel_array;
 
 	//flag to tell if the pixel array data has been packed.
 	bool pixel_array_is_packed;
 
+	//the default empty pixel data.
+	pixel *empty;
+
 	//pixel data array
 	std::vector<pixel*> pixel_data_array;
+
+	/*
+	 * calculate the pixel_data_array row and column position
+	 * based on a passed index.
+	 * Return pair: first = row, second = column
+	 */
+	pair<int,int> calc_pixel_coords_by_packed_index(int);
+
+	/*
+	 * move the character data from one array to another
+	 * based on the passed index
+	 */
+	void move_data_into_packed_array(char*, int, int);
 
 	//vector that stores pre-calculated offset data for accessing pixel data
 	std::vector<int> row_offsets;
