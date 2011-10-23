@@ -23,7 +23,6 @@ ECLIPSE:
 	Create a "Makefile Project With Existing Code"
 		(should be one of the default CDT new project options)
 	Name the new project "SimpleBitmapLibrary"
-		You want the "there is already a folder with that name" warning
 	Browse to the same folder in the Existing Code Location field
 	Select your Toolchain and language(s)
 	Click Okay
