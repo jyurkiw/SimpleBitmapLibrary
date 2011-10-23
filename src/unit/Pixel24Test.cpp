@@ -19,6 +19,8 @@ void Pixel_24_Test::setUp(void)
 	blue.set(255, 0, 0);
 	green.set(0, 255, 0);
 	red.set(0, 0, 255);
+	max = 255;
+	min = 0;
 }
 
 void Pixel_24_Test::EmptyConstructorTest(void)
@@ -44,9 +46,6 @@ void Pixel_24_Test::EqualOperatorTest(void)
 	pixel24 t_blue, t_red;
 	t_blue = blue;
 	t_red = red;
-
-	char max = 255;
-	char min = 0;
 
 	CPPUNIT_ASSERT_MESSAGE("Testing t_blue.blue == 0xFF", t_blue.blue() == max);
 	CPPUNIT_ASSERT_MESSAGE("Testing t_blue.green == 0x00", t_blue.green() == min);
@@ -77,4 +76,14 @@ void Pixel_24_Test::NotEqualOperatorTest(void)
 	CPPUNIT_ASSERT_MESSAGE("Testing t_blue != green", t_blue != green);
 	CPPUNIT_ASSERT_MESSAGE("Testing t_green != red", t_green != red);
 	CPPUNIT_ASSERT_MESSAGE("Testing t_red != blue", t_red != blue);
+}
+
+void Pixel_24_Test::SetTest(void)
+{
+	pixel24 t_blue;
+	t_blue.set(255,0,0);
+
+	CPPUNIT_ASSERT_MESSAGE("Testing t_blue.blue == 0xFF", t_blue.blue() == max);
+	CPPUNIT_ASSERT_MESSAGE("Testing t_blue.green == 0x00", t_blue.green() == min);
+	CPPUNIT_ASSERT_MESSAGE("Testing t_blue.red == 0x00", t_blue.red() == min);
 }

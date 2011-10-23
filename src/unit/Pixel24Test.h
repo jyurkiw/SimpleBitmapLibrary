@@ -22,6 +22,8 @@ class Pixel_24_Test : public TestFixture
 	CPPUNIT_TEST( EqualOperatorTest );
 	CPPUNIT_TEST( EqualEqualOperatorTest );
 	CPPUNIT_TEST( NotEqualOperatorTest );
+	//CPPUNIT_TEST( PackPixelTest );
+	CPPUNIT_TEST( SetTest );
 	CPPUNIT_TEST_SUITE_END();
 public:
 	void setUp(void);
@@ -32,6 +34,8 @@ public:
 	void EqualOperatorTest(void);
 	void EqualEqualOperatorTest(void);
 	void NotEqualOperatorTest(void);
+	//void PackPixelTest(void);
+	void SetTest(void);
 
 private:
 	//local variables
@@ -39,6 +43,8 @@ private:
 	pixel24 red;
 	pixel24 blue;
 	pixel24 green;
+	char max;
+	char min;
 };
 
 #endif /* PIXEL24TEST_H_ */
