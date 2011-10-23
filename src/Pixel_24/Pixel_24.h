@@ -18,20 +18,7 @@
 class PixelData_24_Bit: public pixel
 {
 public:
-	/*!
-	 * Red value of the pixel in hex.
-	 */
-	char blue;
 
-	/*!
-	 * Green value of the pixel in hex.
-	 */
-	char green;
-
-	/*!
-	 * Blue value of the pixel in hex.
-	 */
-	char red;
 
 	/*!
 	 * Empty constructor. Defaults red, green, and blue to 0x00, and
@@ -81,11 +68,6 @@ public:
 	char* pack_pixel();
 
 	/*!
-	 * Repack the pixel data.
-	 */
-	void repack_pixel();
-
-	/*!
 	 * Set the color data of the pixel.
 	 *
 	 * @param red The red value of the pixel in hex.
@@ -94,7 +76,52 @@ public:
 	 */
 	void set(char, char, char);
 
+	/*!
+	 * Set the blue value of the pixel.
+	 *
+	 * @param value The blue value to set
+	 */
+	void blue(char);
+
+	/*!
+	 * Set the green value of the pixel.
+	 *
+	 * @param value The green value to set
+	 */
+	void green(char);
+
+	/*!
+	 * Set the red value of the pixel.
+	 *
+	 * @param value The red value to set
+	 */
+	void red(char);
+
+	/*!
+	 * Get the blue value of the pixel.
+	 *
+	 * @return The blue value of the pixel
+	 */
+	char blue();
+
+	/*!
+	 * Get the green value of the pixel.
+	 *
+	 * @return The green value of the pixel
+	 */
+	char green();
+
+	/*!
+	 * Get the red value of the pixel.
+	 *
+	 * @return The red value of the pixel
+	 */
+	char red();
+
 private:
+	char v_blue;
+	char v_green;
+	char v_red;
 	char packed_pixel_data[3];
 	bool is_packed;
 };

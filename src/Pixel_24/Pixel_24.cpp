@@ -42,14 +42,43 @@ char* PixelData_24_Bit::pack_pixel()
 	return packed_pixel_data;
 }
 
-void PixelData_24_Bit::repack_pixel()
-{
-	is_packed = false;
-}
-
 void PixelData_24_Bit::set(char blue, char green, char red)
 {
 	this->red = red;
 	this->green = green;
 	this->blue = blue;
+	is_packed = false;
+}
+
+void PixelData_24_Bit::blue(char value)
+{
+	v_blue = value;
+	is_packed = false;
+}
+
+void PixelData_24_Bit::green(char value)
+{
+	v_green = value;
+	is_packed = false;
+}
+
+void PixelData_24_Bit::red(char value)
+{
+	v_red = value;
+	is_packed = false;
+}
+
+char PixelData_24_Bit::blue()
+{
+	return v_blue;
+}
+
+char PixelData_24_Bit::green()
+{
+	return v_green;
+}
+
+char PixelData_24_Bit::red()
+{
+	return v_red;
 }
