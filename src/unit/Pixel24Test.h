@@ -19,6 +19,9 @@ class Pixel_24_Test : public TestFixture
 	CPPUNIT_TEST_SUITE( Pixel_24_Test );
 	CPPUNIT_TEST( EmptyConstructorTest );
 	CPPUNIT_TEST( BGRConstructorTest );
+	CPPUNIT_TEST( EqualOperatorTest );
+	CPPUNIT_TEST( EqualEqualOperatorTest );
+	CPPUNIT_TEST( NotEqualOperatorTest );
 	CPPUNIT_TEST_SUITE_END();
 public:
 	void setUp(void);
@@ -26,6 +29,9 @@ public:
 
 	void EmptyConstructorTest(void);
 	void BGRConstructorTest(void);
+	void EqualOperatorTest(void);
+	void EqualEqualOperatorTest(void);
+	void NotEqualOperatorTest(void);
 
 private:
 	//local variables
