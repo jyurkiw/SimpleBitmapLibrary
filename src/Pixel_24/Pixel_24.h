@@ -24,15 +24,15 @@ public:
 	 * Empty constructor. Defaults red, green, and blue to 0x00, and
 	 * write_length to 24.
 	 */
-	PixelData_24_Bit(): PixelData(3), blue(0x00), green(0x00), red(0x00),
+	PixelData_24_Bit(): PixelData(3), v_blue(0x00), v_green(0x00), v_red(0x00),
 			is_packed(false) { }
 
 	/*!
 	 * Constructor. Defaults red, green, and blue to passed values and
 	 * write_length to 24.
 	 */
-	PixelData_24_Bit(char b, char g, char r): PixelData(3), blue(b), green(g),
-			red(r), is_packed(false) { }
+	PixelData_24_Bit(char b, char g, char r): PixelData(3), v_blue(b), v_green(g),
+			v_red(r), is_packed(false) { }
 
 	/*!
 	 * Set this pixel24 equal to another pixel24.
@@ -102,21 +102,21 @@ public:
 	 *
 	 * @return The blue value of the pixel
 	 */
-	char blue();
+	char blue() const;
 
 	/*!
 	 * Get the green value of the pixel.
 	 *
 	 * @return The green value of the pixel
 	 */
-	char green();
+	char green() const;
 
 	/*!
 	 * Get the red value of the pixel.
 	 *
 	 * @return The red value of the pixel
 	 */
-	char red();
+	char red() const;
 
 private:
 	char v_blue;
