@@ -16,10 +16,14 @@ CPPUNIT_TEST_SUITE_REGISTRATION( Pixel_24_Test );
 
 void Pixel_24_Test::setUp(void)
 {
+	empty.set(0,0,0);
 	blue.set(255, 0, 0);
 	green.set(0, 255, 0);
 	red.set(0, 0, 255);
 	max = 255;
+	hi_mid = 213;
+	mid = 127;
+	low_mid = 42;
 	min = 0;
 }
 
@@ -86,4 +90,52 @@ void Pixel_24_Test::SetTest(void)
 	CPPUNIT_ASSERT_MESSAGE("Testing t_blue.blue == 0xFF", t_blue.blue() == max);
 	CPPUNIT_ASSERT_MESSAGE("Testing t_blue.green == 0x00", t_blue.green() == min);
 	CPPUNIT_ASSERT_MESSAGE("Testing t_blue.red == 0x00", t_blue.red() == min);
+}
+
+void Pixel_24_Test::SetBlueTest(void)
+{
+	pixel24 t_pixel = empty;
+
+	CPPUNIT_ASSERT(t_pixel.blue() == min);
+
+	t_pixel.blue(low_mid);
+	CPPUNIT_ASSERT(t_pixel.blue() == low_mid);
+
+	t_pixel.blue(mid);
+	CPPUNIT_ASSERT(t_pixel.blue() == mid);
+
+	t_pixel.blue(hi_mid);
+	CPPUNIT_ASSERT(t_pixel.blue() == hi_mid);
+}
+
+void Pixel_24_Test::SetGreenTest(void)
+{
+	pixel24 t_pixel = empty;
+
+	CPPUNIT_ASSERT(t_pixel.green() == min);
+
+	t_pixel.green(low_mid);
+	CPPUNIT_ASSERT(t_pixel.green() == low_mid);
+
+	t_pixel.green(mid);
+	CPPUNIT_ASSERT(t_pixel.green() == mid);
+
+	t_pixel.green(hi_mid);
+	CPPUNIT_ASSERT(t_pixel.green() == hi_mid);
+}
+
+void Pixel_24_Test::SetRedTest(void)
+{
+	pixel24 t_pixel = empty;
+
+	CPPUNIT_ASSERT(t_pixel.red() == min);
+
+	t_pixel.red(low_mid);
+	CPPUNIT_ASSERT(t_pixel.red() == low_mid);
+
+	t_pixel.red(mid);
+	CPPUNIT_ASSERT(t_pixel.red() == mid);
+
+	t_pixel.red(hi_mid);
+	CPPUNIT_ASSERT(t_pixel.red() == hi_mid);
 }
