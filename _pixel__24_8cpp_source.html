@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="_pixel_data_8h.html">PixelData.h</a>&quot;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &lt;memory&gt;</span>
 <a name="l00012"></a>00012 
-<a name="l00013"></a><a class="code" href="class_pixel_data__24___bit.html#a2ac885be578b7095ef5d1842f5004413">00013</a> <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a>&amp; <a class="code" href="class_pixel_data__24___bit.html#a2ac885be578b7095ef5d1842f5004413">PixelData_24_Bit::operator =</a>(<span class="keyword">const</span> <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> &amp;rhs)
+<a name="l00013"></a><a class="code" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3">00013</a> <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a>&amp; <a class="code" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3">PixelData_24_Bit::operator =</a>(<span class="keyword">const</span> <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> &amp;rhs)
 <a name="l00014"></a>00014 {
 <a name="l00015"></a>00015         <a class="code" href="class_pixel_data__24___bit.html#a950049c94c3097caea239bcc4b090237">blue</a>(rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>());
 <a name="l00016"></a>00016         <a class="code" href="class_pixel_data__24___bit.html#a6525ad48b097c7d6bb2113f079d180ab">green</a>(rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>());
@@ -102,12 +102,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
 <a name="l00020"></a>00020 }
 <a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="class_pixel_data__24___bit.html#a7cde5f9d70eae3ebffa8aadc91e12c41">00022</a> <span class="keywordtype">bool</span> <a class="code" href="class_pixel_data__24___bit.html#a7cde5f9d70eae3ebffa8aadc91e12c41">PixelData_24_Bit::operator ==</a>(<span class="keyword">const</span> <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> &amp;rhs)
+<a name="l00022"></a><a class="code" href="class_pixel_data__24___bit.html#ad4d27a3aebacc937a636b71487e248df">00022</a> <span class="keywordtype">bool</span> <a class="code" href="class_pixel_data__24___bit.html#ad4d27a3aebacc937a636b71487e248df">PixelData_24_Bit::operator ==</a>(<span class="keyword">const</span> <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> &amp;rhs)
 <a name="l00023"></a>00023 {
 <a name="l00024"></a>00024         <span class="keywordflow">return</span> (v_blue == rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>()) &amp;&amp; (v_green == rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>()) &amp;&amp; (v_red == rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>());
 <a name="l00025"></a>00025 }
 <a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="class_pixel_data__24___bit.html#a64d251d27a7298e9f78709f7db0099a1">00027</a> <span class="keywordtype">bool</span> <a class="code" href="class_pixel_data__24___bit.html#a64d251d27a7298e9f78709f7db0099a1">PixelData_24_Bit::operator !=</a>(<span class="keyword">const</span> <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> &amp;rhs)
+<a name="l00027"></a><a class="code" href="class_pixel_data__24___bit.html#a0f9112e0855c8bc73a1125599f8a4e89">00027</a> <span class="keywordtype">bool</span> <a class="code" href="class_pixel_data__24___bit.html#a0f9112e0855c8bc73a1125599f8a4e89">PixelData_24_Bit::operator !=</a>(<span class="keyword">const</span> <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> &amp;rhs)
 <a name="l00028"></a>00028 {
 <a name="l00029"></a>00029         <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == rhs);
 <a name="l00030"></a>00030 }
@@ -170,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_pixel__24_8cpp.html">Pixel_24.cpp</a>      </li>
-      <li class="footer">Generated on Sun Oct 23 2011 22:18:11 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Mon Oct 24 2011 18:14:03 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
