@@ -27,6 +27,7 @@ public:
 	 *
 	 * @param height The height of the bitmap in pixels
 	 * @param width The width of the bitmap in pixels
+	 * @param empty The array's default empty pixel data
 	 */
 	PixelArray(int, int, pixel*);
 
@@ -35,7 +36,6 @@ public:
 	 *
 	 * @param height The height of the bitmap in pixels
 	 * @param width The width of the bitmap in pixels
-	 * @param empty Empty pixel data
 	 */
 	void Resize_PixelArray(int, int);
 
@@ -67,7 +67,6 @@ public:
 	/*!
 	 * Pack and return the Pixel Array data
 	 *
-	 * @param empty Default empty pixel data
 	 * @return The packed pixel array
 	 */
 	char* pack_pixel_array();

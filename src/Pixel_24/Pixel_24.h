@@ -40,7 +40,7 @@ public:
 	 * @param rhs The right hand side of the equality.
 	 * @return This pixel24.
 	 */
-	PixelData_24_Bit& operator = (const PixelData_24_Bit&);
+	PixelData_24_Bit& operator = (const PixelData_24_Bit& rhs);
 
 	/*!
 	 * Determine if this pixel24 is equal to another pixel24.
@@ -48,7 +48,7 @@ public:
 	 * @param rhs The right hand side of the equality.
 	 * @return True if they are the same. False otherwise.
 	 */
-	bool operator == (const PixelData_24_Bit&);
+	bool operator == (const PixelData_24_Bit& rhs);
 
 	/*!
 	 * Determine if this pixel24 is not equal to another pixel24.
@@ -56,7 +56,7 @@ public:
 	 * @param rhs The right hand side of the equality.
 	 * @return True if they are not the same. False otherwise.
 	 */
-	bool operator != (const PixelData_24_Bit&);
+	bool operator != (const PixelData_24_Bit& rhs);
 
 	/*!
 	 * Implimentation of required pack_pixel() function.
