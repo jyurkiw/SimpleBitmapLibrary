@@ -139,3 +139,51 @@ void Pixel_24_Test::SetRedTest(void)
 	t_pixel.red(hi_mid);
 	CPPUNIT_ASSERT(t_pixel.red() == hi_mid);
 }
+
+void Pixel_24_Test::GetBlueTest(void)
+{
+	CPPUNIT_ASSERT(blue.blue() == max);
+	CPPUNIT_ASSERT(empty.blue() == min);
+}
+
+void Pixel_24_Test::GetGreenTest(void)
+{
+	CPPUNIT_ASSERT(green.green() == max);
+	CPPUNIT_ASSERT(empty.green() == min);
+}
+
+void Pixel_24_Test::GetRedTest(void)
+{
+	CPPUNIT_ASSERT(red.red() == max);
+	CPPUNIT_ASSERT(empty.red() == min);
+}
+
+bool compair_pixel_arrays(char* a, char* b, int size)
+{
+	for (int x = 0; x < size; x++)
+		if (a[x] != b[x]) return false;
+
+	return true;
+}
+
+void Pixel_24_Test::PackPixelTest(void)
+{
+	char *pparr;
+
+	char empty_char_arr[3] = {min, min, min};
+	char blue_char_arr[3] = {max, min, min};
+	char green_char_arr[3] = {min, max, min};
+	char red_char_arr[3] = {min, min, max};
+
+	pparr = empty.pack_pixel();
+	CPPUNIT_ASSERT(compair_pixel_arrays(pparr, empty_char_arr, 3));
+
+	pparr = blue.pack_pixel();
+	CPPUNIT_ASSERT(compair_pixel_arrays(pparr, blue_char_arr, 3));
+
+	pparr = green.pack_pixel();
+	CPPUNIT_ASSERT(compair_pixel_arrays(pparr, green_char_arr, 3));
+
+	pparr = red.pack_pixel();
+	CPPUNIT_ASSERT(compair_pixel_arrays(pparr, red_char_arr, 3));
+}
