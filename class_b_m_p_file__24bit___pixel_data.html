@@ -60,7 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -105,10 +105,7 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a></td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="bmp_8h_source.html#l00057">57</a> of file <a class="el" href="bmp_8h_source.html">bmp.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae4710f0a038a7d7023d84d5764337bc4"></a><!-- doxytag: member="BMPFile_24bit_PixelData::BMPFile_24bit_PixelData" ref="ae4710f0a038a7d7023d84d5764337bc4" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -122,9 +119,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="bmp_8cpp_source.html#l00084">84</a> of file <a class="el" href="bmp_8cpp_source.html">bmp.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a> = 0xff;
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a> = 0xff;
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a> = 0xff;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a8afe60135663b361a2e2f351ce00afe8"></a><!-- doxytag: member="BMPFile_24bit_PixelData::BMPFile_24bit_PixelData" ref="a8afe60135663b361a2e2f351ce00afe8" args="(char, char, char)" -->
@@ -157,9 +157,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="bmp_8cpp_source.html#l00091">91</a> of file <a class="el" href="bmp_8cpp_source.html">bmp.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a> = pblue;
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a> = pgreen;
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a> = pred;
+}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -177,9 +180,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="bmp_8cpp_source.html#l00156">156</a> of file <a class="el" href="bmp_8cpp_source.html">bmp.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == rhs);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a0d1ebf470e4a983651f788dbb33c7c72"></a><!-- doxytag: member="BMPFile_24bit_PixelData::operator=" ref="a0d1ebf470e4a983651f788dbb33c7c72" args="(const BMPFile_24bit_PixelData &amp;)" -->
@@ -197,8 +201,15 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="bmp_8cpp_source.html#l00142">142</a> of file <a class="el" href="bmp_8cpp_source.html">bmp.cpp</a>.</p>
+<p>References <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>, and <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        this-&gt;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a> = rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>;
+        this-&gt;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a> = rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>;
+        this-&gt;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a> = rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>;
 
+        <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="aaa317144dedaea577b315e97cfb97d95"></a><!-- doxytag: member="BMPFile_24bit_PixelData::operator==" ref="aaa317144dedaea577b315e97cfb97d95" args="(const BMPFile_24bit_PixelData &amp;)" -->
@@ -216,8 +227,11 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="bmp_8cpp_source.html#l00151">151</a> of file <a class="el" href="bmp_8cpp_source.html">bmp.cpp</a>.</p>
-
+<p>References <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>, and <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">return</span> (this-&gt;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a> == rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>) &amp;&amp; (this-&gt;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a> == rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>) &amp;&amp; (this-&gt;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a> == rhs.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="af0218e25a43baa85678da61ad17d191b"></a><!-- doxytag: member="BMPFile_24bit_PixelData::Write_PixelData" ref="af0218e25a43baa85678da61ad17d191b" args="(std::ofstream *)" -->
@@ -234,9 +248,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="bmp_8cpp_source.html#l00101">101</a> of file <a class="el" href="bmp_8cpp_source.html">bmp.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        p_file-&gt;write(&amp;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>, 1);
+        p_file-&gt;write(&amp;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>, 1);
+        p_file-&gt;write(&amp;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>, 1);
+}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -251,7 +268,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="bmp_8h_source.html#l00060">60</a> of file <a class="el" href="bmp_8h_source.html">bmp.h</a>.</p>
+<p>Referenced by <a class="el" href="class_pixel__24___test.html#a70df27acd0baf2287ac5e53e7e2dd27c">Pixel_24_Test::EqualOperatorTest()</a>, <a class="el" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3">PixelData_24_Bit::operator=()</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a0d1ebf470e4a983651f788dbb33c7c72">operator=()</a>, <a class="el" href="class_pixel_data__24___bit.html#ad4d27a3aebacc937a636b71487e248df">PixelData_24_Bit::operator==()</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#aaa317144dedaea577b315e97cfb97d95">operator==()</a>, <a class="el" href="write_bitmap_8cpp.html#a12371d5d5aa440d1436977cfdf38cbe8">printPixel()</a>, <a class="el" href="class_pixel__24___test.html#a5cbafed03d64d285110e96af6587b5c5">Pixel_24_Test::SetBlueTest()</a>, and <a class="el" href="class_pixel__24___test.html#a69c598f4363419f03d0a0b7e5d0a99a1">Pixel_24_Test::SetTest()</a>.</p>
 
 </div>
 </div>
@@ -266,7 +283,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="bmp_8h_source.html#l00061">61</a> of file <a class="el" href="bmp_8h_source.html">bmp.h</a>.</p>
+<p>Referenced by <a class="el" href="class_pixel__24___test.html#a70df27acd0baf2287ac5e53e7e2dd27c">Pixel_24_Test::EqualOperatorTest()</a>, <a class="el" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3">PixelData_24_Bit::operator=()</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a0d1ebf470e4a983651f788dbb33c7c72">operator=()</a>, <a class="el" href="class_pixel_data__24___bit.html#ad4d27a3aebacc937a636b71487e248df">PixelData_24_Bit::operator==()</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#aaa317144dedaea577b315e97cfb97d95">operator==()</a>, <a class="el" href="write_bitmap_8cpp.html#a12371d5d5aa440d1436977cfdf38cbe8">printPixel()</a>, <a class="el" href="class_pixel__24___test.html#a61b485effe413243965e29ebae3909db">Pixel_24_Test::SetGreenTest()</a>, and <a class="el" href="class_pixel__24___test.html#a69c598f4363419f03d0a0b7e5d0a99a1">Pixel_24_Test::SetTest()</a>.</p>
 
 </div>
 </div>
@@ -281,20 +298,20 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="bmp_8h_source.html#l00062">62</a> of file <a class="el" href="bmp_8h_source.html">bmp.h</a>.</p>
+<p>Referenced by <a class="el" href="class_pixel__24___test.html#a70df27acd0baf2287ac5e53e7e2dd27c">Pixel_24_Test::EqualOperatorTest()</a>, <a class="el" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3">PixelData_24_Bit::operator=()</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a0d1ebf470e4a983651f788dbb33c7c72">operator=()</a>, <a class="el" href="class_pixel_data__24___bit.html#ad4d27a3aebacc937a636b71487e248df">PixelData_24_Bit::operator==()</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#aaa317144dedaea577b315e97cfb97d95">operator==()</a>, <a class="el" href="write_bitmap_8cpp.html#a12371d5d5aa440d1436977cfdf38cbe8">printPixel()</a>, <a class="el" href="class_pixel__24___test.html#ab60a0b197bd8a0e78b7fa20a561bbdc0">Pixel_24_Test::SetRedTest()</a>, and <a class="el" href="class_pixel__24___test.html#a69c598f4363419f03d0a0b7e5d0a99a1">Pixel_24_Test::SetTest()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="bmp_8h_source.html">bmp.h</a></li>
-<li>src/<a class="el" href="bmp_8cpp_source.html">bmp.cpp</a></li>
+<li>src/<a class="el" href="bmp_8cpp.html">bmp.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_b_m_p_file__24bit___pixel_data.html">BMPFile_24bit_PixelData</a>      </li>
-      <li class="footer">Generated on Mon Oct 24 2011 18:14:03 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Wed Oct 26 2011 22:27:40 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

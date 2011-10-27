@@ -91,9 +91,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;boost/cstdint.hpp&gt;</code><br/>
 <code>#include &quot;<a class="el" href="_pixel_array_8h_source.html">PixelArray.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_pixel__24_8h_source.html">Pixel_24.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for writeBitmap.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="write_bitmap_8cpp__incl.png" border="0" usemap="#src_2write_bitmap_8cpp" alt=""/></div>
+<map name="src_2write_bitmap_8cpp" id="src_2write_bitmap_8cpp">
+<area shape="rect" id="node15" href="_pixel_array_8h.html" title="PixelArray.h" alt="" coords="664,83,757,112"/><area shape="rect" id="node23" href="_pixel__24_8h.html" title="Pixel_24.h" alt="" coords="557,83,640,112"/><area shape="rect" id="node21" href="_pixel_data_8h.html" title="PixelData.h" alt="" coords="556,160,647,189"/></map>
 </div>
-<p><a href="write_bitmap_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_bitmap_8cpp.html#a12371d5d5aa440d1436977cfdf38cbe8">printPixel</a> (<a class="el" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> *p24)</td></tr>
@@ -117,7 +122,20 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="write_bitmap_8cpp_source.html#l00087">87</a> of file <a class="el" href="write_bitmap_8cpp_source.html">writeBitmap.cpp</a>.</p>
+<p>References <a class="el" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11">test_new()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="comment">//return test_old();</span>
+        <span class="keywordflow">return</span> <a class="code" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11">test_new</a>();
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="write_bitmap_8cpp_a9fb18cb05795359597d072e81941a1ac_cgraph.png" border="0" usemap="#write_bitmap_8cpp_a9fb18cb05795359597d072e81941a1ac_cgraph" alt=""/></div>
+<map name="write_bitmap_8cpp_a9fb18cb05795359597d072e81941a1ac_cgraph" id="write_bitmap_8cpp_a9fb18cb05795359597d072e81941a1ac_cgraph">
+<area shape="rect" id="node3" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11" title="test_new" alt="" coords="93,32,168,61"/><area shape="rect" id="node5" href="class_pixel_array.html#acc4a66595a4ef1bf01b488a87a296a8c" title="PixelArray::pack_pixel_array" alt="" coords="217,5,404,35"/><area shape="rect" id="node9" href="class_pixel_array.html#ac2b7130e7db21a3ccb83cbb47d56b56d" title="PixelArray::set" alt="" coords="257,59,364,88"/><area shape="rect" id="node7" href="class_pixel_data.html#a9b7f6255aea4bd8159adbc6e5a87a8b3" title="PixelData::pack_pixel" alt="" coords="453,5,603,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -136,8 +154,13 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="write_bitmap_8cpp_source.html#l00021">21</a> of file <a class="el" href="write_bitmap_8cpp_source.html">writeBitmap.cpp</a>.</p>
-
+<p>References <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">BMPFile_24bit_PixelData::blue</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">BMPFile_24bit_PixelData::green</a>, and <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">BMPFile_24bit_PixelData::red</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        cout &lt;&lt; setw(2) &lt;&lt; hex &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; p24-&gt;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt;
+                        setw(2) &lt;&lt; hex &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; p24-&gt;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt;
+                        setw(2) &lt;&lt; hex &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; p24-&gt;<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a> &lt;&lt; endl;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a1cc9e215eaba87af9bea0caad3330144"></a><!-- doxytag: member="writeBitmap.cpp::printPixelCharArray" ref="a1cc9e215eaba87af9bea0caad3330144" args="(char *data, int write_length)" -->
@@ -164,9 +187,12 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="write_bitmap_8cpp_source.html#l00028">28</a> of file <a class="el" href="write_bitmap_8cpp_source.html">writeBitmap.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; write_length; x++)
+                cout &lt;&lt; setw(2) &lt;&lt; hex &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; data[x] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;
+        cout &lt;&lt; endl;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a3325c4107d4db692b625487a90d3ae11"></a><!-- doxytag: member="writeBitmap.cpp::test_new" ref="a3325c4107d4db692b625487a90d3ae11" args="()" -->
@@ -183,7 +209,48 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="write_bitmap_8cpp_source.html#l00064">64</a> of file <a class="el" href="write_bitmap_8cpp_source.html">writeBitmap.cpp</a>.</p>
+<p>References <a class="el" href="class_pixel_array.html#acc4a66595a4ef1bf01b488a87a296a8c">PixelArray::pack_pixel_array()</a>, <a class="el" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">PixelArray::packed_array_length</a>, and <a class="el" href="class_pixel_array.html#ac2b7130e7db21a3ccb83cbb47d56b56d">PixelArray::set()</a>.</p>
+
+<p>Referenced by <a class="el" href="write_bitmap_8cpp.html#a9fb18cb05795359597d072e81941a1ac">m()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="comment">//pixel24 pix(0x01, 0x6F, 0x5A);</span>
+        <span class="comment">//printPixelCharArray(pix.pack_pixel(), pix.write_length);</span>
+
+        <span class="comment">//printPixelCharArray(data, 3);</span>
+
+        <a class="code" href="class_pixel_array.html">PixelArray</a> pa(4, 4);
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> black(0x00, 0x00, 0x00), white(0xFF, 0xFF, 0xFF);
+
+        pa.set(0, 0, &amp;black);
+        pa.set(1, 1, &amp;black);
+        pa.set(2, 2, &amp;black);
+        pa.set(3, 3, &amp;black);
+
+        <span class="keywordtype">char</span> *sp = pa.pack_pixel_array(&amp;white);
+
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; pa.packed_array_length; x++)
+                printf(<span class="stringliteral">&quot;i = %d =&gt; %x&quot;</span>, x, sp[x]);
+
+        <span class="keywordflow">return</span> 0;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="write_bitmap_8cpp_a3325c4107d4db692b625487a90d3ae11_cgraph.png" border="0" usemap="#write_bitmap_8cpp_a3325c4107d4db692b625487a90d3ae11_cgraph" alt=""/></div>
+<map name="write_bitmap_8cpp_a3325c4107d4db692b625487a90d3ae11_cgraph" id="write_bitmap_8cpp_a3325c4107d4db692b625487a90d3ae11_cgraph">
+<area shape="rect" id="node3" href="class_pixel_array.html#acc4a66595a4ef1bf01b488a87a296a8c" title="PixelArray::pack_pixel_array" alt="" coords="129,5,316,35"/><area shape="rect" id="node7" href="class_pixel_array.html#ac2b7130e7db21a3ccb83cbb47d56b56d" title="PixelArray::set" alt="" coords="169,59,276,88"/><area shape="rect" id="node5" href="class_pixel_data.html#a9b7f6255aea4bd8159adbc6e5a87a8b3" title="PixelData::pack_pixel" alt="" coords="365,5,515,35"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="write_bitmap_8cpp_a3325c4107d4db692b625487a90d3ae11_icgraph.png" border="0" usemap="#write_bitmap_8cpp_a3325c4107d4db692b625487a90d3ae11_icgraph" alt=""/></div>
+<map name="write_bitmap_8cpp_a3325c4107d4db692b625487a90d3ae11_icgraph" id="write_bitmap_8cpp_a3325c4107d4db692b625487a90d3ae11_icgraph">
+<area shape="rect" id="node3" href="write_bitmap_8cpp.html#a9fb18cb05795359597d072e81941a1ac" title="m" alt="" coords="129,5,167,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -200,9 +267,34 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+        <span class="comment">/*</span>
+<span class="comment">        int height = 3;</span>
+<span class="comment">        int width = 3;</span>
+<span class="comment">        string filename = &quot;test.bmp&quot;;</span>
+<span class="comment">        //pixel24_array pixarr(height, width);</span>
+<span class="comment">        BMP24 bmp(filename, height, width);</span>
+<span class="comment"></span>
+<span class="comment">        char min = 0x00;</span>
+<span class="comment">        char max = 0xff;</span>
+<span class="comment"></span>
+<span class="comment">        pixel24 blue(max,min,min), green(min,max,min), red(min,min,max);</span>
+<span class="comment">        pair&lt;int,int&gt; rowCol(0,0);</span>
+<span class="comment"></span>
+<span class="comment">        bmp.set(blue,rowCol);</span>
+<span class="comment"></span>
+<span class="comment">        rowCol.second = 1;</span>
+<span class="comment">        bmp.set(green,rowCol);</span>
+<span class="comment"></span>
+<span class="comment">        rowCol.second = 2;</span>
+<span class="comment">        bmp.set(red,rowCol);</span>
+<span class="comment"></span>
+<span class="comment">        bmp.Write_Bitmap();</span>
+<span class="comment">        */</span>
 
-<p>Definition at line <a class="el" href="write_bitmap_8cpp_source.html#l00035">35</a> of file <a class="el" href="write_bitmap_8cpp_source.html">writeBitmap.cpp</a>.</p>
-
+        <span class="keywordflow">return</span> 0;
+}
+</pre></div>
 </div>
 </div>
 </div>
@@ -210,7 +302,7 @@ Functions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="write_bitmap_8cpp.html">writeBitmap.cpp</a>      </li>
-      <li class="footer">Generated on Mon Oct 24 2011 18:14:03 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Wed Oct 26 2011 22:27:40 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_b_m_p_file___header.html" title="{BMPFile_Header\n|+ filesize\l+ creator1\l+ creator2\l+ bmp_offset\l|+ BMPFile_Header()\l+ Write_Header()\l}" alt="" coords="5,493,147,648"/>
+<area shape="rect" id="node4" href="$class_b_m_p_file___infoheader.html" title="{BMPFile_Infoheader\n|+ header_size\l+ width\l+ height\l+ planes\l+ bits_per_pixel\l+ compress_type\l+ image_data_size\l+ horizontal_resolution\l+ vertical_resolution\l+ colors_in_colortable\l+ important_color_count\l|+ BMPFile_Infoheader()\l+ Write_Header()\l}" alt="" coords="171,433,333,709"/>
+<area shape="rect" id="node6" href="$class_b_m_p_file__24bit___pixel_array.html" title="{BMPFile_24bit_PixelArray\n|&#45; row_padding\l&#45; rows\l&#45; columns\l&#45; pixel_array\l&#45; row_offsets\l|+ BMPFile_24bit_PixelArray()\l+ BMPFile_24bit_PixelArray()\l+ Reinitialize_PixelArray()\l+ Write_PixelData()\l+ get()\l+ set()\l&#45; Write_RowPadding()\l&#45; getPosition()\l}" alt="" coords="357,433,552,709"/>
+<area shape="rect" id="node12" href="$class_b_m_p_file__24bit___pixel_data.html" title="{BMPFile_24bit_PixelData\n|+ blue\l+ green\l+ red\l|+ BMPFile_24bit_PixelData()\l+ BMPFile_24bit_PixelData()\l+ Write_PixelData()\l+ operator=()\l+ operator==()\l+ operator!=()\l}" alt="" coords="360,6,549,213"/>
+<area shape="rect" id="node14" title="STL class." alt="" coords="576,528,656,613"/>
+<area shape="rect" id="node16" title="STL class." alt="" coords="607,280,772,365"/>
+<area shape="rect" id="node18" href="$class_b_m_p_file___magic.html" title="{BMPFile_Magic\n|+ magic\l|+ BMPFile_Magic()\l}" alt="" coords="680,528,813,613"/>
+</map>

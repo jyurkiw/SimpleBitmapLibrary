@@ -60,7 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -90,12 +90,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for PixelData_24_Bit:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_pixel_data__24___bit.png" usemap="#PixelData_24_Bit_map" alt=""/>
-  <map id="PixelData_24_Bit_map" name="PixelData_24_Bit_map">
-<area href="class_pixel_data.html" alt="PixelData" shape="rect" coords="0,0,107,24"/>
-</map>
- </div></div>
+<div class="center"><img src="class_pixel_data__24___bit__inherit__graph.png" border="0" usemap="#_pixel_data__24___bit_inherit__map" alt="Inheritance graph"/></div>
+<map name="_pixel_data__24___bit_inherit__map" id="_pixel_data__24___bit_inherit__map">
+<area shape="rect" id="node2" href="class_pixel_data.html" title="{pixel\n|+ write_length\l|+ PixelData()\l+ pack_pixel()\l+ ~PixelData()\l}" alt="" coords="23,5,129,125"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for PixelData_24_Bit:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_data__24___bit__coll__graph.png" border="0" usemap="#_pixel_data__24___bit_coll__map" alt="Collaboration graph"/></div>
+<map name="_pixel_data__24___bit_coll__map" id="_pixel_data__24___bit_coll__map">
+<area shape="rect" id="node2" href="class_pixel_data.html" title="{pixel\n|+ write_length\l|+ PixelData()\l+ pack_pixel()\l+ ~PixelData()\l}" alt="" coords="23,5,129,125"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_pixel_data__24___bit-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -117,8 +122,6 @@ Public Member Functions</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Represents a single 24-bit pixel </p>
-
-<p>Definition at line <a class="el" href="_pixel__24_8h_source.html#l00018">18</a> of file <a class="el" href="_pixel__24_8h_source.html">Pixel_24.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aca27f5a26d1862d45f6d741371e77d99"></a><!-- doxytag: member="PixelData_24_Bit::PixelData_24_Bit" ref="aca27f5a26d1862d45f6d741371e77d99" args="()" -->
 <div class="memitem">
@@ -134,9 +137,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Empty constructor. Defaults red, green, and blue to 0x00, and write_length to 24. </p>
-
-<p>Definition at line <a class="el" href="_pixel__24_8h_source.html#l00027">27</a> of file <a class="el" href="_pixel__24_8h_source.html">Pixel_24.h</a>.</p>
-
+<div class="fragment"><pre class="fragment">                          : <a class="code" href="class_pixel_data.html#a2d08db131d142fd047fce606ce3bd054">PixelData</a>(3), v_blue(0x00), v_green(0x00), v_red(0x00),
+                        is_packed(<span class="keyword">false</span>) { }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a33f66d19385463cf246031076c29581f"></a><!-- doxytag: member="PixelData_24_Bit::PixelData_24_Bit" ref="a33f66d19385463cf246031076c29581f" args="(char b, char g, char r)" -->
@@ -170,9 +173,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Constructor. Defaults red, green, and blue to passed values and write_length to 24. </p>
-
-<p>Definition at line <a class="el" href="_pixel__24_8h_source.html#l00034">34</a> of file <a class="el" href="_pixel__24_8h_source.html">Pixel_24.h</a>.</p>
-
+<div class="fragment"><pre class="fragment">                                                : <a class="code" href="class_pixel_data.html#a2d08db131d142fd047fce606ce3bd054">PixelData</a>(3), v_blue(b), v_green(g),
+                        v_red(r), is_packed(<span class="keyword">false</span>) { }
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -197,9 +200,11 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00053">53</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        v_blue = value;
+        is_packed = <span class="keyword">false</span>;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a950049c94c3097caea239bcc4b090237"></a><!-- doxytag: member="PixelData_24_Bit::blue" ref="a950049c94c3097caea239bcc4b090237" args="() const " -->
@@ -218,7 +223,19 @@ Public Member Functions</h2></td></tr>
 <p>Get the blue value of the pixel.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The blue value of the pixel </dd></dl>
 
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00071">71</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
+<p>Referenced by <a class="el" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3">operator=()</a>, and <a class="el" href="class_pixel_data__24___bit.html#ab3ff741eab8092a50673e7252318cddf">set()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">return</span> v_blue;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_data__24___bit_a950049c94c3097caea239bcc4b090237_icgraph.png" border="0" usemap="#class_pixel_data__24___bit_a950049c94c3097caea239bcc4b090237_icgraph" alt=""/></div>
+<map name="class_pixel_data__24___bit_a950049c94c3097caea239bcc4b090237_icgraph" id="class_pixel_data__24___bit_a950049c94c3097caea239bcc4b090237_icgraph">
+<area shape="rect" id="node3" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3" title="PixelData_24_Bit::operator=" alt="" coords="208,5,395,35"/><area shape="rect" id="node5" href="class_pixel_data__24___bit.html#ab3ff741eab8092a50673e7252318cddf" title="PixelData_24_Bit::set" alt="" coords="227,59,376,88"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -238,7 +255,19 @@ Public Member Functions</h2></td></tr>
 <p>Get the green value of the pixel.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The green value of the pixel </dd></dl>
 
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00076">76</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
+<p>Referenced by <a class="el" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3">operator=()</a>, and <a class="el" href="class_pixel_data__24___bit.html#ab3ff741eab8092a50673e7252318cddf">set()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">return</span> v_green;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_data__24___bit_a6525ad48b097c7d6bb2113f079d180ab_icgraph.png" border="0" usemap="#class_pixel_data__24___bit_a6525ad48b097c7d6bb2113f079d180ab_icgraph" alt=""/></div>
+<map name="class_pixel_data__24___bit_a6525ad48b097c7d6bb2113f079d180ab_icgraph" id="class_pixel_data__24___bit_a6525ad48b097c7d6bb2113f079d180ab_icgraph">
+<area shape="rect" id="node3" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3" title="PixelData_24_Bit::operator=" alt="" coords="216,5,403,35"/><area shape="rect" id="node5" href="class_pixel_data__24___bit.html#ab3ff741eab8092a50673e7252318cddf" title="PixelData_24_Bit::set" alt="" coords="235,59,384,88"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -263,9 +292,11 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00059">59</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        v_green = value;
+        is_packed = <span class="keyword">false</span>;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a0f9112e0855c8bc73a1125599f8a4e89"></a><!-- doxytag: member="PixelData_24_Bit::operator!=" ref="a0f9112e0855c8bc73a1125599f8a4e89" args="(const PixelData_24_Bit &amp;rhs)" -->
@@ -290,9 +321,10 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>True if they are not the same. False otherwise. </dd></dl>
-
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00027">27</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == rhs);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="ae6f3a6cd04d0bd963b3ec516705bffe3"></a><!-- doxytag: member="PixelData_24_Bit::operator=" ref="ae6f3a6cd04d0bd963b3ec516705bffe3" args="(const PixelData_24_Bit &amp;rhs)" -->
@@ -318,7 +350,23 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>This pixel24. </dd></dl>
 
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00013">13</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
+<p>References <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">BMPFile_24bit_PixelData::blue</a>, <a class="el" href="class_pixel_data__24___bit.html#a950049c94c3097caea239bcc4b090237">blue()</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">BMPFile_24bit_PixelData::green</a>, <a class="el" href="class_pixel_data__24___bit.html#a6525ad48b097c7d6bb2113f079d180ab">green()</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">BMPFile_24bit_PixelData::red</a>, and <a class="el" href="class_pixel_data__24___bit.html#aededd5cfec75dbef77ed97244f939386">red()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_pixel_data__24___bit.html#a950049c94c3097caea239bcc4b090237">blue</a>(rhs.<a class="code" href="class_pixel_data__24___bit.html#a4656a6b1c5c23afde651c443af673151">blue</a>());
+        <a class="code" href="class_pixel_data__24___bit.html#a6525ad48b097c7d6bb2113f079d180ab">green</a>(rhs.<a class="code" href="class_pixel_data__24___bit.html#a031ed4450a1dd8f44bdc5622dfc530ce">green</a>());
+        <a class="code" href="class_pixel_data__24___bit.html#aededd5cfec75dbef77ed97244f939386">red</a>(rhs.<a class="code" href="class_pixel_data__24___bit.html#ad2e49bd7dc117748606a51f6c8a26322">red</a>());
+
+        <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_data__24___bit_ae6f3a6cd04d0bd963b3ec516705bffe3_cgraph.png" border="0" usemap="#class_pixel_data__24___bit_ae6f3a6cd04d0bd963b3ec516705bffe3_cgraph" alt=""/></div>
+<map name="class_pixel_data__24___bit_ae6f3a6cd04d0bd963b3ec516705bffe3_cgraph" id="class_pixel_data__24___bit_ae6f3a6cd04d0bd963b3ec516705bffe3_cgraph">
+<area shape="rect" id="node3" href="class_pixel_data__24___bit.html#a950049c94c3097caea239bcc4b090237" title="PixelData_24_Bit::blue" alt="" coords="244,5,399,35"/><area shape="rect" id="node5" href="class_pixel_data__24___bit.html#a6525ad48b097c7d6bb2113f079d180ab" title="PixelData_24_Bit::green" alt="" coords="240,59,403,88"/><area shape="rect" id="node7" href="class_pixel_data__24___bit.html#aededd5cfec75dbef77ed97244f939386" title="PixelData_24_Bit::red" alt="" coords="247,112,396,141"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -345,8 +393,11 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>True if they are the same. False otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00022">22</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
-
+<p>References <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">BMPFile_24bit_PixelData::blue</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">BMPFile_24bit_PixelData::green</a>, and <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">BMPFile_24bit_PixelData::red</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">return</span> (v_blue == rhs.<a class="code" href="class_pixel_data__24___bit.html#a4656a6b1c5c23afde651c443af673151">blue</a>()) &amp;&amp; (v_green == rhs.<a class="code" href="class_pixel_data__24___bit.html#a031ed4450a1dd8f44bdc5622dfc530ce">green</a>()) &amp;&amp; (v_red == rhs.<a class="code" href="class_pixel_data__24___bit.html#ad2e49bd7dc117748606a51f6c8a26322">red</a>());
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a95310d5691b12f4b374b161174bb949d"></a><!-- doxytag: member="PixelData_24_Bit::pack_pixel" ref="a95310d5691b12f4b374b161174bb949d" args="()" -->
@@ -366,9 +417,18 @@ Public Member Functions</h2></td></tr>
 <p>Packs the pixel data into a char array and returns it. 24-bit pixel data is contained in 3 bytes so the return array is 3 chars long (blue, green, red). </p>
 
 <p>Implements <a class="el" href="class_pixel_data.html#a9b7f6255aea4bd8159adbc6e5a87a8b3">PixelData</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">if</span> (!is_packed)
+        {
+                packed_pixel_data[0] = v_blue;
+                packed_pixel_data[1] = v_green;
+                packed_pixel_data[2] = v_red;
+                is_packed = <span class="keyword">true</span>;
+        }
 
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00032">32</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
-
+        <span class="keywordflow">return</span> packed_pixel_data;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="aededd5cfec75dbef77ed97244f939386"></a><!-- doxytag: member="PixelData_24_Bit::red" ref="aededd5cfec75dbef77ed97244f939386" args="() const " -->
@@ -387,7 +447,19 @@ Public Member Functions</h2></td></tr>
 <p>Get the red value of the pixel.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The red value of the pixel </dd></dl>
 
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00081">81</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
+<p>Referenced by <a class="el" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3">operator=()</a>, and <a class="el" href="class_pixel_data__24___bit.html#ab3ff741eab8092a50673e7252318cddf">set()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">return</span> v_red;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_data__24___bit_aededd5cfec75dbef77ed97244f939386_icgraph.png" border="0" usemap="#class_pixel_data__24___bit_aededd5cfec75dbef77ed97244f939386_icgraph" alt=""/></div>
+<map name="class_pixel_data__24___bit_aededd5cfec75dbef77ed97244f939386_icgraph" id="class_pixel_data__24___bit_aededd5cfec75dbef77ed97244f939386_icgraph">
+<area shape="rect" id="node3" href="class_pixel_data__24___bit.html#ae6f3a6cd04d0bd963b3ec516705bffe3" title="PixelData_24_Bit::operator=" alt="" coords="203,5,389,35"/><area shape="rect" id="node5" href="class_pixel_data__24___bit.html#ab3ff741eab8092a50673e7252318cddf" title="PixelData_24_Bit::set" alt="" coords="221,59,371,88"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -412,9 +484,11 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00065">65</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        v_red = value;
+        is_packed = <span class="keyword">false</span>;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="ab3ff741eab8092a50673e7252318cddf"></a><!-- doxytag: member="PixelData_24_Bit::set" ref="ab3ff741eab8092a50673e7252318cddf" args="(char, char, char)" -->
@@ -457,20 +531,35 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pixel__24_8cpp_source.html#l00045">45</a> of file <a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a>.</p>
+<p>References <a class="el" href="class_pixel_data__24___bit.html#a950049c94c3097caea239bcc4b090237">blue()</a>, <a class="el" href="class_pixel_data__24___bit.html#a6525ad48b097c7d6bb2113f079d180ab">green()</a>, and <a class="el" href="class_pixel_data__24___bit.html#aededd5cfec75dbef77ed97244f939386">red()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        this-&gt;v_blue = <a class="code" href="class_pixel_data__24___bit.html#a950049c94c3097caea239bcc4b090237">blue</a>;
+        this-&gt;v_green = <a class="code" href="class_pixel_data__24___bit.html#a6525ad48b097c7d6bb2113f079d180ab">green</a>;
+        this-&gt;v_red = <a class="code" href="class_pixel_data__24___bit.html#aededd5cfec75dbef77ed97244f939386">red</a>;
+        is_packed = <span class="keyword">false</span>;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_data__24___bit_ab3ff741eab8092a50673e7252318cddf_cgraph.png" border="0" usemap="#class_pixel_data__24___bit_ab3ff741eab8092a50673e7252318cddf_cgraph" alt=""/></div>
+<map name="class_pixel_data__24___bit_ab3ff741eab8092a50673e7252318cddf_cgraph" id="class_pixel_data__24___bit_ab3ff741eab8092a50673e7252318cddf_cgraph">
+<area shape="rect" id="node3" href="class_pixel_data__24___bit.html#a950049c94c3097caea239bcc4b090237" title="PixelData_24_Bit::blue" alt="" coords="207,5,361,35"/><area shape="rect" id="node5" href="class_pixel_data__24___bit.html#a6525ad48b097c7d6bb2113f079d180ab" title="PixelData_24_Bit::green" alt="" coords="203,59,365,88"/><area shape="rect" id="node7" href="class_pixel_data__24___bit.html#aededd5cfec75dbef77ed97244f939386" title="PixelData_24_Bit::red" alt="" coords="209,112,359,141"/></map>
+</div>
+</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/Pixel_24/<a class="el" href="_pixel__24_8h_source.html">Pixel_24.h</a></li>
-<li>src/Pixel_24/<a class="el" href="_pixel__24_8cpp_source.html">Pixel_24.cpp</a></li>
+<li>src/Pixel_24/<a class="el" href="_pixel__24_8cpp.html">Pixel_24.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_pixel_data__24___bit.html">PixelData_24_Bit</a>      </li>
-      <li class="footer">Generated on Mon Oct 24 2011 18:14:03 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Wed Oct 26 2011 22:27:40 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

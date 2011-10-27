@@ -60,7 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -102,10 +102,7 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_p_file___header.html#adb337e0224bc0fe1a293e5a137d1bb72">creator2</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_p_file___header.html#afef2565f1812aa7acd8924ead5f68f44">bmp_offset</a></td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="bmp_8h_source.html#l00026">26</a> of file <a class="el" href="bmp_8h_source.html">bmp.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aaede1d9e464222c3e63b91d2e8aa9497"></a><!-- doxytag: member="BMPFile_Header::BMPFile_Header" ref="aaede1d9e464222c3e63b91d2e8aa9497" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -119,9 +116,13 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="bmp_8cpp_source.html#l00028">28</a> of file <a class="el" href="bmp_8cpp_source.html">bmp.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file___header.html#a3b387a7de49cdcde106b5412420ba0b9">filesize</a> = 0;
+        <a class="code" href="class_b_m_p_file___header.html#a490febb6c2d307f057d1948a352ad65b">creator1</a> = 0;
+        <a class="code" href="class_b_m_p_file___header.html#adb337e0224bc0fe1a293e5a137d1bb72">creator2</a> = 0;
+        <a class="code" href="class_b_m_p_file___header.html#afef2565f1812aa7acd8924ead5f68f44">bmp_offset</a> = 0;
+}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -150,8 +151,17 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="bmp_8cpp_source.html#l00036">36</a> of file <a class="el" href="bmp_8cpp_source.html">bmp.cpp</a>.</p>
+<p>References <a class="el" href="class_b_m_p_file___magic.html#ab087a2234cc747631bf96e2950d0e463">BMPFile_Magic::magic</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        p_file-&gt;write(p_magic-&gt;<a class="code" href="class_b_m_p_file___magic.html#ab087a2234cc747631bf96e2950d0e463">magic</a>, 2);
 
+        <span class="comment">//write filesize, creator 1, creator 2, and bmp_offset</span>
+        Write_Memoryblock &lt;uint32_t&gt; (p_file, <a class="code" href="class_b_m_p_file___header.html#a3b387a7de49cdcde106b5412420ba0b9">filesize</a>);
+        Write_Memoryblock &lt;uint16_t&gt; (p_file, <a class="code" href="class_b_m_p_file___header.html#a490febb6c2d307f057d1948a352ad65b">creator1</a>);
+        Write_Memoryblock &lt;uint16_t&gt; (p_file, <a class="code" href="class_b_m_p_file___header.html#adb337e0224bc0fe1a293e5a137d1bb72">creator2</a>);
+        Write_Memoryblock &lt;uint32_t&gt; (p_file, <a class="code" href="class_b_m_p_file___header.html#afef2565f1812aa7acd8924ead5f68f44">bmp_offset</a>);
+}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -166,8 +176,6 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="bmp_8h_source.html#l00032">32</a> of file <a class="el" href="bmp_8h_source.html">bmp.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a490febb6c2d307f057d1948a352ad65b"></a><!-- doxytag: member="BMPFile_Header::creator1" ref="a490febb6c2d307f057d1948a352ad65b" args="" -->
@@ -180,8 +188,6 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="bmp_8h_source.html#l00030">30</a> of file <a class="el" href="bmp_8h_source.html">bmp.h</a>.</p>
 
 </div>
 </div>
@@ -196,8 +202,6 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="bmp_8h_source.html#l00031">31</a> of file <a class="el" href="bmp_8h_source.html">bmp.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a3b387a7de49cdcde106b5412420ba0b9"></a><!-- doxytag: member="BMPFile_Header::filesize" ref="a3b387a7de49cdcde106b5412420ba0b9" args="" -->
@@ -211,20 +215,18 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="bmp_8h_source.html#l00029">29</a> of file <a class="el" href="bmp_8h_source.html">bmp.h</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="bmp_8h_source.html">bmp.h</a></li>
-<li>src/<a class="el" href="bmp_8cpp_source.html">bmp.cpp</a></li>
+<li>src/<a class="el" href="bmp_8cpp.html">bmp.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_b_m_p_file___header.html">BMPFile_Header</a>      </li>
-      <li class="footer">Generated on Mon Oct 24 2011 18:14:03 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Wed Oct 26 2011 22:27:40 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

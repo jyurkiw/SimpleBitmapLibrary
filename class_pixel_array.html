@@ -60,7 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -88,6 +88,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <!-- doxytag: class="PixelArray" -->
 <p><code>#include &lt;<a class="el" href="_pixel_array_8h_source.html">PixelArray.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for PixelArray:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_array__coll__graph.png" border="0" usemap="#_pixel_array_coll__map" alt="Collaboration graph"/></div>
+<map name="_pixel_array_coll__map" id="_pixel_array_coll__map">
+<area shape="rect" id="node4" href="class_pixel_data.html" title="{PixelData\n|+ write_length\l|+ PixelData()\l+ pack_pixel()\l+ ~PixelData()\l}" alt="" coords="5,5,112,125"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_pixel_array-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -107,10 +114,7 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a></td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_pixel_array_8h_source.html#l00017">17</a> of file <a class="el" href="_pixel_array_8h_source.html">PixelArray.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8341d3e872dcc538c3ff54b0b9a6a2a2"></a><!-- doxytag: member="PixelArray::PixelArray" ref="a8341d3e872dcc538c3ff54b0b9a6a2a2" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -126,8 +130,18 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>Empty constructor for STL support </p>
 
-<p>Definition at line <a class="el" href="_pixel_array_8cpp_source.html#l00013">13</a> of file <a class="el" href="_pixel_array_8cpp_source.html">PixelArray.cpp</a>.</p>
+<p>References <a class="el" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a>, <a class="el" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a>, and <a class="el" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a> = 0;
+        <a class="code" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a> = 0;
 
+        row_padding = 0;
+        packed_pixel_array = 0;
+        <a class="code" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a> = 0;
+        empty = 0;
+        pixel_array_is_packed = <span class="keyword">false</span>;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a86cd66a13f7c1c9c43341f3ea11a74ba"></a><!-- doxytag: member="PixelArray::PixelArray" ref="a86cd66a13f7c1c9c43341f3ea11a74ba" args="(int, int, pixel *)" -->
@@ -170,7 +184,20 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pixel_array_8cpp_source.html#l00025">25</a> of file <a class="el" href="_pixel_array_8cpp_source.html">PixelArray.cpp</a>.</p>
+<p>References <a class="el" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray()</a>, and <a class="el" href="class_pixel_array.html#ad8fdd4bec1887f2ed8db25f330e84f4f">setEmpty()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray</a>(height, width);
+        <a class="code" href="class_pixel_array.html#ad8fdd4bec1887f2ed8db25f330e84f4f">setEmpty</a>(empty);
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_array_a86cd66a13f7c1c9c43341f3ea11a74ba_cgraph.png" border="0" usemap="#class_pixel_array_a86cd66a13f7c1c9c43341f3ea11a74ba_cgraph" alt=""/></div>
+<map name="class_pixel_array_a86cd66a13f7c1c9c43341f3ea11a74ba_cgraph" id="class_pixel_array_a86cd66a13f7c1c9c43341f3ea11a74ba_cgraph">
+<area shape="rect" id="node3" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8" title="PixelArray::Resize_PixelArray" alt="" coords="207,5,404,35"/><area shape="rect" id="node5" href="class_pixel_array.html#ad8fdd4bec1887f2ed8db25f330e84f4f" title="PixelArray::setEmpty" alt="" coords="232,59,379,88"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -188,9 +215,12 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Destroys packed_pixel_array. </p>
-
-<p>Definition at line <a class="el" href="_pixel_array_8cpp_source.html#l00096">96</a> of file <a class="el" href="_pixel_array_8cpp_source.html">PixelArray.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">if</span> (packed_pixel_array != 0)
+                <span class="keyword">delete</span>[] packed_pixel_array;
+        un_init_pixel_data_array();
+}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -227,9 +257,11 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The pixel at row x col </dd></dl>
-
-<p>Definition at line <a class="el" href="bmp_8cpp_source.html#l00161">161</a> of file <a class="el" href="bmp_8cpp_source.html">bmp.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        <span class="comment">//return pixel_array.at(rowCol.first).at(rowCol.second);</span>
+        <span class="keywordflow">return</span> pixel_array[getPosition(rowCol)];
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="acc4a66595a4ef1bf01b488a87a296a8c"></a><!-- doxytag: member="PixelArray::pack_pixel_array" ref="acc4a66595a4ef1bf01b488a87a296a8c" args="()" -->
@@ -248,7 +280,54 @@ Public Attributes</h2></td></tr>
 <p>Pack and return the Pixel Array data</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The packed pixel array </dd></dl>
 
-<p>Definition at line <a class="el" href="_pixel_array_8cpp_source.html#l00067">67</a> of file <a class="el" href="_pixel_array_8cpp_source.html">PixelArray.cpp</a>.</p>
+<p>References <a class="el" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a>, <a class="el" href="class_pixel_data.html#a9b7f6255aea4bd8159adbc6e5a87a8b3">PixelData::pack_pixel()</a>, <a class="el" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a>, <a class="el" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a>, and <a class="el" href="class_pixel_data.html#a5d73fc35530ecf52999154cf81de4d6d">PixelData::write_length</a>.</p>
+
+<p>Referenced by <a class="el" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11">test_new()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">if</span> (!pixel_array_is_packed)
+        {
+                <span class="keywordtype">int</span> pixel_len = empty-&gt;<a class="code" href="class_pixel_data.html#a5d73fc35530ecf52999154cf81de4d6d">write_length</a>;
+                <span class="keywordtype">char</span> *packed_pixel = 0;
+
+                <a class="code" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a> = (<a class="code" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a> + row_padding) * <a class="code" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a> * pixel_len;
+                packed_pixel_array = <span class="keyword">new</span> <span class="keywordtype">char</span>[<a class="code" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a>];
+
+                pair&lt;int,int&gt; coords;
+                <span class="keywordtype">int</span> row, col;
+
+                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> packed_i = 0; packed_i &lt; <a class="code" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a>; packed_i += pixel_len)
+                {
+                        coords = calc_pixel_coords_by_packed_index(packed_i);
+                        row = coords.first;
+                        col = coords.second;
+
+                        packed_pixel = col &lt; <a class="code" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a> ? <span class="keyword">get</span>(row, col)-&gt;pack_pixel() : empty-&gt;pack_pixel();
+
+                        move_data_into_packed_array(packed_pixel, packed_i, pixel_len);
+                }
+
+                pixel_array_is_packed = <span class="keyword">true</span>;
+        }
+        <span class="keywordflow">return</span> packed_pixel_array;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_cgraph.png" border="0" usemap="#class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_cgraph" alt=""/></div>
+<map name="class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_cgraph" id="class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_cgraph">
+<area shape="rect" id="node3" href="class_pixel_data.html#a9b7f6255aea4bd8159adbc6e5a87a8b3" title="PixelData::pack_pixel" alt="" coords="243,5,392,35"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_icgraph.png" border="0" usemap="#class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_icgraph" alt=""/></div>
+<map name="class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_icgraph" id="class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_icgraph">
+<area shape="rect" id="node3" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11" title="test_new" alt="" coords="243,5,317,35"/><area shape="rect" id="node5" href="write_bitmap_8cpp.html#a9fb18cb05795359597d072e81941a1ac" title="m" alt="" coords="367,5,404,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -285,7 +364,35 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pixel_array_8cpp_source.html#l00031">31</a> of file <a class="el" href="_pixel_array_8cpp_source.html">PixelArray.cpp</a>.</p>
+<p>References <a class="el" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a>, <a class="el" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a>, and <a class="el" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a>.</p>
+
+<p>Referenced by <a class="el" href="class_pixel_array.html#a86cd66a13f7c1c9c43341f3ea11a74ba">PixelArray()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a> = height;
+        <a class="code" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a> = width;
+
+        row_padding = <a class="code" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a> % 4;
+        <span class="keywordflow">if</span> (packed_pixel_array != 0)
+        {
+                <span class="keyword">delete</span>[] packed_pixel_array;
+        }
+
+        <a class="code" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a> = 0;
+        packed_pixel_array = 0;
+        pixel_array_is_packed = <span class="keyword">false</span>;
+
+        init_pixel_data_array();
+        row_offsets.reserve(<a class="code" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a>);
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_array_ae949729d467d4ff6de362df734336fe8_icgraph.png" border="0" usemap="#class_pixel_array_ae949729d467d4ff6de362df734336fe8_icgraph" alt=""/></div>
+<map name="class_pixel_array_ae949729d467d4ff6de362df734336fe8_icgraph" id="class_pixel_array_ae949729d467d4ff6de362df734336fe8_icgraph">
+<area shape="rect" id="node3" href="class_pixel_array.html#a86cd66a13f7c1c9c43341f3ea11a74ba" title="PixelArray::PixelArray" alt="" coords="255,5,404,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -329,7 +436,19 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="bmp_8cpp_source.html#l00167">167</a> of file <a class="el" href="bmp_8cpp_source.html">bmp.cpp</a>.</p>
+<p>Referenced by <a class="el" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11">test_new()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        pixel_array[getPosition(rowCol)] = <a class="code" href="_pixel_data_8h.html#a917093390ae6dd6d061eb84a6c593d67">pixel</a>;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_array_ac2b7130e7db21a3ccb83cbb47d56b56d_icgraph.png" border="0" usemap="#class_pixel_array_ac2b7130e7db21a3ccb83cbb47d56b56d_icgraph" alt=""/></div>
+<map name="class_pixel_array_ac2b7130e7db21a3ccb83cbb47d56b56d_icgraph" id="class_pixel_array_ac2b7130e7db21a3ccb83cbb47d56b56d_icgraph">
+<area shape="rect" id="node3" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11" title="test_new" alt="" coords="163,5,237,35"/><area shape="rect" id="node5" href="write_bitmap_8cpp.html#a9fb18cb05795359597d072e81941a1ac" title="m" alt="" coords="287,5,324,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -355,7 +474,20 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pixel_array_8cpp_source.html#l00061">61</a> of file <a class="el" href="_pixel_array_8cpp_source.html">PixelArray.cpp</a>.</p>
+<p>Referenced by <a class="el" href="class_pixel_array.html#a86cd66a13f7c1c9c43341f3ea11a74ba">PixelArray()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        empty = new_empty;
+        pixel_array_is_packed = <span class="keyword">false</span>;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_array_ad8fdd4bec1887f2ed8db25f330e84f4f_icgraph.png" border="0" usemap="#class_pixel_array_ad8fdd4bec1887f2ed8db25f330e84f4f_icgraph" alt=""/></div>
+<map name="class_pixel_array_ad8fdd4bec1887f2ed8db25f330e84f4f_icgraph" id="class_pixel_array_ad8fdd4bec1887f2ed8db25f330e84f4f_icgraph">
+<area shape="rect" id="node3" href="class_pixel_array.html#a86cd66a13f7c1c9c43341f3ea11a74ba" title="PixelArray::PixelArray" alt="" coords="201,5,351,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -372,7 +504,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>Number of columns of data per row </p>
 
-<p>Definition at line <a class="el" href="_pixel_array_8h_source.html#l00087">87</a> of file <a class="el" href="_pixel_array_8h_source.html">PixelArray.h</a>.</p>
+<p>Referenced by <a class="el" href="class_pixel_array.html#acc4a66595a4ef1bf01b488a87a296a8c">pack_pixel_array()</a>, <a class="el" href="class_pixel_array.html#a8341d3e872dcc538c3ff54b0b9a6a2a2">PixelArray()</a>, and <a class="el" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray()</a>.</p>
 
 </div>
 </div>
@@ -388,7 +520,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>The length of the packed pixel array. </p>
 
-<p>Definition at line <a class="el" href="_pixel_array_8h_source.html#l00092">92</a> of file <a class="el" href="_pixel_array_8h_source.html">PixelArray.h</a>.</p>
+<p>Referenced by <a class="el" href="class_pixel_array.html#acc4a66595a4ef1bf01b488a87a296a8c">pack_pixel_array()</a>, <a class="el" href="class_pixel_array.html#a8341d3e872dcc538c3ff54b0b9a6a2a2">PixelArray()</a>, <a class="el" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray()</a>, and <a class="el" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11">test_new()</a>.</p>
 
 </div>
 </div>
@@ -404,21 +536,21 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>Number of pixel rows in the bitmap </p>
 
-<p>Definition at line <a class="el" href="_pixel_array_8h_source.html#l00082">82</a> of file <a class="el" href="_pixel_array_8h_source.html">PixelArray.h</a>.</p>
+<p>Referenced by <a class="el" href="class_pixel_array.html#acc4a66595a4ef1bf01b488a87a296a8c">pack_pixel_array()</a>, <a class="el" href="class_pixel_array.html#a8341d3e872dcc538c3ff54b0b9a6a2a2">PixelArray()</a>, and <a class="el" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/PixelArray/<a class="el" href="_pixel_array_8h_source.html">PixelArray.h</a></li>
-<li>src/<a class="el" href="bmp_8cpp_source.html">bmp.cpp</a></li>
-<li>src/PixelArray/<a class="el" href="_pixel_array_8cpp_source.html">PixelArray.cpp</a></li>
+<li>src/<a class="el" href="bmp_8cpp.html">bmp.cpp</a></li>
+<li>src/PixelArray/<a class="el" href="_pixel_array_8cpp.html">PixelArray.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_pixel_array.html">PixelArray</a>      </li>
-      <li class="footer">Generated on Mon Oct 24 2011 18:14:03 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Wed Oct 26 2011 22:27:40 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -60,7 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -87,6 +87,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <!-- doxytag: class="Pixel_24_Test" -->
 <p><code>#include &lt;<a class="el" href="_pixel24_test_8h_source.html">Pixel24Test.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Pixel_24_Test:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel__24___test__coll__graph.png" border="0" usemap="#_pixel__24___test_coll__map" alt="Collaboration graph"/></div>
+<map name="_pixel__24___test_coll__map" id="_pixel__24___test_coll__map">
+<area shape="rect" id="node2" href="class_b_m_p_file__24bit___pixel_data.html" title="{BMPFile_24bit_PixelData\n|+ blue\l+ green\l+ red\l|+ BMPFile_24bit_PixelData()\l+ BMPFile_24bit_PixelData()\l+ Write_PixelData()\l+ operator=()\l+ operator==()\l+ operator!=()\l}" alt="" coords="21,6,211,213"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_pixel__24___test-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -104,10 +111,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel__24___test.html#a61b485effe413243965e29ebae3909db">SetGreenTest</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel__24___test.html#ab60a0b197bd8a0e78b7fa20a561bbdc0">SetRedTest</a> (void)</td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_pixel24_test_8h_source.html#l00017">17</a> of file <a class="el" href="_pixel24_test_8h_source.html">Pixel24Test.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a9d7ee7158a50653e6e50434d3d29795d"></a><!-- doxytag: member="Pixel_24_Test::BGRConstructorTest" ref="a9d7ee7158a50653e6e50434d3d29795d" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -122,9 +126,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_blue(255, 0, 0);
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_green(0, 255, 0);
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_red(0, 0, 255);
 
-<p>Definition at line <a class="el" href="_pixel24_test_8cpp_source.html#l00037">37</a> of file <a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a>.</p>
-
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing blue == t_blue&quot;</span>, blue == t_blue);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing green == t_green&quot;</span>, green == t_green);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing red == t_red&quot;</span>, red == t_red);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a52aae1ef9c6fe9077e3c2ff4bbab8bc3"></a><!-- doxytag: member="Pixel_24_Test::EmptyConstructorTest" ref="a52aae1ef9c6fe9077e3c2ff4bbab8bc3" args="(void)" -->
@@ -141,9 +152,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_pixel24_test_8cpp_source.html#l00030">30</a> of file <a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing that blue = 0x00&quot;</span>, empty.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>() == 0x00);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing that green = 0x00&quot;</span>, empty.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>() == 0x00);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing that red = 0x00&quot;</span>, empty.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>() == 0x00);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a4609680a9e3c42e7302865eb6347baee"></a><!-- doxytag: member="Pixel_24_Test::EqualEqualOperatorTest" ref="a4609680a9e3c42e7302865eb6347baee" args="(void)" -->
@@ -160,9 +174,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_blue(255, 0, 0);
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_green(0, 255, 0);
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_red(0, 0, 255);
 
-<p>Definition at line <a class="el" href="_pixel24_test_8cpp_source.html#l00063">63</a> of file <a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a>.</p>
-
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_blue == blue&quot;</span>, t_blue == blue);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_green == green&quot;</span>, t_green == green);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_red == red&quot;</span>, t_red == red);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a70df27acd0baf2287ac5e53e7e2dd27c"></a><!-- doxytag: member="Pixel_24_Test::EqualOperatorTest" ref="a70df27acd0baf2287ac5e53e7e2dd27c" args="(void)" -->
@@ -180,8 +201,21 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pixel24_test_8cpp_source.html#l00048">48</a> of file <a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a>.</p>
+<p>References <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">BMPFile_24bit_PixelData::blue</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">BMPFile_24bit_PixelData::green</a>, and <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">BMPFile_24bit_PixelData::red</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_blue, t_red;
+        t_blue = blue;
+        t_red = red;
 
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_blue.blue == 0xFF&quot;</span>, t_blue.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>() == max);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_blue.green == 0x00&quot;</span>, t_blue.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>() == min);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_blue.red == 0x00&quot;</span>, t_blue.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>() == min);
+
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_red.blue == 0x00&quot;</span>, t_red.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>() == min);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_red.green == 0x00&quot;</span>, t_red.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>() == min);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_red.red == 0xFF&quot;</span>, t_red.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>() == max);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="ac1a53ec8ee52ccafa33cfea1b70bee42"></a><!-- doxytag: member="Pixel_24_Test::NotEqualOperatorTest" ref="ac1a53ec8ee52ccafa33cfea1b70bee42" args="(void)" -->
@@ -198,9 +232,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_blue(255, 0, 0);
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_green(0, 255, 0);
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_red(0, 0, 255);
 
-<p>Definition at line <a class="el" href="_pixel24_test_8cpp_source.html#l00074">74</a> of file <a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a>.</p>
-
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_blue != green&quot;</span>, t_blue != green);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_green != red&quot;</span>, t_green != red);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_red != blue&quot;</span>, t_red != blue);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a5cbafed03d64d285110e96af6587b5c5"></a><!-- doxytag: member="Pixel_24_Test::SetBlueTest" ref="a5cbafed03d64d285110e96af6587b5c5" args="(void)" -->
@@ -218,8 +259,22 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pixel24_test_8cpp_source.html#l00095">95</a> of file <a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a>.</p>
+<p>References <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">BMPFile_24bit_PixelData::blue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_pixel = empty;
 
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>() == min);
+
+        t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>(low_mid);
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>() == low_mid);
+
+        t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>(mid);
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>() == mid);
+
+        t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>(hi_mid);
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>() == hi_mid);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a61b485effe413243965e29ebae3909db"></a><!-- doxytag: member="Pixel_24_Test::SetGreenTest" ref="a61b485effe413243965e29ebae3909db" args="(void)" -->
@@ -237,8 +292,22 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pixel24_test_8cpp_source.html#l00111">111</a> of file <a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a>.</p>
+<p>References <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">BMPFile_24bit_PixelData::green</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_pixel = empty;
 
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>() == min);
+
+        t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>(low_mid);
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>() == low_mid);
+
+        t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>(mid);
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>() == mid);
+
+        t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>(hi_mid);
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>() == hi_mid);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="ab60a0b197bd8a0e78b7fa20a561bbdc0"></a><!-- doxytag: member="Pixel_24_Test::SetRedTest" ref="ab60a0b197bd8a0e78b7fa20a561bbdc0" args="(void)" -->
@@ -256,8 +325,22 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pixel24_test_8cpp_source.html#l00127">127</a> of file <a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a>.</p>
+<p>References <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">BMPFile_24bit_PixelData::red</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_pixel = empty;
 
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>() == min);
+
+        t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>(low_mid);
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>() == low_mid);
+
+        t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>(mid);
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>() == mid);
+
+        t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>(hi_mid);
+        CPPUNIT_ASSERT(t_pixel.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>() == hi_mid);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a69c598f4363419f03d0a0b7e5d0a99a1"></a><!-- doxytag: member="Pixel_24_Test::SetTest" ref="a69c598f4363419f03d0a0b7e5d0a99a1" args="(void)" -->
@@ -275,8 +358,16 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pixel24_test_8cpp_source.html#l00085">85</a> of file <a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a>.</p>
+<p>References <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">BMPFile_24bit_PixelData::blue</a>, <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">BMPFile_24bit_PixelData::green</a>, and <a class="el" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">BMPFile_24bit_PixelData::red</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> t_blue;
+        t_blue.set(255,0,0);
 
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_blue.blue == 0xFF&quot;</span>, t_blue.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a6402cb8e1283ff95905b8d83f3d82547">blue</a>() == max);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_blue.green == 0x00&quot;</span>, t_blue.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a21216c20efe6d781ad8f4c86c410ee80">green</a>() == min);
+        CPPUNIT_ASSERT_MESSAGE(<span class="stringliteral">&quot;Testing t_blue.red == 0x00&quot;</span>, t_blue.<a class="code" href="class_b_m_p_file__24bit___pixel_data.html#a84b83493198df40d6a4fbe40bd7c5b2e">red</a>() == min);
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a9449629337321b72549fab146d25e889"></a><!-- doxytag: member="Pixel_24_Test::setUp" ref="a9449629337321b72549fab146d25e889" args="(void)" -->
@@ -293,9 +384,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_pixel24_test_8cpp_source.html#l00017">17</a> of file <a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+        empty.set(0,0,0);
+        blue.set(255, 0, 0);
+        green.set(0, 255, 0);
+        red.set(0, 0, 255);
+        max = 255;
+        hi_mid = 213;
+        mid = 127;
+        low_mid = 42;
+        min = 0;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="af4a9650f371ce286fb7a64a86cceeac2"></a><!-- doxytag: member="Pixel_24_Test::tearDown" ref="af4a9650f371ce286fb7a64a86cceeac2" args="(void)" -->
@@ -312,21 +412,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_pixel24_test_8h_source.html#l00033">33</a> of file <a class="el" href="_pixel24_test_8h_source.html">Pixel24Test.h</a>.</p>
-
+<div class="fragment"><pre class="fragment">{}
+</pre></div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/unit/<a class="el" href="_pixel24_test_8h_source.html">Pixel24Test.h</a></li>
-<li>src/unit/<a class="el" href="_pixel24_test_8cpp_source.html">Pixel24Test.cpp</a></li>
+<li>src/unit/<a class="el" href="_pixel24_test_8cpp.html">Pixel24Test.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_pixel__24___test.html">Pixel_24_Test</a>      </li>
-      <li class="footer">Generated on Mon Oct 24 2011 18:14:03 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Wed Oct 26 2011 22:27:40 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
