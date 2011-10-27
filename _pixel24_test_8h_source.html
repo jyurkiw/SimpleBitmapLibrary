@@ -105,47 +105,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022         CPPUNIT_TEST( EqualOperatorTest );
 <a name="l00023"></a>00023         CPPUNIT_TEST( EqualEqualOperatorTest );
 <a name="l00024"></a>00024         CPPUNIT_TEST( NotEqualOperatorTest );
-<a name="l00025"></a>00025         <span class="comment">//CPPUNIT_TEST( PackPixelTest );</span>
-<a name="l00026"></a>00026         CPPUNIT_TEST( SetTest );
-<a name="l00027"></a>00027         CPPUNIT_TEST( SetBlueTest );
-<a name="l00028"></a>00028         CPPUNIT_TEST( SetGreenTest );
-<a name="l00029"></a>00029         CPPUNIT_TEST( SetRedTest );
-<a name="l00030"></a>00030         CPPUNIT_TEST_SUITE_END();
-<a name="l00031"></a>00031 <span class="keyword">public</span>:
-<a name="l00032"></a>00032         <span class="keywordtype">void</span> setUp(<span class="keywordtype">void</span>);
-<a name="l00033"></a><a class="code" href="class_pixel__24___test.html#af4a9650f371ce286fb7a64a86cceeac2">00033</a>         <span class="keywordtype">void</span> <a class="code" href="class_pixel__24___test.html#af4a9650f371ce286fb7a64a86cceeac2">tearDown</a>(<span class="keywordtype">void</span>) {}
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035         <span class="keywordtype">void</span> EmptyConstructorTest(<span class="keywordtype">void</span>);
-<a name="l00036"></a>00036         <span class="keywordtype">void</span> BGRConstructorTest(<span class="keywordtype">void</span>);
-<a name="l00037"></a>00037         <span class="keywordtype">void</span> EqualOperatorTest(<span class="keywordtype">void</span>);
-<a name="l00038"></a>00038         <span class="keywordtype">void</span> EqualEqualOperatorTest(<span class="keywordtype">void</span>);
-<a name="l00039"></a>00039         <span class="keywordtype">void</span> NotEqualOperatorTest(<span class="keywordtype">void</span>);
-<a name="l00040"></a>00040         <span class="comment">//void PackPixelTest(void);</span>
-<a name="l00041"></a>00041         <span class="keywordtype">void</span> SetTest(<span class="keywordtype">void</span>);
-<a name="l00042"></a>00042         <span class="keywordtype">void</span> SetBlueTest(<span class="keywordtype">void</span>);
-<a name="l00043"></a>00043         <span class="keywordtype">void</span> SetGreenTest(<span class="keywordtype">void</span>);
-<a name="l00044"></a>00044         <span class="keywordtype">void</span> SetRedTest(<span class="keywordtype">void</span>);
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046 <span class="keyword">private</span>:
-<a name="l00047"></a>00047         <span class="comment">//local variables</span>
-<a name="l00048"></a>00048         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> empty;
-<a name="l00049"></a>00049         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> red;
-<a name="l00050"></a>00050         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> blue;
-<a name="l00051"></a>00051         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> green;
-<a name="l00052"></a>00052         <span class="keywordtype">char</span> max;
-<a name="l00053"></a>00053         <span class="keywordtype">char</span> hi_mid;
-<a name="l00054"></a>00054         <span class="keywordtype">char</span> mid;
-<a name="l00055"></a>00055         <span class="keywordtype">char</span> low_mid;
-<a name="l00056"></a>00056         <span class="keywordtype">char</span> min;
-<a name="l00057"></a>00057 };
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="preprocessor">#endif </span><span class="comment">/* PIXEL24TEST_H_ */</span>
+<a name="l00025"></a>00025         CPPUNIT_TEST( SetTest );
+<a name="l00026"></a>00026         CPPUNIT_TEST( SetBlueTest );
+<a name="l00027"></a>00027         CPPUNIT_TEST( SetGreenTest );
+<a name="l00028"></a>00028         CPPUNIT_TEST( SetRedTest );
+<a name="l00029"></a>00029         CPPUNIT_TEST( GetBlueTest );
+<a name="l00030"></a>00030         CPPUNIT_TEST( GetGreenTest );
+<a name="l00031"></a>00031         CPPUNIT_TEST( GetRedTest );
+<a name="l00032"></a>00032         CPPUNIT_TEST( PackPixelTest );
+<a name="l00033"></a>00033         CPPUNIT_TEST_SUITE_END();
+<a name="l00034"></a>00034 <span class="keyword">public</span>:
+<a name="l00035"></a>00035         <span class="keywordtype">void</span> setUp(<span class="keywordtype">void</span>);
+<a name="l00036"></a><a class="code" href="class_pixel__24___test.html#af4a9650f371ce286fb7a64a86cceeac2">00036</a>         <span class="keywordtype">void</span> <a class="code" href="class_pixel__24___test.html#af4a9650f371ce286fb7a64a86cceeac2">tearDown</a>(<span class="keywordtype">void</span>) {}
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038         <span class="keywordtype">void</span> EmptyConstructorTest(<span class="keywordtype">void</span>);
+<a name="l00039"></a>00039         <span class="keywordtype">void</span> BGRConstructorTest(<span class="keywordtype">void</span>);
+<a name="l00040"></a>00040         <span class="keywordtype">void</span> EqualOperatorTest(<span class="keywordtype">void</span>);
+<a name="l00041"></a>00041         <span class="keywordtype">void</span> EqualEqualOperatorTest(<span class="keywordtype">void</span>);
+<a name="l00042"></a>00042         <span class="keywordtype">void</span> NotEqualOperatorTest(<span class="keywordtype">void</span>);
+<a name="l00043"></a>00043         <span class="keywordtype">void</span> SetTest(<span class="keywordtype">void</span>);
+<a name="l00044"></a>00044         <span class="keywordtype">void</span> SetBlueTest(<span class="keywordtype">void</span>);
+<a name="l00045"></a>00045         <span class="keywordtype">void</span> SetGreenTest(<span class="keywordtype">void</span>);
+<a name="l00046"></a>00046         <span class="keywordtype">void</span> SetRedTest(<span class="keywordtype">void</span>);
+<a name="l00047"></a>00047         <span class="keywordtype">void</span> GetBlueTest(<span class="keywordtype">void</span>);
+<a name="l00048"></a>00048         <span class="keywordtype">void</span> GetGreenTest(<span class="keywordtype">void</span>);
+<a name="l00049"></a>00049         <span class="keywordtype">void</span> GetRedTest(<span class="keywordtype">void</span>);
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> PackPixelTest(<span class="keywordtype">void</span>);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="keyword">private</span>:
+<a name="l00053"></a>00053         <span class="comment">//local variables</span>
+<a name="l00054"></a>00054         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> empty;
+<a name="l00055"></a>00055         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> red;
+<a name="l00056"></a>00056         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> blue;
+<a name="l00057"></a>00057         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> green;
+<a name="l00058"></a>00058         <span class="keywordtype">char</span> max;
+<a name="l00059"></a>00059         <span class="keywordtype">char</span> hi_mid;
+<a name="l00060"></a>00060         <span class="keywordtype">char</span> mid;
+<a name="l00061"></a>00061         <span class="keywordtype">char</span> low_mid;
+<a name="l00062"></a>00062         <span class="keywordtype">char</span> min;
+<a name="l00063"></a>00063 };
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 <span class="preprocessor">#endif </span><span class="comment">/* PIXEL24TEST_H_ */</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_pixel24_test_8h.html">Pixel24Test.h</a>      </li>
-      <li class="footer">Generated on Wed Oct 26 2011 22:27:40 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Wed Oct 26 2011 23:09:06 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

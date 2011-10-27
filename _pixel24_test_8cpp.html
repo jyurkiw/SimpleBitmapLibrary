@@ -98,8 +98,59 @@ Include dependency graph for Pixel24Test.cpp:</div>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pixel24_test_8cpp.html#af1b5ecff0a5f7bd6f19953e8b29db1f0">CPPUNIT_TEST_SUITE_REGISTRATION</a> (<a class="el" href="class_pixel__24___test.html">Pixel_24_Test</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pixel24_test_8cpp.html#ae0886547fcc4dd37a15af7b404267cde">compair_pixel_arrays</a> (char *a, char *b, int size)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ae0886547fcc4dd37a15af7b404267cde"></a><!-- doxytag: member="Pixel24Test.cpp::compair_pixel_arrays" ref="ae0886547fcc4dd37a15af7b404267cde" args="(char *a, char *b, int size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool compair_pixel_arrays </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_pixel__24___test.html#a83796d93f7b56792c2dc286f330c3926">Pixel_24_Test::PackPixelTest()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; size; x++)
+                <span class="keywordflow">if</span> (a[x] != b[x]) <span class="keywordflow">return</span> <span class="keyword">false</span>;
+
+        <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_pixel24_test_8cpp_ae0886547fcc4dd37a15af7b404267cde_icgraph.png" border="0" usemap="#_pixel24_test_8cpp_ae0886547fcc4dd37a15af7b404267cde_icgraph" alt=""/></div>
+<map name="_pixel24_test_8cpp_ae0886547fcc4dd37a15af7b404267cde_icgraph" id="_pixel24_test_8cpp_ae0886547fcc4dd37a15af7b404267cde_icgraph">
+<area shape="rect" id="node3" href="class_pixel__24___test.html#a83796d93f7b56792c2dc286f330c3926" title="Pixel_24_Test::PackPixelTest" alt="" coords="201,5,399,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="af1b5ecff0a5f7bd6f19953e8b29db1f0"></a><!-- doxytag: member="Pixel24Test.cpp::CPPUNIT_TEST_SUITE_REGISTRATION" ref="af1b5ecff0a5f7bd6f19953e8b29db1f0" args="(Pixel_24_Test)" -->
 <div class="memitem">
 <div class="memproto">
@@ -122,7 +173,7 @@ Functions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_pixel24_test_8cpp.html">Pixel24Test.cpp</a>      </li>
-      <li class="footer">Generated on Wed Oct 26 2011 22:27:40 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Wed Oct 26 2011 23:09:06 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
