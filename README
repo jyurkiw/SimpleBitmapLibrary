@@ -1,6 +1,6 @@
 Simple Bitmap Library
 by Jeffrey Yurkiw
-Version: 0.1
+Version: 0.0.1
 
 A simple C++ library for writing bitmap images to file.
 
@@ -10,8 +10,12 @@ src/writeBitmap.cpp is good for a basic use example, but not much else.
 All code in this project is based off of the bitmap file format
 information present at http://en.wikipedia.org/wiki/BMP_file_format
 
-Currently the library supports the 24-bit 8.8.8.0.0 format and only
-writes to file.
+Currently the library supports the 24-bit 8.8.8.0.0 format and currently does
+not write to file.
+
+Goals:
+	1.0.0 - Write a 24-bit bitmap to file that can be opened and edited in
+		  The GIMP with full public member UnitTesting for basic functionality.
 
 Documentation:
 	Use Doxygen. Just do it.
@@ -30,6 +34,16 @@ ECLIPSE:
 	Click Okay
 	Win!
 	
+	You may have to tell eclipse what executable to run. To do that go into
+	your project properties and create a new run/debug target in your
+	project's Run/Debug Settings.
+
+DEBUGGING:
+	The makefile has support for Valgrind. If you have it installed
+	the command is "make valgrind". That will build a .valgrind
+	executable and a series of .valgrind object files in the build
+	directory that are compiled with full debugging flags enabled.
+
 TODO:
 	Complete the Pixel_24 and PixelArray unit tests
 	Divide up the bmp.h/cpp classes into their own classes
