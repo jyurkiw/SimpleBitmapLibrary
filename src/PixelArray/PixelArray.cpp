@@ -24,6 +24,7 @@ PixelArray::PixelArray()
 
 PixelArray::PixelArray(int height, int width, pixel *empty)
 {
+	packed_pixel_array = 0;
 	Resize_PixelArray(height, width);
 	setEmpty(empty);
 }
@@ -45,6 +46,21 @@ void PixelArray::Resize_PixelArray(int height, int width)
 
 	init_pixel_data_array();
 	row_offsets.reserve(rows);
+}
+
+int PixelArray::Rows()
+{
+	return rows;
+}
+
+int PixelArray::Columns()
+{
+	return columns;
+}
+
+int PixelArray::Packed_Array_Length()
+{
+	return packed_array_length;
 }
 
 pixel* PixelArray::get(int row, int col)

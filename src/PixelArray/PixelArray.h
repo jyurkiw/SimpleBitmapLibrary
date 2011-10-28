@@ -32,6 +32,28 @@ public:
 	PixelArray(int, int, pixel*);
 
 	/*!
+	 * Get the number of rows in the bitmap. Does not count padding.
+	 *
+	 * @return The number of rows of pixel data
+	 */
+	int Rows();
+
+	/*!
+	 * Get the number of columns in the bitmap.
+	 *
+	 * @return The number of columns of pixel data
+	 */
+	int Columns();
+
+	/*!
+	 * Return the length of the fully packed pixel array (char array).
+	 * Includes empty pixel data used for padding.
+	 *
+	 * @return The length of the pixel data array.
+	 */
+	int Packed_Array_Length();
+
+	/*!
 	 * Resize the PixelArray to a new size.
 	 *
 	 * @param height The height of the bitmap in pixels
@@ -76,22 +98,22 @@ public:
 	 */
 	~PixelArray();
 
-	/*!
+private:
+	/*
 	 * Number of pixel rows in the bitmap
 	 */
 	int rows;
 
-	/*!
+	/*
 	 * Number of columns of data per row
 	 */
 	int columns;
 
-	/*!
+	/*
 	 * The length of the packed pixel array.
 	 */
 	int packed_array_length;
 
-private:
 	//Space at the end of every row that needs to be packed with
 	//empty pixels.
 	int row_padding;
@@ -139,5 +161,7 @@ private:
 	//calculate the contents of the offsets vector
 	void calculate_offsets();
 };
+
+typedef PixelArray pixel_array;
 
 #endif /* PIXELARRAY_H_ */
