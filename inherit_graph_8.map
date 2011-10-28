@@ -1,4 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_pixel_data.html" title="PixelData" alt="" coords="7,5,84,35"/>
-<area shape="rect" id="node3" href="$class_pixel_data__24___bit.html" title="PixelData_24_Bit" alt="" coords="133,5,256,35"/>
+<area shape="rect" id="node1" href="$class_pixel_array.html" title="PixelArray" alt="" coords="5,5,88,35"/>
 </map>

@@ -80,8 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a>  </div>
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">PixelArray Class Reference</div>  </div>
 </div>
@@ -102,17 +101,15 @@ Collaboration diagram for PixelArray:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#a8341d3e872dcc538c3ff54b0b9a6a2a2">PixelArray</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#a86cd66a13f7c1c9c43341f3ea11a74ba">PixelArray</a> (int, int, <a class="el" href="class_pixel_data.html">pixel</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#acb956a8ec19ff6195d0f4c0a338cafc0">Rows</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#abc0605df1fa4d9751b89bce18415305a">Columns</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#a1c396439dcb70867604edc116a9729dd">Packed_Array_Length</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray</a> (int, int)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_pixel_data.html">pixel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#a42d632311d3fecf32c2b25ab9a675448">get</a> (int, int)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#ac2b7130e7db21a3ccb83cbb47d56b56d">set</a> (int, int, <a class="el" href="class_pixel_data.html">pixel</a> *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#ad8fdd4bec1887f2ed8db25f330e84f4f">setEmpty</a> (<a class="el" href="class_pixel_data.html">pixel</a> *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#acc4a66595a4ef1bf01b488a87a296a8c">pack_pixel_array</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#a9f4d10fcbd08290dfdecafb2ed4ad687">~PixelArray</a> ()</td></tr>
-<tr><td colspan="2"><h2><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a></td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8341d3e872dcc538c3ff54b0b9a6a2a2"></a><!-- doxytag: member="PixelArray::PixelArray" ref="a8341d3e872dcc538c3ff54b0b9a6a2a2" args="()" -->
@@ -129,15 +126,13 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Empty constructor for STL support </p>
-
-<p>References <a class="el" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a>, <a class="el" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a>, and <a class="el" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a>.</p>
 <div class="fragment"><pre class="fragment">{
-        <a class="code" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a> = 0;
-        <a class="code" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a> = 0;
+        rows = 0;
+        columns = 0;
 
         row_padding = 0;
         packed_pixel_array = 0;
-        <a class="code" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a> = 0;
+        packed_array_length = 0;
         empty = 0;
         pixel_array_is_packed = <span class="keyword">false</span>;
 }
@@ -186,6 +181,7 @@ Public Attributes</h2></td></tr>
 
 <p>References <a class="el" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray()</a>, and <a class="el" href="class_pixel_array.html#ad8fdd4bec1887f2ed8db25f330e84f4f">setEmpty()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+        packed_pixel_array = 0;
         <a class="code" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray</a>(height, width);
         <a class="code" href="class_pixel_array.html#ad8fdd4bec1887f2ed8db25f330e84f4f">setEmpty</a>(empty);
 }
@@ -224,6 +220,38 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="abc0605df1fa4d9751b89bce18415305a"></a><!-- doxytag: member="PixelArray::Columns" ref="abc0605df1fa4d9751b89bce18415305a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PixelArray::Columns </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the number of columns in the bitmap.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The number of columns of pixel data </dd></dl>
+
+<p>Referenced by <a class="el" href="class_pixel___array___test.html#a8ace89857ce7d025d7cd09b9b147bed4">Pixel_Array_Test::EmptyConstructorTest()</a>, and <a class="el" href="class_pixel___array___test.html#ab3da0486ee28d1666bcf51267ae232bc">Pixel_Array_Test::IntIntPixelPointer_ConstructorTest()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">return</span> columns;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_array_abc0605df1fa4d9751b89bce18415305a_icgraph.png" border="0" usemap="#class_pixel_array_abc0605df1fa4d9751b89bce18415305a_icgraph" alt=""/></div>
+<map name="class_pixel_array_abc0605df1fa4d9751b89bce18415305a_icgraph" id="class_pixel_array_abc0605df1fa4d9751b89bce18415305a_icgraph">
+<area shape="rect" id="node3" href="class_pixel___array___test.html#a8ace89857ce7d025d7cd09b9b147bed4" title="Pixel_Array_Test::EmptyConstructorTest" alt="" coords="232,5,493,35"/><area shape="rect" id="node5" href="class_pixel___array___test.html#ab3da0486ee28d1666bcf51267ae232bc" title="Pixel_Array_Test::IntIntPixelPointer_ConstructorTest" alt="" coords="197,59,528,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a42d632311d3fecf32c2b25ab9a675448"></a><!-- doxytag: member="PixelArray::get" ref="a42d632311d3fecf32c2b25ab9a675448" args="(int, int)" -->
 <div class="memitem">
 <div class="memproto">
@@ -259,7 +287,7 @@ Here is the call graph for this function:</div>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The pixel at row x col </dd></dl>
 <div class="fragment"><pre class="fragment">{
         <span class="comment">//return pixel_array.at(rowCol.first).at(rowCol.second);</span>
-        <span class="keywordflow">return</span> pixel_array[getPosition(rowCol)];
+        <span class="keywordflow">return</span> <a class="code" href="class_pixel_array.html">pixel_array</a>[getPosition(rowCol)];
 }
 </pre></div>
 </div>
@@ -280,7 +308,7 @@ Here is the call graph for this function:</div>
 <p>Pack and return the Pixel Array data</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The packed pixel array </dd></dl>
 
-<p>References <a class="el" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a>, <a class="el" href="class_pixel_data.html#a9b7f6255aea4bd8159adbc6e5a87a8b3">PixelData::pack_pixel()</a>, <a class="el" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a>, <a class="el" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a>, and <a class="el" href="class_pixel_data.html#a5d73fc35530ecf52999154cf81de4d6d">PixelData::write_length</a>.</p>
+<p>References <a class="el" href="class_pixel_data.html#a9b7f6255aea4bd8159adbc6e5a87a8b3">PixelData::pack_pixel()</a>, and <a class="el" href="class_pixel_data.html#a5d73fc35530ecf52999154cf81de4d6d">PixelData::write_length</a>.</p>
 
 <p>Referenced by <a class="el" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11">test_new()</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -289,19 +317,19 @@ Here is the call graph for this function:</div>
                 <span class="keywordtype">int</span> pixel_len = empty-&gt;<a class="code" href="class_pixel_data.html#a5d73fc35530ecf52999154cf81de4d6d">write_length</a>;
                 <span class="keywordtype">char</span> *packed_pixel = 0;
 
-                <a class="code" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a> = (<a class="code" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a> + row_padding) * <a class="code" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a> * pixel_len;
-                packed_pixel_array = <span class="keyword">new</span> <span class="keywordtype">char</span>[<a class="code" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a>];
+                packed_array_length = (columns + row_padding) * rows * pixel_len;
+                packed_pixel_array = <span class="keyword">new</span> <span class="keywordtype">char</span>[packed_array_length];
 
                 pair&lt;int,int&gt; coords;
                 <span class="keywordtype">int</span> row, col;
 
-                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> packed_i = 0; packed_i &lt; <a class="code" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a>; packed_i += pixel_len)
+                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> packed_i = 0; packed_i &lt; packed_array_length; packed_i += pixel_len)
                 {
                         coords = calc_pixel_coords_by_packed_index(packed_i);
                         row = coords.first;
                         col = coords.second;
 
-                        packed_pixel = col &lt; <a class="code" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a> ? <span class="keyword">get</span>(row, col)-&gt;pack_pixel() : empty-&gt;pack_pixel();
+                        packed_pixel = col &lt; columns ? <span class="keyword">get</span>(row, col)-&gt;pack_pixel() : empty-&gt;pack_pixel();
 
                         move_data_into_packed_array(packed_pixel, packed_i, pixel_len);
                 }
@@ -326,6 +354,38 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_icgraph.png" border="0" usemap="#class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_icgraph" alt=""/></div>
 <map name="class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_icgraph" id="class_pixel_array_acc4a66595a4ef1bf01b488a87a296a8c_icgraph">
 <area shape="rect" id="node3" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11" title="test_new" alt="" coords="243,5,317,35"/><area shape="rect" id="node5" href="write_bitmap_8cpp.html#a9fb18cb05795359597d072e81941a1ac" title="m" alt="" coords="367,5,404,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c396439dcb70867604edc116a9729dd"></a><!-- doxytag: member="PixelArray::Packed_Array_Length" ref="a1c396439dcb70867604edc116a9729dd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PixelArray::Packed_Array_Length </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Return the length of the fully packed pixel array (char array). Includes empty pixel data used for padding.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The length of the pixel data array. </dd></dl>
+
+<p>Referenced by <a class="el" href="class_pixel___array___test.html#a8ace89857ce7d025d7cd09b9b147bed4">Pixel_Array_Test::EmptyConstructorTest()</a>, and <a class="el" href="class_pixel___array___test.html#ab3da0486ee28d1666bcf51267ae232bc">Pixel_Array_Test::IntIntPixelPointer_ConstructorTest()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">return</span> packed_array_length;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_array_a1c396439dcb70867604edc116a9729dd_icgraph.png" border="0" usemap="#class_pixel_array_a1c396439dcb70867604edc116a9729dd_icgraph" alt=""/></div>
+<map name="class_pixel_array_a1c396439dcb70867604edc116a9729dd_icgraph" id="class_pixel_array_a1c396439dcb70867604edc116a9729dd_icgraph">
+<area shape="rect" id="node3" href="class_pixel___array___test.html#a8ace89857ce7d025d7cd09b9b147bed4" title="Pixel_Array_Test::EmptyConstructorTest" alt="" coords="307,5,568,35"/><area shape="rect" id="node5" href="class_pixel___array___test.html#ab3da0486ee28d1666bcf51267ae232bc" title="Pixel_Array_Test::IntIntPixelPointer_ConstructorTest" alt="" coords="272,59,603,88"/></map>
 </div>
 </p>
 
@@ -364,25 +424,23 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>References <a class="el" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a>, <a class="el" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a>, and <a class="el" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a>.</p>
-
 <p>Referenced by <a class="el" href="class_pixel_array.html#a86cd66a13f7c1c9c43341f3ea11a74ba">PixelArray()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-        <a class="code" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a> = height;
-        <a class="code" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a> = width;
+        rows = height;
+        columns = width;
 
-        row_padding = <a class="code" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">columns</a> % 4;
+        row_padding = columns % 4;
         <span class="keywordflow">if</span> (packed_pixel_array != 0)
         {
                 <span class="keyword">delete</span>[] packed_pixel_array;
         }
 
-        <a class="code" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">packed_array_length</a> = 0;
+        packed_array_length = 0;
         packed_pixel_array = 0;
         pixel_array_is_packed = <span class="keyword">false</span>;
 
         init_pixel_data_array();
-        row_offsets.reserve(<a class="code" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">rows</a>);
+        row_offsets.reserve(rows);
 }
 </pre></div>
 <p><div class="dynheader">
@@ -391,6 +449,38 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_pixel_array_ae949729d467d4ff6de362df734336fe8_icgraph.png" border="0" usemap="#class_pixel_array_ae949729d467d4ff6de362df734336fe8_icgraph" alt=""/></div>
 <map name="class_pixel_array_ae949729d467d4ff6de362df734336fe8_icgraph" id="class_pixel_array_ae949729d467d4ff6de362df734336fe8_icgraph">
 <area shape="rect" id="node3" href="class_pixel_array.html#a86cd66a13f7c1c9c43341f3ea11a74ba" title="PixelArray::PixelArray" alt="" coords="255,5,404,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acb956a8ec19ff6195d0f4c0a338cafc0"></a><!-- doxytag: member="PixelArray::Rows" ref="acb956a8ec19ff6195d0f4c0a338cafc0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PixelArray::Rows </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the number of rows in the bitmap. Does not count padding.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The number of rows of pixel data </dd></dl>
+
+<p>Referenced by <a class="el" href="class_pixel___array___test.html#a8ace89857ce7d025d7cd09b9b147bed4">Pixel_Array_Test::EmptyConstructorTest()</a>, and <a class="el" href="class_pixel___array___test.html#ab3da0486ee28d1666bcf51267ae232bc">Pixel_Array_Test::IntIntPixelPointer_ConstructorTest()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">return</span> rows;
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pixel_array_acb956a8ec19ff6195d0f4c0a338cafc0_icgraph.png" border="0" usemap="#class_pixel_array_acb956a8ec19ff6195d0f4c0a338cafc0_icgraph" alt=""/></div>
+<map name="class_pixel_array_acb956a8ec19ff6195d0f4c0a338cafc0_icgraph" id="class_pixel_array_acb956a8ec19ff6195d0f4c0a338cafc0_icgraph">
+<area shape="rect" id="node3" href="class_pixel___array___test.html#a8ace89857ce7d025d7cd09b9b147bed4" title="Pixel_Array_Test::EmptyConstructorTest" alt="" coords="213,5,475,35"/><area shape="rect" id="node5" href="class_pixel___array___test.html#ab3da0486ee28d1666bcf51267ae232bc" title="Pixel_Array_Test::IntIntPixelPointer_ConstructorTest" alt="" coords="179,59,509,88"/></map>
 </div>
 </p>
 
@@ -438,7 +528,7 @@ Here is the caller graph for this function:</div>
 
 <p>Referenced by <a class="el" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11">test_new()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-        pixel_array[getPosition(rowCol)] = <a class="code" href="_pixel_data_8h.html#a917093390ae6dd6d061eb84a6c593d67">pixel</a>;
+        <a class="code" href="class_pixel_array.html">pixel_array</a>[getPosition(rowCol)] = <a class="code" href="_pixel_data_8h.html#a917093390ae6dd6d061eb84a6c593d67">pixel</a>;
 }
 </pre></div>
 <p><div class="dynheader">
@@ -491,55 +581,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="ae5bb72cb933e2f4217902f08cbf895d6"></a><!-- doxytag: member="PixelArray::columns" ref="ae5bb72cb933e2f4217902f08cbf895d6" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_pixel_array.html#ae5bb72cb933e2f4217902f08cbf895d6">PixelArray::columns</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Number of columns of data per row </p>
-
-<p>Referenced by <a class="el" href="class_pixel_array.html#acc4a66595a4ef1bf01b488a87a296a8c">pack_pixel_array()</a>, <a class="el" href="class_pixel_array.html#a8341d3e872dcc538c3ff54b0b9a6a2a2">PixelArray()</a>, and <a class="el" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aae597b227c5e79d8507c11a51a35ea7b"></a><!-- doxytag: member="PixelArray::packed_array_length" ref="aae597b227c5e79d8507c11a51a35ea7b" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_pixel_array.html#aae597b227c5e79d8507c11a51a35ea7b">PixelArray::packed_array_length</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The length of the packed pixel array. </p>
-
-<p>Referenced by <a class="el" href="class_pixel_array.html#acc4a66595a4ef1bf01b488a87a296a8c">pack_pixel_array()</a>, <a class="el" href="class_pixel_array.html#a8341d3e872dcc538c3ff54b0b9a6a2a2">PixelArray()</a>, <a class="el" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray()</a>, and <a class="el" href="write_bitmap_8cpp.html#a3325c4107d4db692b625487a90d3ae11">test_new()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adba627dcdee048f306c6893724baba20"></a><!-- doxytag: member="PixelArray::rows" ref="adba627dcdee048f306c6893724baba20" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_pixel_array.html#adba627dcdee048f306c6893724baba20">PixelArray::rows</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Number of pixel rows in the bitmap </p>
-
-<p>Referenced by <a class="el" href="class_pixel_array.html#acc4a66595a4ef1bf01b488a87a296a8c">pack_pixel_array()</a>, <a class="el" href="class_pixel_array.html#a8341d3e872dcc538c3ff54b0b9a6a2a2">PixelArray()</a>, and <a class="el" href="class_pixel_array.html#ae949729d467d4ff6de362df734336fe8">Resize_PixelArray()</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/PixelArray/<a class="el" href="_pixel_array_8h_source.html">PixelArray.h</a></li>
 <li>src/<a class="el" href="bmp_8cpp.html">bmp.cpp</a></li>
@@ -550,7 +591,7 @@ Here is the caller graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_pixel_array.html">PixelArray</a>      </li>
-      <li class="footer">Generated on Wed Oct 26 2011 23:09:06 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Thu Oct 27 2011 22:34:02 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

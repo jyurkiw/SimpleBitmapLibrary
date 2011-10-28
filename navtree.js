@@ -9,6 +9,7 @@ var NAVTREE =
       [ "BMPFile_Infoheader", "class_b_m_p_file___infoheader.html", null ],
       [ "BMPFile_Magic", "class_b_m_p_file___magic.html", null ],
       [ "Pixel_24_Test", "class_pixel__24___test.html", null ],
+      [ "Pixel_Array_Test", "class_pixel___array___test.html", null ],
       [ "PixelArray", "class_pixel_array.html", null ],
       [ "PixelData", "class_pixel_data.html", null ],
       [ "PixelData_24_Bit", "class_pixel_data__24___bit.html", null ]
@@ -22,6 +23,7 @@ var NAVTREE =
       [ "BMPFile_Infoheader", "class_b_m_p_file___infoheader.html", null ],
       [ "BMPFile_Magic", "class_b_m_p_file___magic.html", null ],
       [ "Pixel_24_Test", "class_pixel__24___test.html", null ],
+      [ "Pixel_Array_Test", "class_pixel___array___test.html", null ],
       [ "PixelArray", "class_pixel_array.html", null ],
       [ "PixelData", "class_pixel_data.html", [
         [ "PixelData_24_Bit", "class_pixel_data__24___bit.html", null ]
@@ -39,6 +41,8 @@ var NAVTREE =
       [ "src/PixelArray/PixelArray.h", "_pixel_array_8h.html", null ],
       [ "src/unit/Pixel24Test.cpp", "_pixel24_test_8cpp.html", null ],
       [ "src/unit/Pixel24Test.h", "_pixel24_test_8h.html", null ],
+      [ "src/unit/PixelArrayTest.cpp", "_pixel_array_test_8cpp.html", null ],
+      [ "src/unit/PixelArrayTest.h", "_pixel_array_test_8h.html", null ],
       [ "src/unit/RunUnitTests.cpp", "_run_unit_tests_8cpp.html", null ]
     ] ],
     [ "File Members", "globals.html", null ]

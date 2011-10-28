@@ -1,5 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_pixel24_test_8h.html" title="Pixel24Test.h" alt="" coords="189,83,291,112"/>
-<area shape="rect" id="node5" href="$_pixel__24_8h.html" title="Pixel_24.h" alt="" coords="61,160,144,189"/>
-<area shape="rect" id="node7" href="$_pixel_data_8h.html" title="PixelData.h" alt="" coords="5,237,96,267"/>
+<area shape="rect" id="node3" href="$_pixel24_test_8h.html" title="Pixel24Test.h" alt="" coords="313,83,415,112"/>
+<area shape="rect" id="node15" href="$_pixel_array_test_8h.html" title="PixelArrayTest.h" alt="" coords="172,83,289,112"/>
+<area shape="rect" id="node5" href="$_pixel__24_8h.html" title="Pixel_24.h" alt="" coords="185,160,268,189"/>
+<area shape="rect" id="node7" href="$_pixel_data_8h.html" title="PixelData.h" alt="" coords="165,237,256,267"/>
+<area shape="rect" id="node18" href="$_pixel_array_8h.html" title="PixelArray.h" alt="" coords="68,160,161,189"/>
 </map>
