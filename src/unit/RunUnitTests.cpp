@@ -5,6 +5,7 @@
  *      Author: master
  */
 #include "Pixel24Test.h"
+#include "PixelArrayTest.h"
 
 #include "cppunit/CompilerOutputter.h"
 #include "cppunit/extensions/TestFactoryRegistry.h"
