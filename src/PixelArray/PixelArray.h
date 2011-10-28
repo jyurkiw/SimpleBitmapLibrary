@@ -106,7 +106,7 @@ private:
 	pixel *empty;
 
 	//pixel data array
-	std::vector<pixel*> pixel_data_array;
+	vector<pixel*> pixel_data_array;
 
 	/*
 	 * calculate the pixel_data_array row and column position
@@ -122,7 +122,7 @@ private:
 	void move_data_into_packed_array(char*, int, int);
 
 	//vector that stores pre-calculated offset data for accessing pixel data
-	std::vector<int> row_offsets;
+	vector<int> row_offsets;
 
 	//Get the position of a pixel in the data array based on it's
 	//cartesian coordinates.
