@@ -119,7 +119,30 @@ void Pixel_Array_Test::PackedArrayLengthTest(void)
 
 void Pixel_Array_Test::IntIntResize_PixelArrayTest(void)
 {
-	CPPUNIT_ASSERT(true);
+	char err_buff[255];
+
+		int packed_length = 0;
+		t_pa = new pixel_array(rows, cols ,&black);
+
+		sprintf(err_buff,
+			"The assertion 0 == %d failed. Got %d == %d instead.",
+			packed_length, t_pa->Packed_Array_Length(), packed_length);
+
+		CPPUNIT_ASSERT_MESSAGE(err_buff, t_pa->Packed_Array_Length() == packed_length);
+
+		for (int x = 0; x < 255; x++) err_buff[x] = '\0';
+
+		rows = 256;
+		cols = 256;
+		packed_length = 0;
+
+		t_pa->Resize_PixelArray(rows, cols);
+
+		sprintf(err_buff,
+			"The assertion 0 == %d failed. Got %d == %d instead.",
+			packed_length, t_pa->Packed_Array_Length(), packed_length);
+
+		CPPUNIT_ASSERT_MESSAGE(err_buff, t_pa->Packed_Array_Length() == packed_length);
 }
 
 void Pixel_Array_Test::IntIntGetTest(void)
