@@ -24,7 +24,7 @@ public:
 	 * Empty constructor. Defaults red, green, and blue to 0x00, and
 	 * write_length to 24.
 	 */
-	PixelData_24_Bit(): PixelData(3), v_blue(0x00), v_green(0x00), v_red(0x00),
+	PixelData_24_Bit(): PixelData(3), v_blue(0), v_green(0), v_red(0),
 			is_packed(false) { }
 
 	/*!
