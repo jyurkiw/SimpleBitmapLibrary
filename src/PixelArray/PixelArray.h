@@ -12,8 +12,13 @@
 #include <utility>
 #include "PixelData.h"
 
-using namespace std;
-
+/*!
+ * Pixel container class.
+ * Instantiation is declared Explicitly in PixelArray.cpp
+ *
+ * PixelArray can be used with the following instantiations...
+ * -# PixelArray<PixelData_24_Bit> (Pixel_24.h)
+ */
 template <class pixeltype>
 class PixelArray
 {
@@ -129,14 +134,14 @@ private:
 	pixeltype *empty;
 
 	//pixel data array
-	vector<pixeltype> pixel_data_array;
+	std::vector<pixeltype> pixel_data_array;
 
 	/*
 	 * calculate the pixel_data_array row and column position
 	 * based on a passed index.
 	 * Return pair: first = row, second = column
 	 */
-	pair<int,int> calc_pixel_coords_by_packed_index(int);
+	std::pair<int,int> calc_pixel_coords_by_packed_index(int);
 
 	/*
 	 * move the character data from one array to another
@@ -145,7 +150,7 @@ private:
 	void move_data_into_packed_array(char*, int, int);
 
 	//vector that stores pre-calculated offset data for accessing pixel data
-	vector<int> row_offsets;
+	std::vector<int> row_offsets;
 
 	//Get the position of a pixel in the data array based on it's
 	//cartesian coordinates.
@@ -154,10 +159,6 @@ private:
 
 	//initialize the pixel data array to zeros
 	void init_pixel_data_array();
-
-	//de-initialize the pixel data array.
-	//delete all pixel objects and clear the vector
-	void un_init_pixel_data_array();
 
 	//calculate the contents of the offsets vector
 	void calculate_offsets();
