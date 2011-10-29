@@ -35,7 +35,7 @@ public:
 	 * @param width The width of the bitmap in pixels
 	 * @param empty The array's default empty pixel data
 	 */
-	PixelArray(int, int, pixeltype*);
+	PixelArray(int, int, pixeltype);
 
 	/*!
 	 * Get the number of rows in the bitmap. Does not count padding.
@@ -74,7 +74,7 @@ public:
 	 * @param col The column position of the requested pixel
 	 * @return The pixel at row x col
 	 */
-	pixeltype* get(int, int);
+	pixeltype get(int, int);
 
 	/*!
 	 * Set a pixel object to a specific row and column in the PixelArray
@@ -83,14 +83,14 @@ public:
 	 * @param col The column position of the requested pixel data
 	 * @param p The pixel data to set
 	 */
-	void set(int, int, pixeltype*);
+	void set(int, int, pixeltype);
 
 	/*!
 	 * Set the empty pixel data.
 	 *
 	 * @param new_empty The empty pixel data
 	 */
-	void setEmpty(pixeltype*);
+	void setEmpty(pixeltype);
 
 	/*!
 	 * Pack and return the Pixel Array data
@@ -131,7 +131,7 @@ private:
 	bool pixel_array_is_packed;
 
 	//the default empty pixel data.
-	pixeltype *empty;
+	pixeltype empty;
 
 	//pixel data array
 	std::vector<pixeltype> pixel_data_array;

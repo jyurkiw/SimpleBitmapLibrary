@@ -9,6 +9,9 @@
 #include <utility>
 #include <vector>
 
+#include <iostream>
+using namespace std;
+
 /* PUBLIC */
 template <class pixeltype>
 PixelArray<pixeltype>::PixelArray()
@@ -19,12 +22,11 @@ PixelArray<pixeltype>::PixelArray()
 	row_padding = 0;
 	packed_pixel_array = 0;
 	packed_array_length = 0;
-	empty = 0;
 	pixel_array_is_packed = false;
 }
 
 template <class pixeltype>
-PixelArray<pixeltype>::PixelArray(int height, int width, pixeltype *empty)
+PixelArray<pixeltype>::PixelArray(int height, int width, pixeltype empty)
 {
 	packed_pixel_array = 0;
 	setEmpty(empty);
@@ -49,6 +51,7 @@ void PixelArray<pixeltype>::Resize_PixelArray(int height, int width)
 
 	init_pixel_data_array();
 	row_offsets.reserve(rows);
+	calculate_offsets();
 }
 
 template <class pixeltype>
@@ -70,20 +73,20 @@ int PixelArray<pixeltype>::Packed_Array_Length()
 }
 
 template <class pixeltype>
-pixeltype* PixelArray<pixeltype>::get(int row, int col)
+pixeltype PixelArray<pixeltype>::get(int row, int col)
 {
-	return &pixel_data_array[get_pixel_position(row, col)];
+	return pixel_data_array[get_pixel_position(row, col)];
 }
 
 template <class pixeltype>
-void PixelArray<pixeltype>::set(int row, int col, pixeltype *p)
+void PixelArray<pixeltype>::set(int row, int col, pixeltype p)
 {
-	pixel_data_array[get_pixel_position(row, col)] = *p;
+	pixel_data_array[get_pixel_position(row, col)] = p;
 	pixel_array_is_packed = false;
 }
 
 template <class pixeltype>
-void PixelArray<pixeltype>::setEmpty(pixeltype *new_empty)
+void PixelArray<pixeltype>::setEmpty(pixeltype new_empty)
 {
 	empty = new_empty;
 	pixel_array_is_packed = false;
@@ -94,7 +97,7 @@ char* PixelArray<pixeltype>::pack_pixel_array()
 {
 	if (!pixel_array_is_packed)
 	{
-		int pixel_len = empty->write_length;
+		int pixel_len = empty.write_length;
 		char *packed_pixel = 0;
 
 		packed_array_length = (columns + row_padding) * rows * pixel_len;
@@ -109,7 +112,7 @@ char* PixelArray<pixeltype>::pack_pixel_array()
 			row = coords.first;
 			col = coords.second;
 
-			packed_pixel = col < columns ? get(row, col)->pack_pixel() : empty->pack_pixel();
+			packed_pixel = col < columns ? get(row, col).pack_pixel() : empty.pack_pixel();
 
 			move_data_into_packed_array(packed_pixel, packed_i, pixel_len);
 		}
@@ -147,7 +150,7 @@ void PixelArray<pixeltype>::init_pixel_data_array()
 {
 	int length = columns * rows;
 	pixel_data_array.reserve(length);
-	for (int i = 0; i < length; i++) pixel_data_array[i] = *empty;
+	for (int i = 0; i < length; i++) pixel_data_array[i] = empty;
 }
 
 template <class pixeltype>
