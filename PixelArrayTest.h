@@ -45,8 +45,8 @@ public:
 	void PackedArrayLengthTest(void);
 	void IntIntResize_PixelArrayTest(void);
 	void IntIntGet_WhileEmpty_Test(void);
-	void IntIntGet_WhileNotEmpty_Test(void);
 	void IntIntSetTest(void);
+	void IntIntGet_WhileNotEmpty_Test(void);
 	void PixelSetEmptyTest(void);
 	void PackPixelParrayTest(void);
 
