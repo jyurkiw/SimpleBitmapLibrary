@@ -4,6 +4,8 @@ Debug/*
 Release/*
 build/*
 bin/*
+src/unit
+src/unit/*
 .cproject
 .project
 *~
