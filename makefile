@@ -40,7 +40,6 @@ docs:
 #MAKE valgrind
 valgrind: Pixel_24.o.valgrind PixelArray.o.valgrind Pixel24Test.o.valgrind PixelArrayTest.o.valgrind RunUnitTests.o.valgrind
 	g++ -g -O0 -fno-inline build/Pixel_24.o.valgrind build/PixelArray.o.valgrind build/Pixel24Test.o.valgrind build/PixelArrayTest.o.valgrind build/RunUnitTests.o.valgrind -lcppunit -o bin/RunUnitTests.valgrind
-	valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes bin/RunUnitTests.valgrind
 
 #MAKE Pixel_24.o.valgrind
 Pixel_24.o.valgrind: src/Pixel_24/Pixel_24.cpp
@@ -61,3 +60,8 @@ PixelArrayTest.o.valgrind:  src/unit/PixelArrayTest.cpp
 #MAKE RunUnitTests.o.valgrind
 RunUnitTests.o.valgrind: src/unit/RunUnitTests.cpp
 	g++ -g -O0 -fno-inline -c -Isrc -Isrc/Pixel_24 -Isrc/PixelArray -lcppunit src/unit/RunUnitTests.cpp -o build/RunUnitTests.o.valgrind
+
+.PHONY: run_valgrind
+#MAKE run valgrind
+run_valgrind:
+	valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes bin/RunUnitTests.valgrind
