@@ -13,8 +13,10 @@ Pixel_24.o: src/Pixel_24/Pixel_24.cpp
 	g++ -c -Isrc src/Pixel_24/Pixel_24.cpp -o build/Pixel_24.o 
 
 #MAKE PixelArray.o
-PixelArray.o: src/PixelArray/PixelArray.cpp
-	g++ -c -Isrc src/PixelArray/PixelArray.cpp -o build/PixelArray.o
+#PixelArray.o: src/PixelArray/PixelArray.cpp
+#	g++ -c -Isrc src/PixelArray/PixelArray.cpp -o build/PixelArray.o
+PixelArray.o: src/PixelArray/PixelArray.cpp Pixel_24.o
+	g++ -c -Isrc -Isrc/Pixel_24 build/Pixel_24.o src/PixelArray/PixelArray.cpp -o build/PixelArray.o
 
 #MAKE Pixel24Test.o
 Pixel24Test.o: src/unit/Pixel24Test.cpp

@@ -6,11 +6,9 @@
  *  @version 0.1
  */
 #include "PixelArray.h"
+#include "Pixel_24.h"
 #include <utility>
 #include <vector>
-
-#include <iostream>
-using namespace std;
 
 /* PUBLIC */
 template <class pixeltype>
@@ -81,8 +79,8 @@ pixeltype* PixelArray<pixeltype>::get(int row, int col)
 template <class pixeltype>
 void PixelArray<pixeltype>::set(int row, int col, pixeltype *p)
 {
-	*pixel_data_array[get_pixel_position(row, col)] = *p;
-	pixel_array_is_packed = false;
+//	*pixel_data_array[get_pixel_position(row, col)] = *p;
+//	pixel_array_is_packed = false;
 }
 
 template <class pixeltype>
@@ -151,15 +149,15 @@ void PixelArray<pixeltype>::init_pixel_data_array()
 {
 	int length = columns * rows;
 	pixel_data_array.reserve(length);
-	for (int i = 0; i < length; i++) pixel_data_array[i] = 0;
+//	for (int i = 0; i < length; i++) pixel_data_array[i] = 0;
 }
 
 template <class pixeltype>
 void PixelArray<pixeltype>::un_init_pixel_data_array()
 {
-	for (int i = 0, si = pixel_data_array.size(); i < si; i++)
-		if (pixel_data_array[i] != 0) delete pixel_data_array[i];
-	pixel_data_array.clear();
+//	for (int i = 0, si = pixel_data_array.size(); i < si; i++)
+//		if (pixel_data_array[i] != 0) delete pixel_data_array[i];
+//	pixel_data_array.clear();
 }
 
 template <class pixeltype>
@@ -177,3 +175,5 @@ void PixelArray<pixeltype>::move_data_into_packed_array(char *data, int packed_i
 	for (int i = 0; i < pixel_len; i++)
 		packed_pixel_array[packed_i + i] = data[i];
 }
+
+template class PixelArray<pixel24>;
