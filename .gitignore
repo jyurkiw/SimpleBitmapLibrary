@@ -1,9 +1,0 @@
-doc/*
-!.gitignore
-Debug/*
-Release/*
-build/*
-bin/*
-.cproject
-.project
-*~
