@@ -36,7 +36,7 @@ void Pixel_Array_Test::tearDown(void)
 
 void Pixel_Array_Test::EmptyConstructorTest(void)
 {
-	t_pa = new pixel_array();
+	t_pa = new pixel_array24();
 
 	CPPUNIT_ASSERT(t_pa->Rows() == 0);
 	CPPUNIT_ASSERT(t_pa->Columns() == 0);
@@ -48,7 +48,7 @@ void Pixel_Array_Test::IntIntPixelPointer_ConstructorTest(void)
 	char err_buff[255];
 
 	int packed_length = 0;
-	t_pa = new pixel_array(rows, cols ,&black);
+	t_pa = new pixel_array24(rows, cols ,&black);
 
 	CPPUNIT_ASSERT(t_pa->Rows() == rows);
 	CPPUNIT_ASSERT(t_pa->Columns() == cols);
@@ -56,7 +56,7 @@ void Pixel_Array_Test::IntIntPixelPointer_ConstructorTest(void)
 
 void Pixel_Array_Test::RowsTest(void)
 {
-	t_pa = new pixel_array(rows, cols ,&black);
+	t_pa = new pixel_array24(rows, cols ,&black);
 
 	CPPUNIT_ASSERT(t_pa->Rows() == rows);
 
@@ -65,14 +65,14 @@ void Pixel_Array_Test::RowsTest(void)
 
 	rows = 256;
 	cols = 256;
-	t_pa = new pixel_array(rows, cols, &white);
+	t_pa = new pixel_array24(rows, cols, &white);
 
 	CPPUNIT_ASSERT(t_pa->Rows() == rows);
 }
 
 void Pixel_Array_Test::ColumnsTest(void)
 {
-	t_pa = new pixel_array(rows, cols, &black);
+	t_pa = new pixel_array24(rows, cols, &black);
 
 	CPPUNIT_ASSERT(t_pa->Columns() == cols);
 
@@ -81,7 +81,7 @@ void Pixel_Array_Test::ColumnsTest(void)
 
 	rows = 256;
 	cols = 256;
-	t_pa = new pixel_array(rows, cols, &white);
+	t_pa = new pixel_array24(rows, cols, &white);
 
 	CPPUNIT_ASSERT(t_pa->Columns() == cols);
 }
@@ -91,7 +91,7 @@ void Pixel_Array_Test::PackedArrayLengthTest(void)
 	char err_buff[255];
 
 	int packed_length = 0;
-	t_pa = new pixel_array(rows, cols ,&black);
+	t_pa = new pixel_array24(rows, cols ,&black);
 
 	sprintf(err_buff,
 		"The assertion 0 == %d failed. Got %d == %d instead.",
@@ -107,7 +107,7 @@ void Pixel_Array_Test::PackedArrayLengthTest(void)
 	rows = 256;
 	cols = 256;
 	packed_length = 0;
-	t_pa = new pixel_array(rows, cols ,&black);
+	t_pa = new pixel_array24(rows, cols ,&black);
 
 	sprintf(err_buff,
 		"The assertion 0 == %d failed. Got %d == %d instead.",
@@ -122,7 +122,7 @@ void Pixel_Array_Test::IntIntResize_PixelArrayTest(void)
 	char err_buff[255];
 
 		int packed_length = 0;
-		t_pa = new pixel_array(rows, cols ,&black);
+		t_pa = new pixel_array24(rows, cols ,&black);
 
 		sprintf(err_buff,
 			"The assertion 0 == %d failed. Got %d == %d instead.",
@@ -145,7 +145,13 @@ void Pixel_Array_Test::IntIntResize_PixelArrayTest(void)
 		CPPUNIT_ASSERT_MESSAGE(err_buff, t_pa->Packed_Array_Length() == packed_length);
 }
 
-void Pixel_Array_Test::IntIntGetTest(void)
+
+void Pixel_Array_Test::IntIntGet_WhileEmpty_Test(void)
+{
+	CPPUNIT_ASSERT(true);
+}
+
+void Pixel_Array_Test::IntIntGet_WhileNotEmpty_Test(void)
 {
 	CPPUNIT_ASSERT(true);
 }

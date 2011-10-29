@@ -16,6 +16,8 @@
 
 using namespace CppUnit;
 
+typedef PixelArray<pixel24> pixel_array24;
+
 class Pixel_Array_Test : public TestFixture
 {
 	CPPUNIT_TEST_SUITE( Pixel_Array_Test );
@@ -25,8 +27,9 @@ class Pixel_Array_Test : public TestFixture
 	CPPUNIT_TEST( ColumnsTest );
 	CPPUNIT_TEST( PackedArrayLengthTest );
 	CPPUNIT_TEST( IntIntResize_PixelArrayTest );
-	CPPUNIT_TEST( IntIntGetTest );
+	CPPUNIT_TEST( IntIntGet_WhileEmpty_Test );
 	CPPUNIT_TEST( IntIntSetTest );
+	CPPUNIT_TEST( IntIntGet_WhileNotEmpty_Test );
 	CPPUNIT_TEST( PixelSetEmptyTest );
 	CPPUNIT_TEST( PackPixelParrayTest );
 	CPPUNIT_TEST_SUITE_END();
@@ -41,7 +44,8 @@ public:
 	void ColumnsTest(void);
 	void PackedArrayLengthTest(void);
 	void IntIntResize_PixelArrayTest(void);
-	void IntIntGetTest(void);
+	void IntIntGet_WhileEmpty_Test(void);
+	void IntIntGet_WhileNotEmpty_Test(void);
 	void IntIntSetTest(void);
 	void PixelSetEmptyTest(void);
 	void PackPixelParrayTest(void);
@@ -49,7 +53,7 @@ public:
 private:
 	pixel24 white;
 	pixel24 black;
-	pixel_array *t_pa;
+	pixel_array24 *t_pa;
 
 	int rows, cols;
 };

@@ -9,8 +9,12 @@
 #include <utility>
 #include <vector>
 
+#include <iostream>
+using namespace std;
+
 /* PUBLIC */
-PixelArray::PixelArray()
+template <class pixeltype>
+PixelArray<pixeltype>::PixelArray()
 {
 	rows = 0;
 	columns = 0;
@@ -22,14 +26,16 @@ PixelArray::PixelArray()
 	pixel_array_is_packed = false;
 }
 
-PixelArray::PixelArray(int height, int width, pixel *empty)
+template <class pixeltype>
+PixelArray<pixeltype>::PixelArray(int height, int width, pixeltype *empty)
 {
 	packed_pixel_array = 0;
-	Resize_PixelArray(height, width);
 	setEmpty(empty);
+	Resize_PixelArray(height, width);
 }
 
-void PixelArray::Resize_PixelArray(int height, int width)
+template <class pixeltype>
+void PixelArray<pixeltype>::Resize_PixelArray(int height, int width)
 {
 	rows = height;
 	columns = width;
@@ -48,39 +54,46 @@ void PixelArray::Resize_PixelArray(int height, int width)
 	row_offsets.reserve(rows);
 }
 
-int PixelArray::Rows()
+template <class pixeltype>
+int PixelArray<pixeltype>::Rows()
 {
 	return rows;
 }
 
-int PixelArray::Columns()
+template <class pixeltype>
+int PixelArray<pixeltype>::Columns()
 {
 	return columns;
 }
 
-int PixelArray::Packed_Array_Length()
+template <class pixeltype>
+int PixelArray<pixeltype>::Packed_Array_Length()
 {
 	return packed_array_length;
 }
 
-pixel* PixelArray::get(int row, int col)
+template <class pixeltype>
+pixeltype* PixelArray<pixeltype>::get(int row, int col)
 {
-	return pixel_data_array[get_pixel_position(row, col)];
+	return empty;
 }
 
-void PixelArray::set(int row, int col, pixel *p)
+template <class pixeltype>
+void PixelArray<pixeltype>::set(int row, int col, pixeltype *p)
 {
 	*pixel_data_array[get_pixel_position(row, col)] = *p;
 	pixel_array_is_packed = false;
 }
 
-void PixelArray::setEmpty(pixel *new_empty)
+template <class pixeltype>
+void PixelArray<pixeltype>::setEmpty(pixeltype *new_empty)
 {
 	empty = new_empty;
 	pixel_array_is_packed = false;
 }
 
-char* PixelArray::pack_pixel_array()
+template <class pixeltype>
+char* PixelArray<pixeltype>::pack_pixel_array()
 {
 	if (!pixel_array_is_packed)
 	{
@@ -109,7 +122,8 @@ char* PixelArray::pack_pixel_array()
 	return packed_pixel_array;
 }
 
-PixelArray::~PixelArray()
+template <class pixeltype>
+PixelArray<pixeltype>::~PixelArray()
 {
 	if (packed_pixel_array != 0)
 		delete[] packed_pixel_array;
@@ -117,7 +131,8 @@ PixelArray::~PixelArray()
 }
 
 /* PRIVATE */
-pair<int,int> PixelArray::calc_pixel_coords_by_packed_index(int pack_i)
+template <class pixeltype>
+pair<int,int> PixelArray<pixeltype>::calc_pixel_coords_by_packed_index(int pack_i)
 {
 	pair<int,int> coords(pack_i / (columns + row_padding),
 			pack_i % (columns + row_padding));
@@ -125,26 +140,30 @@ pair<int,int> PixelArray::calc_pixel_coords_by_packed_index(int pack_i)
 	return coords;
 }
 
-int PixelArray::get_pixel_position(int row, int col)
+template <class pixeltype>
+int PixelArray<pixeltype>::get_pixel_position(int row, int col)
 {
 	return row_offsets[row] + col;
 }
 
-void PixelArray::init_pixel_data_array()
+template <class pixeltype>
+void PixelArray<pixeltype>::init_pixel_data_array()
 {
 	int length = columns * rows;
 	pixel_data_array.reserve(length);
 	for (int i = 0; i < length; i++) pixel_data_array[i] = 0;
 }
 
-void PixelArray::un_init_pixel_data_array()
+template <class pixeltype>
+void PixelArray<pixeltype>::un_init_pixel_data_array()
 {
 	for (int i = 0, si = pixel_data_array.size(); i < si; i++)
 		if (pixel_data_array[i] != 0) delete pixel_data_array[i];
 	pixel_data_array.clear();
 }
 
-void PixelArray::calculate_offsets()
+template <class pixeltype>
+void PixelArray<pixeltype>::calculate_offsets()
 {
 	for (int offset = 0, rowCount = 0;
 		rowCount < rows;
@@ -152,7 +171,8 @@ void PixelArray::calculate_offsets()
 		row_offsets[rowCount] = offset;
 }
 
-void PixelArray::move_data_into_packed_array(char *data, int packed_i, int pixel_len)
+template <class pixeltype>
+void PixelArray<pixeltype>::move_data_into_packed_array(char *data, int packed_i, int pixel_len)
 {
 	for (int i = 0; i < pixel_len; i++)
 		packed_pixel_array[packed_i + i] = data[i];

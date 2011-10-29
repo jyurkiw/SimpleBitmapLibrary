@@ -14,6 +14,7 @@
 
 using namespace std;
 
+template <class pixeltype>
 class PixelArray
 {
 public:
@@ -29,7 +30,7 @@ public:
 	 * @param width The width of the bitmap in pixels
 	 * @param empty The array's default empty pixel data
 	 */
-	PixelArray(int, int, pixel*);
+	PixelArray(int, int, pixeltype*);
 
 	/*!
 	 * Get the number of rows in the bitmap. Does not count padding.
@@ -68,7 +69,7 @@ public:
 	 * @param col The column position of the requested pixel
 	 * @return The pixel at row x col
 	 */
-	pixel* get(int, int);
+	pixeltype* get(int, int);
 
 	/*!
 	 * Set a pixel object to a specific row and column in the PixelArray
@@ -77,14 +78,14 @@ public:
 	 * @param col The column position of the requested pixel data
 	 * @param p The pixel data to set
 	 */
-	void set(int, int, pixel*);
+	void set(int, int, pixeltype*);
 
 	/*!
 	 * Set the empty pixel data.
 	 *
 	 * @param new_empty The empty pixel data
 	 */
-	void setEmpty(pixel*);
+	void setEmpty(pixeltype*);
 
 	/*!
 	 * Pack and return the Pixel Array data
@@ -125,10 +126,10 @@ private:
 	bool pixel_array_is_packed;
 
 	//the default empty pixel data.
-	pixel *empty;
+	pixeltype *empty;
 
 	//pixel data array
-	vector<pixel*> pixel_data_array;
+	vector<pixeltype> pixel_data_array;
 
 	/*
 	 * calculate the pixel_data_array row and column position
@@ -161,7 +162,5 @@ private:
 	//calculate the contents of the offsets vector
 	void calculate_offsets();
 };
-
-typedef PixelArray pixel_array;
 
 #endif /* PIXELARRAY_H_ */
