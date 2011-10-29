@@ -1,9 +1,10 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$_pixel__24_8cpp.html" title="src/Pixel_24/Pixel_24.cpp" alt="" coords="5,83,179,112"/>
-<area shape="rect" id="node5" href="$_pixel24_test_8h.html" title="src/unit/Pixel24Test.h" alt="" coords="253,83,403,112"/>
-<area shape="rect" id="node7" href="$_pixel24_test_8cpp.html" title="src/unit/Pixel24Test.cpp" alt="" coords="137,160,300,189"/>
-<area shape="rect" id="node12" href="$_pixel_array_test_8h.html" title="src/unit/PixelArrayTest.h" alt="" coords="427,83,592,112"/>
-<area shape="rect" id="node14" href="$_pixel_array_test_8cpp.html" title="src/unit/PixelArrayTest.cpp" alt="" coords="537,160,716,189"/>
-<area shape="rect" id="node18" href="$write_bitmap_8cpp.html" title="src/writeBitmap.cpp" alt="" coords="667,83,805,112"/>
-<area shape="rect" id="node9" href="$_run_unit_tests_8cpp.html" title="src/unit/RunUnitTests.cpp" alt="" coords="329,160,503,189"/>
+<area shape="rect" id="node5" href="$_pixel_array_8cpp.html" title="src/PixelArray/PixelArray.cpp" alt="" coords="203,83,395,112"/>
+<area shape="rect" id="node7" href="$_pixel24_test_8h.html" title="src/unit/Pixel24Test.h" alt="" coords="469,83,619,112"/>
+<area shape="rect" id="node9" href="$_pixel24_test_8cpp.html" title="src/unit/Pixel24Test.cpp" alt="" coords="353,160,516,189"/>
+<area shape="rect" id="node14" href="$_pixel_array_test_8h.html" title="src/unit/PixelArrayTest.h" alt="" coords="643,83,808,112"/>
+<area shape="rect" id="node16" href="$_pixel_array_test_8cpp.html" title="src/unit/PixelArrayTest.cpp" alt="" coords="753,160,932,189"/>
+<area shape="rect" id="node20" href="$write_bitmap_8cpp.html" title="src/writeBitmap.cpp" alt="" coords="883,83,1021,112"/>
+<area shape="rect" id="node11" href="$_run_unit_tests_8cpp.html" title="src/unit/RunUnitTests.cpp" alt="" coords="545,160,719,189"/>
 </map>

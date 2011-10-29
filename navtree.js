@@ -10,7 +10,7 @@ var NAVTREE =
       [ "BMPFile_Magic", "class_b_m_p_file___magic.html", null ],
       [ "Pixel_24_Test", "class_pixel__24___test.html", null ],
       [ "Pixel_Array_Test", "class_pixel___array___test.html", null ],
-      [ "PixelArray", "class_pixel_array.html", null ],
+      [ "PixelArray< pixeltype >", "class_pixel_array.html", null ],
       [ "PixelData", "class_pixel_data.html", null ],
       [ "PixelData_24_Bit", "class_pixel_data__24___bit.html", null ]
     ] ],
@@ -24,7 +24,7 @@ var NAVTREE =
       [ "BMPFile_Magic", "class_b_m_p_file___magic.html", null ],
       [ "Pixel_24_Test", "class_pixel__24___test.html", null ],
       [ "Pixel_Array_Test", "class_pixel___array___test.html", null ],
-      [ "PixelArray", "class_pixel_array.html", null ],
+      [ "PixelArray< pixeltype >", "class_pixel_array.html", null ],
       [ "PixelData", "class_pixel_data.html", [
         [ "PixelData_24_Bit", "class_pixel_data__24___bit.html", null ]
       ] ]

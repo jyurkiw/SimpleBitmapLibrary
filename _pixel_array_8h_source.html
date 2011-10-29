@@ -95,98 +95,91 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a>00012 <span class="preprocessor">#include &lt;utility&gt;</span>
 <a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="_pixel_data_8h.html">PixelData.h</a>&quot;</span>
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="keyword">using namespace </span>std;
-<a name="l00016"></a>00016 
-<a name="l00017"></a><a class="code" href="class_pixel_array.html">00017</a> <span class="keyword">class </span><a class="code" href="class_pixel_array.html">PixelArray</a>
-<a name="l00018"></a>00018 {
-<a name="l00019"></a>00019 <span class="keyword">public</span>:
-<a name="l00023"></a>00023         <a class="code" href="class_pixel_array.html">PixelArray</a>();
-<a name="l00024"></a>00024 
-<a name="l00032"></a>00032         <a class="code" href="class_pixel_array.html">PixelArray</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <a class="code" href="class_pixel_data.html">pixel</a>*);
-<a name="l00033"></a>00033 
-<a name="l00039"></a>00039         <span class="keywordtype">int</span> Rows();
-<a name="l00040"></a>00040 
-<a name="l00046"></a>00046         <span class="keywordtype">int</span> Columns();
-<a name="l00047"></a>00047 
-<a name="l00054"></a>00054         <span class="keywordtype">int</span> Packed_Array_Length();
-<a name="l00055"></a>00055 
-<a name="l00062"></a>00062         <span class="keywordtype">void</span> Resize_PixelArray(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);
-<a name="l00063"></a>00063 
-<a name="l00071"></a>00071         <a class="code" href="class_pixel_data.html">pixel</a>* <span class="keyword">get</span>(int, int);
-<a name="l00072"></a>00072 
-<a name="l00080"></a>00080         <span class="keywordtype">void</span> <span class="keyword">set</span>(int, int, <a class="code" href="class_pixel_data.html">pixel</a>*);
-<a name="l00081"></a>00081 
-<a name="l00087"></a>00087         <span class="keywordtype">void</span> setEmpty(<a class="code" href="class_pixel_data.html">pixel</a>*);
-<a name="l00088"></a>00088 
-<a name="l00094"></a>00094         <span class="keywordtype">char</span>* pack_pixel_array();
-<a name="l00095"></a>00095 
-<a name="l00099"></a>00099         ~<a class="code" href="class_pixel_array.html">PixelArray</a>();
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101 <span class="keyword">private</span>:
-<a name="l00102"></a>00102         <span class="comment">/*</span>
-<a name="l00103"></a>00103 <span class="comment">         * Number of pixel rows in the bitmap</span>
-<a name="l00104"></a>00104 <span class="comment">         */</span>
-<a name="l00105"></a>00105         <span class="keywordtype">int</span> rows;
+<a name="l00022"></a>00022 <span class="keyword">template</span> &lt;<span class="keyword">class</span> pixeltype&gt;
+<a name="l00023"></a><a class="code" href="class_pixel_array.html">00023</a> <span class="keyword">class </span><a class="code" href="class_pixel_array.html">PixelArray</a>
+<a name="l00024"></a>00024 {
+<a name="l00025"></a>00025 <span class="keyword">public</span>:
+<a name="l00029"></a>00029         <a class="code" href="class_pixel_array.html#a6927de8affe3dd4151e04a8e87e41230">PixelArray</a>();
+<a name="l00030"></a>00030 
+<a name="l00038"></a>00038         <a class="code" href="class_pixel_array.html#a6927de8affe3dd4151e04a8e87e41230">PixelArray</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, pixeltype*);
+<a name="l00039"></a>00039 
+<a name="l00045"></a>00045         <span class="keywordtype">int</span> <a class="code" href="class_pixel_array.html#a9a9c9242ccf1524f41de64e8a72f4aef">Rows</a>();
+<a name="l00046"></a>00046 
+<a name="l00052"></a>00052         <span class="keywordtype">int</span> <a class="code" href="class_pixel_array.html#adf525392f409fe11655ba92a55ae72e8">Columns</a>();
+<a name="l00053"></a>00053 
+<a name="l00060"></a>00060         <span class="keywordtype">int</span> <a class="code" href="class_pixel_array.html#a40139b0aac8717cac715088d440a8553">Packed_Array_Length</a>();
+<a name="l00061"></a>00061 
+<a name="l00068"></a>00068         <span class="keywordtype">void</span> <a class="code" href="class_pixel_array.html#ab2ebf8f766f5eb347861ee082c51f63d">Resize_PixelArray</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);
+<a name="l00069"></a>00069 
+<a name="l00077"></a>00077         pixeltype* <span class="keyword">get</span>(int, int);
+<a name="l00078"></a>00078 
+<a name="l00086"></a>00086         <span class="keywordtype">void</span> <span class="keyword">set</span>(int, int, pixeltype*);
+<a name="l00087"></a>00087 
+<a name="l00093"></a>00093         <span class="keywordtype">void</span> <a class="code" href="class_pixel_array.html#a874970213082ac1b134da1beccc5b074">setEmpty</a>(pixeltype*);
+<a name="l00094"></a>00094 
+<a name="l00100"></a>00100         <span class="keywordtype">char</span>* <a class="code" href="class_pixel_array.html#a96b65e9cf9401f8ec50ae970ed492182">pack_pixel_array</a>();
+<a name="l00101"></a>00101 
+<a name="l00105"></a>00105         <a class="code" href="class_pixel_array.html#a4d403f0b2120b40b9e9f5ace8a9be674">~PixelArray</a>();
 <a name="l00106"></a>00106 
-<a name="l00107"></a>00107         <span class="comment">/*</span>
-<a name="l00108"></a>00108 <span class="comment">         * Number of columns of data per row</span>
-<a name="l00109"></a>00109 <span class="comment">         */</span>
-<a name="l00110"></a>00110         <span class="keywordtype">int</span> columns;
-<a name="l00111"></a>00111 
-<a name="l00112"></a>00112         <span class="comment">/*</span>
-<a name="l00113"></a>00113 <span class="comment">         * The length of the packed pixel array.</span>
-<a name="l00114"></a>00114 <span class="comment">         */</span>
-<a name="l00115"></a>00115         <span class="keywordtype">int</span> packed_array_length;
-<a name="l00116"></a>00116 
-<a name="l00117"></a>00117         <span class="comment">//Space at the end of every row that needs to be packed with</span>
-<a name="l00118"></a>00118         <span class="comment">//empty pixels.</span>
-<a name="l00119"></a>00119         <span class="keywordtype">int</span> row_padding;
-<a name="l00120"></a>00120 
-<a name="l00121"></a>00121         <span class="comment">//pointer for a character array used to return packed pixel data</span>
-<a name="l00122"></a>00122         <span class="keywordtype">char</span> *packed_pixel_array;
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124         <span class="comment">//flag to tell if the pixel array data has been packed.</span>
-<a name="l00125"></a>00125         <span class="keywordtype">bool</span> pixel_array_is_packed;
+<a name="l00107"></a>00107 <span class="keyword">private</span>:
+<a name="l00108"></a>00108         <span class="comment">/*</span>
+<a name="l00109"></a>00109 <span class="comment">         * Number of pixel rows in the bitmap</span>
+<a name="l00110"></a>00110 <span class="comment">         */</span>
+<a name="l00111"></a>00111         <span class="keywordtype">int</span> rows;
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113         <span class="comment">/*</span>
+<a name="l00114"></a>00114 <span class="comment">         * Number of columns of data per row</span>
+<a name="l00115"></a>00115 <span class="comment">         */</span>
+<a name="l00116"></a>00116         <span class="keywordtype">int</span> columns;
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118         <span class="comment">/*</span>
+<a name="l00119"></a>00119 <span class="comment">         * The length of the packed pixel array.</span>
+<a name="l00120"></a>00120 <span class="comment">         */</span>
+<a name="l00121"></a>00121         <span class="keywordtype">int</span> packed_array_length;
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123         <span class="comment">//Space at the end of every row that needs to be packed with</span>
+<a name="l00124"></a>00124         <span class="comment">//empty pixels.</span>
+<a name="l00125"></a>00125         <span class="keywordtype">int</span> row_padding;
 <a name="l00126"></a>00126 
-<a name="l00127"></a>00127         <span class="comment">//the default empty pixel data.</span>
-<a name="l00128"></a>00128         <a class="code" href="class_pixel_data.html">pixel</a> *empty;
+<a name="l00127"></a>00127         <span class="comment">//pointer for a character array used to return packed pixel data</span>
+<a name="l00128"></a>00128         <span class="keywordtype">char</span> *packed_pixel_array;
 <a name="l00129"></a>00129 
-<a name="l00130"></a>00130         <span class="comment">//pixel data array</span>
-<a name="l00131"></a>00131         vector&lt;pixel*&gt; pixel_data_array;
+<a name="l00130"></a>00130         <span class="comment">//flag to tell if the pixel array data has been packed.</span>
+<a name="l00131"></a>00131         <span class="keywordtype">bool</span> pixel_array_is_packed;
 <a name="l00132"></a>00132 
-<a name="l00133"></a>00133         <span class="comment">/*</span>
-<a name="l00134"></a>00134 <span class="comment">         * calculate the pixel_data_array row and column position</span>
-<a name="l00135"></a>00135 <span class="comment">         * based on a passed index.</span>
-<a name="l00136"></a>00136 <span class="comment">         * Return pair: first = row, second = column</span>
-<a name="l00137"></a>00137 <span class="comment">         */</span>
-<a name="l00138"></a>00138         pair&lt;int,int&gt; calc_pixel_coords_by_packed_index(<span class="keywordtype">int</span>);
-<a name="l00139"></a>00139 
-<a name="l00140"></a>00140         <span class="comment">/*</span>
-<a name="l00141"></a>00141 <span class="comment">         * move the character data from one array to another</span>
-<a name="l00142"></a>00142 <span class="comment">         * based on the passed index</span>
+<a name="l00133"></a>00133         <span class="comment">//the default empty pixel data.</span>
+<a name="l00134"></a>00134         pixeltype *empty;
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136         <span class="comment">//pixel data array</span>
+<a name="l00137"></a>00137         std::vector&lt;pixeltype&gt; pixel_data_array;
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139         <span class="comment">/*</span>
+<a name="l00140"></a>00140 <span class="comment">         * calculate the pixel_data_array row and column position</span>
+<a name="l00141"></a>00141 <span class="comment">         * based on a passed index.</span>
+<a name="l00142"></a>00142 <span class="comment">         * Return pair: first = row, second = column</span>
 <a name="l00143"></a>00143 <span class="comment">         */</span>
-<a name="l00144"></a>00144         <span class="keywordtype">void</span> move_data_into_packed_array(<span class="keywordtype">char</span>*, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>);
+<a name="l00144"></a>00144         std::pair&lt;int,int&gt; calc_pixel_coords_by_packed_index(<span class="keywordtype">int</span>);
 <a name="l00145"></a>00145 
-<a name="l00146"></a>00146         <span class="comment">//vector that stores pre-calculated offset data for accessing pixel data</span>
-<a name="l00147"></a>00147         vector&lt;int&gt; row_offsets;
-<a name="l00148"></a>00148 
-<a name="l00149"></a>00149         <span class="comment">//Get the position of a pixel in the data array based on it&#39;s</span>
-<a name="l00150"></a>00150         <span class="comment">//cartesian coordinates.</span>
-<a name="l00151"></a>00151         <span class="comment">//int height/row, int width/column</span>
-<a name="l00152"></a>00152         <span class="keywordtype">int</span> get_pixel_position(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);
-<a name="l00153"></a>00153 
-<a name="l00154"></a>00154         <span class="comment">//initialize the pixel data array to zeros</span>
-<a name="l00155"></a>00155         <span class="keywordtype">void</span> init_pixel_data_array();
-<a name="l00156"></a>00156 
-<a name="l00157"></a>00157         <span class="comment">//de-initialize the pixel data array.</span>
-<a name="l00158"></a>00158         <span class="comment">//delete all pixel objects and clear the vector</span>
-<a name="l00159"></a>00159         <span class="keywordtype">void</span> un_init_pixel_data_array();
-<a name="l00160"></a>00160 
-<a name="l00161"></a>00161         <span class="comment">//calculate the contents of the offsets vector</span>
-<a name="l00162"></a>00162         <span class="keywordtype">void</span> calculate_offsets();
-<a name="l00163"></a>00163 };
-<a name="l00164"></a>00164 
-<a name="l00165"></a><a class="code" href="_pixel_array_8h.html#a11eac0401383669ce3910aa626f1f097">00165</a> <span class="keyword">typedef</span> <a class="code" href="class_pixel_array.html">PixelArray</a> <a class="code" href="_pixel_array_8h.html#a11eac0401383669ce3910aa626f1f097">pixel_array</a>;
+<a name="l00146"></a>00146         <span class="comment">/*</span>
+<a name="l00147"></a>00147 <span class="comment">         * move the character data from one array to another</span>
+<a name="l00148"></a>00148 <span class="comment">         * based on the passed index</span>
+<a name="l00149"></a>00149 <span class="comment">         */</span>
+<a name="l00150"></a>00150         <span class="keywordtype">void</span> move_data_into_packed_array(<span class="keywordtype">char</span>*, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>);
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152         <span class="comment">//vector that stores pre-calculated offset data for accessing pixel data</span>
+<a name="l00153"></a>00153         std::vector&lt;int&gt; row_offsets;
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155         <span class="comment">//Get the position of a pixel in the data array based on it&#39;s</span>
+<a name="l00156"></a>00156         <span class="comment">//cartesian coordinates.</span>
+<a name="l00157"></a>00157         <span class="comment">//int height/row, int width/column</span>
+<a name="l00158"></a>00158         <span class="keywordtype">int</span> get_pixel_position(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160         <span class="comment">//initialize the pixel data array to zeros</span>
+<a name="l00161"></a>00161         <span class="keywordtype">void</span> init_pixel_data_array();
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163         <span class="comment">//calculate the contents of the offsets vector</span>
+<a name="l00164"></a>00164         <span class="keywordtype">void</span> calculate_offsets();
+<a name="l00165"></a>00165 };
 <a name="l00166"></a>00166 
 <a name="l00167"></a>00167 <span class="preprocessor">#endif </span><span class="comment">/* PIXELARRAY_H_ */</span>
 </pre></div></div>
@@ -194,7 +187,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_pixel_array_8h.html">PixelArray.h</a>      </li>
-      <li class="footer">Generated on Thu Oct 27 2011 22:34:02 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Fri Oct 28 2011 22:29:00 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

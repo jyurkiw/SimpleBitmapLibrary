@@ -99,48 +99,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00016"></a>00016 
 <a name="l00017"></a>00017 <span class="keyword">using namespace </span>CppUnit;
 <a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="class_pixel___array___test.html">00019</a> <span class="keyword">class </span><a class="code" href="class_pixel___array___test.html">Pixel_Array_Test</a> : <span class="keyword">public</span> TestFixture
-<a name="l00020"></a>00020 {
-<a name="l00021"></a>00021         CPPUNIT_TEST_SUITE( <a class="code" href="class_pixel___array___test.html">Pixel_Array_Test</a> );
-<a name="l00022"></a>00022         CPPUNIT_TEST( EmptyConstructorTest );
-<a name="l00023"></a>00023         CPPUNIT_TEST( IntIntPixelPointer_ConstructorTest );
-<a name="l00024"></a>00024         CPPUNIT_TEST( RowsTest );
-<a name="l00025"></a>00025         CPPUNIT_TEST( ColumnsTest );
-<a name="l00026"></a>00026         CPPUNIT_TEST( PackedArrayLengthTest );
-<a name="l00027"></a>00027         CPPUNIT_TEST( IntIntResize_PixelArrayTest );
-<a name="l00028"></a>00028         CPPUNIT_TEST( IntIntGetTest );
-<a name="l00029"></a>00029         CPPUNIT_TEST( IntIntSetTest );
-<a name="l00030"></a>00030         CPPUNIT_TEST( PixelSetEmptyTest );
-<a name="l00031"></a>00031         CPPUNIT_TEST( PackPixelParrayTest );
-<a name="l00032"></a>00032         CPPUNIT_TEST_SUITE_END();
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 <span class="keyword">public</span>:
-<a name="l00035"></a>00035         <span class="keywordtype">void</span> setUp(<span class="keywordtype">void</span>);
-<a name="l00036"></a>00036         <span class="keywordtype">void</span> tearDown(<span class="keywordtype">void</span>);
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038         <span class="keywordtype">void</span> EmptyConstructorTest(<span class="keywordtype">void</span>);
-<a name="l00039"></a>00039         <span class="keywordtype">void</span> IntIntPixelPointer_ConstructorTest(<span class="keywordtype">void</span>);
-<a name="l00040"></a>00040         <span class="keywordtype">void</span> RowsTest(<span class="keywordtype">void</span>);
-<a name="l00041"></a>00041         <span class="keywordtype">void</span> ColumnsTest(<span class="keywordtype">void</span>);
-<a name="l00042"></a>00042         <span class="keywordtype">void</span> PackedArrayLengthTest(<span class="keywordtype">void</span>);
-<a name="l00043"></a>00043         <span class="keywordtype">void</span> IntIntResize_PixelArrayTest(<span class="keywordtype">void</span>);
-<a name="l00044"></a>00044         <span class="keywordtype">void</span> IntIntGetTest(<span class="keywordtype">void</span>);
-<a name="l00045"></a>00045         <span class="keywordtype">void</span> IntIntSetTest(<span class="keywordtype">void</span>);
-<a name="l00046"></a>00046         <span class="keywordtype">void</span> PixelSetEmptyTest(<span class="keywordtype">void</span>);
-<a name="l00047"></a>00047         <span class="keywordtype">void</span> PackPixelParrayTest(<span class="keywordtype">void</span>);
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049 <span class="keyword">private</span>:
-<a name="l00050"></a>00050         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> white;
-<a name="l00051"></a>00051         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> black;
-<a name="l00052"></a>00052 };
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="preprocessor">#endif </span><span class="comment">/* PIXELARRAYTEST_H_ */</span>
+<a name="l00019"></a><a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">00019</a> <span class="keyword">typedef</span> <a class="code" href="class_pixel_array.html">PixelArray&lt;pixel24&gt;</a> <a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">pixel_array24</a>;
+<a name="l00020"></a>00020 
+<a name="l00021"></a><a class="code" href="class_pixel___array___test.html">00021</a> <span class="keyword">class </span><a class="code" href="class_pixel___array___test.html">Pixel_Array_Test</a> : <span class="keyword">public</span> TestFixture
+<a name="l00022"></a>00022 {
+<a name="l00023"></a>00023         CPPUNIT_TEST_SUITE( <a class="code" href="class_pixel___array___test.html">Pixel_Array_Test</a> );
+<a name="l00024"></a>00024         CPPUNIT_TEST( EmptyConstructorTest );
+<a name="l00025"></a>00025         CPPUNIT_TEST( IntIntPixelPointer_ConstructorTest );
+<a name="l00026"></a>00026         CPPUNIT_TEST( RowsTest );
+<a name="l00027"></a>00027         CPPUNIT_TEST( ColumnsTest );
+<a name="l00028"></a>00028         CPPUNIT_TEST( PackedArrayLengthTest );
+<a name="l00029"></a>00029         CPPUNIT_TEST( IntIntResize_PixelArrayTest );
+<a name="l00030"></a>00030         CPPUNIT_TEST( IntIntGet_WhileEmpty_Test );
+<a name="l00031"></a>00031         CPPUNIT_TEST( IntIntSetTest );
+<a name="l00032"></a>00032         CPPUNIT_TEST( IntIntGet_WhileNotEmpty_Test );
+<a name="l00033"></a>00033         CPPUNIT_TEST( PixelSetEmptyTest );
+<a name="l00034"></a>00034         CPPUNIT_TEST( PackPixelParrayTest );
+<a name="l00035"></a>00035         CPPUNIT_TEST_SUITE_END();
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037 <span class="keyword">public</span>:
+<a name="l00038"></a>00038         <span class="keywordtype">void</span> setUp(<span class="keywordtype">void</span>);
+<a name="l00039"></a>00039         <span class="keywordtype">void</span> tearDown(<span class="keywordtype">void</span>);
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         <span class="keywordtype">void</span> EmptyConstructorTest(<span class="keywordtype">void</span>);
+<a name="l00042"></a>00042         <span class="keywordtype">void</span> IntIntPixelPointer_ConstructorTest(<span class="keywordtype">void</span>);
+<a name="l00043"></a>00043         <span class="keywordtype">void</span> RowsTest(<span class="keywordtype">void</span>);
+<a name="l00044"></a>00044         <span class="keywordtype">void</span> ColumnsTest(<span class="keywordtype">void</span>);
+<a name="l00045"></a>00045         <span class="keywordtype">void</span> PackedArrayLengthTest(<span class="keywordtype">void</span>);
+<a name="l00046"></a>00046         <span class="keywordtype">void</span> IntIntResize_PixelArrayTest(<span class="keywordtype">void</span>);
+<a name="l00047"></a>00047         <span class="keywordtype">void</span> IntIntGet_WhileEmpty_Test(<span class="keywordtype">void</span>);
+<a name="l00048"></a>00048         <span class="keywordtype">void</span> IntIntGet_WhileNotEmpty_Test(<span class="keywordtype">void</span>);
+<a name="l00049"></a>00049         <span class="keywordtype">void</span> IntIntSetTest(<span class="keywordtype">void</span>);
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> PixelSetEmptyTest(<span class="keywordtype">void</span>);
+<a name="l00051"></a>00051         <span class="keywordtype">void</span> PackPixelParrayTest(<span class="keywordtype">void</span>);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="keyword">private</span>:
+<a name="l00054"></a>00054         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> white;
+<a name="l00055"></a>00055         <a class="code" href="class_b_m_p_file__24bit___pixel_data.html">pixel24</a> black;
+<a name="l00056"></a>00056         <a class="code" href="class_pixel_array.html">pixel_array24</a> *t_pa;
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058         <span class="keywordtype">int</span> rows, cols;
+<a name="l00059"></a>00059 };
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 <span class="preprocessor">#endif </span><span class="comment">/* PIXELARRAYTEST_H_ */</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_pixel_array_test_8h.html">PixelArrayTest.h</a>      </li>
-      <li class="footer">Generated on Thu Oct 27 2011 22:34:02 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Fri Oct 28 2011 22:29:00 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

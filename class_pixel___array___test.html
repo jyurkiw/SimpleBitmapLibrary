@@ -92,7 +92,7 @@ Collaboration diagram for Pixel_Array_Test:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_pixel___array___test__coll__graph.png" border="0" usemap="#_pixel___array___test_coll__map" alt="Collaboration graph"/></div>
 <map name="_pixel___array___test_coll__map" id="_pixel___array___test_coll__map">
-<area shape="rect" id="node2" href="class_b_m_p_file__24bit___pixel_data.html" title="{BMPFile_24bit_PixelData\n|+ blue\l+ green\l+ red\l|+ BMPFile_24bit_PixelData()\l+ BMPFile_24bit_PixelData()\l+ Write_PixelData()\l+ operator=()\l+ operator==()\l+ operator!=()\l}" alt="" coords="32,6,221,213"/></map>
+<area shape="rect" id="node2" href="class_pixel_array.html" title="{PixelArray\&lt; pixeltype \&gt;\n|&#45; rows\l&#45; columns\l&#45; packed_array_length\l&#45; row_padding\l&#45; packed_pixel_array\l&#45; pixel_array_is_packed\l&#45; empty\l&#45; pixel_data_array\l&#45; row_offsets\l|+ PixelArray()\l+ PixelArray()\l+ Rows()\l+ Columns()\l+ Packed_Array_Length()\l+ Resize_PixelArray()\l+ get()\l+ set()\l+ setEmpty()\l+ pack_pixel_array()\l+ ~PixelArray()\l&#45; calc_pixel_coords_by_packed_index()\l&#45; move_data_into_packed_array()\l&#45; get_pixel_position()\l&#45; init_pixel_data_array()\l&#45; calculate_offsets()\l}" alt="" coords="24,158,275,642"/><area shape="rect" id="node8" href="class_b_m_p_file__24bit___pixel_data.html" title="{BMPFile_24bit_PixelData\n|+ blue\l+ green\l+ red\l|+ BMPFile_24bit_PixelData()\l+ BMPFile_24bit_PixelData()\l+ Write_PixelData()\l+ operator=()\l+ operator==()\l+ operator!=()\l}" alt="" coords="299,297,488,503"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_pixel___array___test-members.html">List of all members.</a></p>
@@ -107,7 +107,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel___array___test.html#a5d19a5e61a100d4566b08583072b5bb5">ColumnsTest</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel___array___test.html#a1ec92a7e7e205040637522d5ac3d6f07">PackedArrayLengthTest</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel___array___test.html#aaf13f4cc539b0c0b83b176efa460648e">IntIntResize_PixelArrayTest</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel___array___test.html#a8a73479cb2fd90022e21ffb07ecf70ca">IntIntGetTest</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel___array___test.html#abb4f6c43b3c881fc649c61b8a6fba7be">IntIntGet_WhileEmpty_Test</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel___array___test.html#afaf37e72478d8eb8659650aad397d0f5">IntIntGet_WhileNotEmpty_Test</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel___array___test.html#a1120c5238bf317591eb67b11e399f309">IntIntSetTest</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel___array___test.html#a5d40d5da899a7c9217fbd7d055d0274f">PixelSetEmptyTest</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pixel___array___test.html#af799c10b88e9490789885dd4918d6a1f">PackPixelParrayTest</a> (void)</td></tr>
@@ -128,7 +129,18 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <div class="fragment"><pre class="fragment">{
-        CPPUNIT_ASSERT(<span class="keyword">true</span>);
+        t_pa = <span class="keyword">new</span> <a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">pixel_array24</a>(rows, cols, &amp;black);
+
+        CPPUNIT_ASSERT(t_pa-&gt;<a class="code" href="class_pixel_array.html#adf525392f409fe11655ba92a55ae72e8">Columns</a>() == cols);
+
+        <span class="keyword">delete</span> t_pa;
+        t_pa = 0;
+
+        rows = 256;
+        cols = 256;
+        t_pa = <span class="keyword">new</span> <a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">pixel_array24</a>(rows, cols, &amp;white);
+
+        CPPUNIT_ASSERT(t_pa-&gt;Columns() == cols);
 }
 </pre></div>
 </div>
@@ -147,33 +159,42 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>References <a class="el" href="class_pixel_array.html#abc0605df1fa4d9751b89bce18415305a">PixelArray::Columns()</a>, <a class="el" href="class_pixel_array.html#a1c396439dcb70867604edc116a9729dd">PixelArray::Packed_Array_Length()</a>, and <a class="el" href="class_pixel_array.html#acb956a8ec19ff6195d0f4c0a338cafc0">PixelArray::Rows()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-        <a class="code" href="class_pixel_array.html">pixel_array</a> t_pa;
+        t_pa = <span class="keyword">new</span> <a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">pixel_array24</a>();
 
-        CPPUNIT_ASSERT(t_pa.<a class="code" href="class_pixel_array.html#acb956a8ec19ff6195d0f4c0a338cafc0">Rows</a>() == 0);
-        CPPUNIT_ASSERT(t_pa.<a class="code" href="class_pixel_array.html#abc0605df1fa4d9751b89bce18415305a">Columns</a>() == 0);
-        CPPUNIT_ASSERT(t_pa.<a class="code" href="class_pixel_array.html#a1c396439dcb70867604edc116a9729dd">Packed_Array_Length</a>() == 0);
+        CPPUNIT_ASSERT(t_pa-&gt;<a class="code" href="class_pixel_array.html#a9a9c9242ccf1524f41de64e8a72f4aef">Rows</a>() == 0);
+        CPPUNIT_ASSERT(t_pa-&gt;<a class="code" href="class_pixel_array.html#adf525392f409fe11655ba92a55ae72e8">Columns</a>() == 0);
+        CPPUNIT_ASSERT(t_pa-&gt;<a class="code" href="class_pixel_array.html#a40139b0aac8717cac715088d440a8553">Packed_Array_Length</a>() == 0);
 }
 </pre></div>
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_pixel___array___test_a8ace89857ce7d025d7cd09b9b147bed4_cgraph.png" border="0" usemap="#class_pixel___array___test_a8ace89857ce7d025d7cd09b9b147bed4_cgraph" alt=""/></div>
-<map name="class_pixel___array___test_a8ace89857ce7d025d7cd09b9b147bed4_cgraph" id="class_pixel___array___test_a8ace89857ce7d025d7cd09b9b147bed4_cgraph">
-<area shape="rect" id="node3" href="class_pixel_array.html#abc0605df1fa4d9751b89bce18415305a" title="PixelArray::Columns" alt="" coords="356,5,497,35"/><area shape="rect" id="node5" href="class_pixel_array.html#a1c396439dcb70867604edc116a9729dd" title="PixelArray::Packed_Array_Length" alt="" coords="317,59,536,88"/><area shape="rect" id="node7" href="class_pixel_array.html#acb956a8ec19ff6195d0f4c0a338cafc0" title="PixelArray::Rows" alt="" coords="365,112,488,141"/></map>
-</div>
-</p>
-
 </div>
 </div>
-<a class="anchor" id="a8a73479cb2fd90022e21ffb07ecf70ca"></a><!-- doxytag: member="Pixel_Array_Test::IntIntGetTest" ref="a8a73479cb2fd90022e21ffb07ecf70ca" args="(void)" -->
+<a class="anchor" id="abb4f6c43b3c881fc649c61b8a6fba7be"></a><!-- doxytag: member="Pixel_Array_Test::IntIntGet_WhileEmpty_Test" ref="abb4f6c43b3c881fc649c61b8a6fba7be" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Pixel_Array_Test::IntIntGetTest </td>
+          <td class="memname">void Pixel_Array_Test::IntIntGet_WhileEmpty_Test </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+        CPPUNIT_ASSERT(<span class="keyword">true</span>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="afaf37e72478d8eb8659650aad397d0f5"></a><!-- doxytag: member="Pixel_Array_Test::IntIntGet_WhileNotEmpty_Test" ref="afaf37e72478d8eb8659650aad397d0f5" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pixel_Array_Test::IntIntGet_WhileNotEmpty_Test </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -202,34 +223,16 @@ Here is the call graph for this function:</div>
       </table>
 </div>
 <div class="memdoc">
-
-<p>References <a class="el" href="class_pixel_array.html#abc0605df1fa4d9751b89bce18415305a">PixelArray::Columns()</a>, <a class="el" href="class_pixel_array.html#a1c396439dcb70867604edc116a9729dd">PixelArray::Packed_Array_Length()</a>, and <a class="el" href="class_pixel_array.html#acb956a8ec19ff6195d0f4c0a338cafc0">PixelArray::Rows()</a>.</p>
 <div class="fragment"><pre class="fragment">{
         <span class="keywordtype">char</span> err_buff[255];
 
-        <span class="keywordtype">int</span> rows = 3;
-        <span class="keywordtype">int</span> columns = 3;
         <span class="keywordtype">int</span> packed_length = 0;
-        <a class="code" href="class_pixel_array.html">pixel_array</a> t_pa(rows, columns ,&amp;black);
+        t_pa = <span class="keyword">new</span> <a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">pixel_array24</a>(rows, cols ,&amp;black);
 
-        sprintf(err_buff,
-                <span class="stringliteral">&quot;The assertion 0 == %d failed. Got %d == %d instead.&quot;</span>,
-                packed_length, t_pa.Packed_Array_Length(), packed_length);
-
-        CPPUNIT_ASSERT(t_pa.Rows() == rows);
-        CPPUNIT_ASSERT(t_pa.Columns() == columns);
-        CPPUNIT_ASSERT_MESSAGE(err_buff, t_pa.Packed_Array_Length() == packed_length);
+        CPPUNIT_ASSERT(t_pa-&gt;<a class="code" href="class_pixel_array.html#a9a9c9242ccf1524f41de64e8a72f4aef">Rows</a>() == rows);
+        CPPUNIT_ASSERT(t_pa-&gt;<a class="code" href="class_pixel_array.html#adf525392f409fe11655ba92a55ae72e8">Columns</a>() == cols);
 }
 </pre></div>
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_pixel___array___test_ab3da0486ee28d1666bcf51267ae232bc_cgraph.png" border="0" usemap="#class_pixel___array___test_ab3da0486ee28d1666bcf51267ae232bc_cgraph" alt=""/></div>
-<map name="class_pixel___array___test_ab3da0486ee28d1666bcf51267ae232bc_cgraph" id="class_pixel___array___test_ab3da0486ee28d1666bcf51267ae232bc_cgraph">
-<area shape="rect" id="node3" href="class_pixel_array.html#abc0605df1fa4d9751b89bce18415305a" title="PixelArray::Columns" alt="" coords="423,5,564,35"/><area shape="rect" id="node5" href="class_pixel_array.html#a1c396439dcb70867604edc116a9729dd" title="PixelArray::Packed_Array_Length" alt="" coords="384,59,603,88"/><area shape="rect" id="node7" href="class_pixel_array.html#acb956a8ec19ff6195d0f4c0a338cafc0" title="PixelArray::Rows" alt="" coords="432,112,555,141"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="aaf13f4cc539b0c0b83b176efa460648e"></a><!-- doxytag: member="Pixel_Array_Test::IntIntResize_PixelArrayTest" ref="aaf13f4cc539b0c0b83b176efa460648e" args="(void)" -->
@@ -247,7 +250,30 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 <div class="fragment"><pre class="fragment">{
-        CPPUNIT_ASSERT(<span class="keyword">true</span>);
+        <span class="keywordtype">char</span> err_buff[255];
+
+                <span class="keywordtype">int</span> packed_length = 0;
+                t_pa = <span class="keyword">new</span> <a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">pixel_array24</a>(rows, cols ,&amp;black);
+
+                sprintf(err_buff,
+                        <span class="stringliteral">&quot;The assertion 0 == %d failed. Got %d == %d instead.&quot;</span>,
+                        packed_length, t_pa-&gt;<a class="code" href="class_pixel_array.html#a40139b0aac8717cac715088d440a8553">Packed_Array_Length</a>(), packed_length);
+
+                CPPUNIT_ASSERT_MESSAGE(err_buff, t_pa-&gt;<a class="code" href="class_pixel_array.html#a40139b0aac8717cac715088d440a8553">Packed_Array_Length</a>() == packed_length);
+
+                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; 255; x++) err_buff[x] = <span class="charliteral">&#39;\0&#39;</span>;
+
+                rows = 256;
+                cols = 256;
+                packed_length = 0;
+
+                t_pa-&gt;<a class="code" href="class_pixel_array.html#ab2ebf8f766f5eb347861ee082c51f63d">Resize_PixelArray</a>(rows, cols);
+
+                sprintf(err_buff,
+                        <span class="stringliteral">&quot;The assertion 0 == %d failed. Got %d == %d instead.&quot;</span>,
+                        packed_length, t_pa-&gt;<a class="code" href="class_pixel_array.html#a40139b0aac8717cac715088d440a8553">Packed_Array_Length</a>(), packed_length);
+
+                CPPUNIT_ASSERT_MESSAGE(err_buff, t_pa-&gt;<a class="code" href="class_pixel_array.html#a40139b0aac8717cac715088d440a8553">Packed_Array_Length</a>() == packed_length);
 }
 </pre></div>
 </div>
@@ -287,7 +313,32 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 <div class="fragment"><pre class="fragment">{
-        CPPUNIT_ASSERT(<span class="keyword">true</span>);
+        <span class="keywordtype">char</span> err_buff[255];
+
+        <span class="keywordtype">int</span> packed_length = 0;
+        t_pa = <span class="keyword">new</span> <a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">pixel_array24</a>(rows, cols ,&amp;black);
+
+        sprintf(err_buff,
+                <span class="stringliteral">&quot;The assertion 0 == %d failed. Got %d == %d instead.&quot;</span>,
+                packed_length, t_pa-&gt;<a class="code" href="class_pixel_array.html#a40139b0aac8717cac715088d440a8553">Packed_Array_Length</a>(), packed_length);
+
+        CPPUNIT_ASSERT_MESSAGE(err_buff, t_pa-&gt;<a class="code" href="class_pixel_array.html#a40139b0aac8717cac715088d440a8553">Packed_Array_Length</a>() == packed_length);
+
+        <span class="keyword">delete</span> t_pa;
+        t_pa = 0;
+
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; 255; x++) err_buff[x] = <span class="charliteral">&#39;\0&#39;</span>;
+
+        rows = 256;
+        cols = 256;
+        packed_length = 0;
+        t_pa = <span class="keyword">new</span> <a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">pixel_array24</a>(rows, cols ,&amp;black);
+
+        sprintf(err_buff,
+                <span class="stringliteral">&quot;The assertion 0 == %d failed. Got %d == %d instead.&quot;</span>,
+                packed_length, t_pa-&gt;Packed_Array_Length(), packed_length);
+
+        CPPUNIT_ASSERT_MESSAGE(err_buff, t_pa-&gt;Packed_Array_Length() == packed_length);
 }
 </pre></div>
 </div>
@@ -347,7 +398,18 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 <div class="fragment"><pre class="fragment">{
-        CPPUNIT_ASSERT(<span class="keyword">true</span>);
+        t_pa = <span class="keyword">new</span> <a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">pixel_array24</a>(rows, cols ,&amp;black);
+
+        CPPUNIT_ASSERT(t_pa-&gt;<a class="code" href="class_pixel_array.html#a9a9c9242ccf1524f41de64e8a72f4aef">Rows</a>() == rows);
+
+        <span class="keyword">delete</span> t_pa;
+        t_pa = 0;
+
+        rows = 256;
+        cols = 256;
+        t_pa = <span class="keyword">new</span> <a class="code" href="_pixel_array_test_8h.html#ae8fe5c8dab6b2566bc7f454733928631">pixel_array24</a>(rows, cols, &amp;white);
+
+        CPPUNIT_ASSERT(t_pa-&gt;Rows() == rows);
 }
 </pre></div>
 </div>
@@ -369,6 +431,11 @@ Here is the call graph for this function:</div>
 <div class="fragment"><pre class="fragment">{
         white.set(0,0,0);
         black.set(255,255,255);
+
+        rows = 4;
+        cols = 4;
+
+        t_pa = 0;
 }
 </pre></div>
 </div>
@@ -387,7 +454,9 @@ Here is the call graph for this function:</div>
       </table>
 </div>
 <div class="memdoc">
-<div class="fragment"><pre class="fragment">{}
+<div class="fragment"><pre class="fragment">{
+        <span class="keywordflow">if</span> (t_pa != 0) <span class="keyword">delete</span> t_pa;
+}
 </pre></div>
 </div>
 </div>
@@ -400,7 +469,7 @@ Here is the call graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_pixel___array___test.html">Pixel_Array_Test</a>      </li>
-      <li class="footer">Generated on Thu Oct 27 2011 22:34:02 for SimpleBitmapLibrary by&#160;
+      <li class="footer">Generated on Fri Oct 28 2011 22:29:00 for SimpleBitmapLibrary by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
