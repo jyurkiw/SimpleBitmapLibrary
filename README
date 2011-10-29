@@ -43,10 +43,3 @@ DEBUGGING:
 	the command is "make valgrind". That will build a .valgrind
 	executable and a series of .valgrind object files in the build
 	directory that are compiled with full debugging flags enabled.
-
-TODO:
-	Complete the Pixel_24 and PixelArray unit tests
-	Divide up the bmp.h/cpp classes into their own classes
-	Write unit tests for the headers and the like
-	Write unit tests for the bitmap class
-	Figure out how to compile the library into a DLL
