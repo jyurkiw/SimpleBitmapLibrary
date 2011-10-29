@@ -49,6 +49,9 @@ public:
 private:
 	pixel24 white;
 	pixel24 black;
+	pixel_array *t_pa;
+
+	int rows, cols;
 };
 
 #endif /* PIXELARRAYTEST_H_ */
