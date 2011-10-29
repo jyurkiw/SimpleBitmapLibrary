@@ -55,12 +55,38 @@ void Pixel_Array_Test::IntIntPixelPointer_ConstructorTest(void)
 
 void Pixel_Array_Test::RowsTest(void)
 {
-	CPPUNIT_ASSERT(true);
+	int rows = 4;
+	int cols = 4;
+	pixel_array *t_pa = new pixel_array(rows, cols, &black);
+
+	CPPUNIT_ASSERT(t_pa->Rows() == rows);
+
+	delete t_pa;
+	t_pa = 0;
+
+	rows = 256;
+	cols = 256;
+	t_pa = new pixel_array(rows, cols, &white);
+
+	CPPUNIT_ASSERT(t_pa->Rows() == rows);
 }
 
 void Pixel_Array_Test::ColumnsTest(void)
 {
-	CPPUNIT_ASSERT(true);
+	int rows = 4;
+	int cols = 4;
+	pixel_array *t_pa = new pixel_array(rows, cols, &black);
+
+	CPPUNIT_ASSERT(t_pa->Columns() == cols);
+
+	delete t_pa;
+	t_pa = 0;
+
+	rows = 256;
+	cols = 256;
+	t_pa = new pixel_array(rows, cols, &white);
+
+	CPPUNIT_ASSERT(t_pa->Columns() == cols);
 }
 
 void Pixel_Array_Test::PackedArrayLengthTest(void)
