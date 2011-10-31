@@ -63,10 +63,8 @@ void Pixel_Array_Test::RowsTest(void)
 	delete t_pa;
 	t_pa = 0;
 
-//	rows = 256;
-//	cols = 256;
-	rows = 8;
-	cols = 8;
+	rows = 256;
+	cols = 256;
 	t_pa = new pixel_array24(rows, cols, white);
 
 	CPPUNIT_ASSERT(t_pa->Rows() == rows);
@@ -81,10 +79,8 @@ void Pixel_Array_Test::ColumnsTest(void)
 	delete t_pa;
 	t_pa = 0;
 
-//	rows = 256;
-//	cols = 256;
-	rows = 8;
-	cols = 8;
+	rows = 256;
+	cols = 256;
 	t_pa = new pixel_array24(rows, cols, white);
 
 	CPPUNIT_ASSERT(t_pa->Columns() == cols);
@@ -108,10 +104,8 @@ void Pixel_Array_Test::PackedArrayLengthTest(void)
 
 	for (int x = 0; x < 255; x++) err_buff[x] = '\0';
 
-//	rows = 256;
-//	cols = 256;
-	rows = 8;
-	cols = 8;
+	rows = 256;
+	cols = 256;
 	packed_length = 0;
 	t_pa = new pixel_array24(rows, cols , black);
 
@@ -138,10 +132,8 @@ void Pixel_Array_Test::IntIntResize_PixelArrayTest(void)
 
 	for (int x = 0; x < 255; x++) err_buff[x] = '\0';
 
-//	rows = 256;
-//	cols = 256;
-	rows = 8;
-	cols = 8;
+	rows = 256;
+	cols = 256;
 	packed_length = 0;
 
 	t_pa->Resize_PixelArray(rows, cols);
@@ -159,7 +151,7 @@ void Pixel_Array_Test::IntIntGet_WhileEmpty_Test(void)
 	char err_buff[255];
 	t_pa = new pixel_array24(rows, cols, black);
 	pixel24 p;
-	p = t_pa->get(1,1);
+	p = t_pa->get(0,0);
 
 	sprintf(err_buff,
 		"1. The assertion R(%d) G(%d) B(%d) == R(%d) G(%d) B(%d) failed.",
@@ -210,20 +202,150 @@ void Pixel_Array_Test::IntIntGet_WhileEmpty_Test(void)
 
 void Pixel_Array_Test::IntIntSetTest(void)
 {
-	CPPUNIT_ASSERT(true);
+	t_pa = new pixel_array24(rows, cols, white);
+	pixel24 n_p(127, 127, 127);
+	pixel24 g_p;
+
+	for (int x = 0; x < cols; x++)
+	{
+		for (int y = 0; y < rows; y++)
+		{
+			t_pa->set(y, x, n_p);
+		}
+	}
+
+	char err_buff[100];
+
+	for (int x = 0; x < cols; x++)
+	{
+		for (int y = 0; y < rows; y++)
+		{
+			g_p = t_pa->get(y, x);
+
+			if (g_p != n_p)
+			{
+				for(int i = 0; i < 100; i++) err_buff[i] = '\0';
+
+				sprintf(err_buff, "Assertion failure while comparing R(%d)G(%d)B(%d) and R(%d)G(%d)B(%d).",
+					g_p.red(), g_p.green(), g_p.blue(),
+					n_p.red(), n_p.green(), n_p.blue());
+
+				CPPUNIT_ASSERT_MESSAGE(err_buff, g_p == n_p);
+			}
+			else
+			{
+				CPPUNIT_ASSERT(g_p == n_p);
+			}
+		}
+	}
 }
 
 void Pixel_Array_Test::IntIntGet_WhileNotEmpty_Test(void)
 {
-	CPPUNIT_ASSERT(true);
+	t_pa = new pixel_array24(rows, cols, white);
+	pixel24 n_p(127, 127, 127);
+	pixel24 g_p;
+
+	for (int x = 0; x < cols; x++)
+	{
+		for (int y = 0; y < rows; y++)
+		{
+			t_pa->set(y, x, n_p);
+		}
+	}
+
+	char err_buff[100];
+
+	for (int x = 0; x < cols; x++)
+	{
+		for (int y = 0; y < rows; y++)
+		{
+			g_p = t_pa->get(y, x);
+
+			if (g_p != n_p)
+			{
+				for(int i = 0; i < 100; i++) err_buff[i] = '\0';
+
+				sprintf(err_buff, "Assertion failure while comparing R(%d)G(%d)B(%d) and R(%d)G(%d)B(%d).",
+					g_p.red(), g_p.green(), g_p.blue(),
+					n_p.red(), n_p.green(), n_p.blue());
+
+				CPPUNIT_ASSERT_MESSAGE(err_buff, g_p == n_p);
+			}
+			else
+			{
+				CPPUNIT_ASSERT(g_p == n_p);
+			}
+		}
+	}
 }
 
 void Pixel_Array_Test::PixelSetEmptyTest(void)
 {
-	CPPUNIT_ASSERT(true);
+	t_pa = new pixel_array24(rows, cols, white);
+
+	CPPUNIT_ASSERT(t_pa->getEmpty() == white);
+
+	t_pa->setEmpty(black);
+
+	CPPUNIT_ASSERT(t_pa->getEmpty() == black);
 }
 
-void Pixel_Array_Test::PackPixelParrayTest(void)
+void Pixel_Array_Test::PackPixelArrayTest(void)
 {
-	CPPUNIT_ASSERT(true);
+	rows = 7;
+	cols = 7;
+
+	int phony_padding_len = cols % 4;
+	if (cols < 4) phony_padding_len = 4 % cols;
+	int padded_row_len = cols + phony_padding_len;
+
+	int phony_packed_array_len = rows * padded_row_len * white.write_length;
+	pixel24 pix_dat = black;
+
+	char *phony_pixel_pack_array = new char[phony_packed_array_len];
+	char *pixel_data = pix_dat.pack_pixel();
+	char *empty_data = white.pack_pixel();
+
+	int c_t = 0;
+	int p_t = 0;
+
+	while(c_t < phony_packed_array_len)
+	{
+		p_t++;
+		if (p_t >= pix_dat.write_length)
+		{
+			if (((c_t / pix_dat.write_length) % padded_row_len) < cols)
+			{
+				if (pix_dat == white) pix_dat = black;
+				else pix_dat = white;
+			}
+			else
+			{
+				pix_dat = white;
+			}
+			p_t = 0;
+			pixel_data = pix_dat.pack_pixel();
+		}
+
+		phony_pixel_pack_array[c_t] = pixel_data[p_t];
+		c_t++;
+	}
+
+	t_pa = new pixel_array24(rows, cols, white);
+
+	for (int r = 0; r < rows; r++)
+		for (int c = 0; c < cols; c++)
+			if ((r * cols) + c % 2 == 0) t_pa->set(r, c, black);
+			else t_pa->set(r, c, white);
+
+	char *pixel_pack_array = t_pa->pack_pixel_array();
+
+	for (int x = 0, mx = t_pa->Packed_Array_Length(); x < mx; x++)
+		CPPUNIT_ASSERT(phony_pixel_pack_array[x] == pixel_pack_array[x]);
+
+	phony_pixel_pack_array = 0;
+	pixel_data = 0;
+	empty_data = 0;
+	pixel_pack_array = 0;
 }

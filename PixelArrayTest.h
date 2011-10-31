@@ -31,7 +31,7 @@ class Pixel_Array_Test : public TestFixture
 	CPPUNIT_TEST( IntIntSetTest );
 	CPPUNIT_TEST( IntIntGet_WhileNotEmpty_Test );
 	CPPUNIT_TEST( PixelSetEmptyTest );
-	CPPUNIT_TEST( PackPixelParrayTest );
+	CPPUNIT_TEST( PackPixelArrayTest );
 	CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -48,7 +48,7 @@ public:
 	void IntIntSetTest(void);
 	void IntIntGet_WhileNotEmpty_Test(void);
 	void PixelSetEmptyTest(void);
-	void PackPixelParrayTest(void);
+	void PackPixelArrayTest(void);
 
 private:
 	pixel24 white;
