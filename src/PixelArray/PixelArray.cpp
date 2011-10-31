@@ -93,6 +93,12 @@ void PixelArray<pixeltype>::setEmpty(pixeltype new_empty)
 }
 
 template <class pixeltype>
+void PixelArray<pixeltype>::getEmpty()
+{
+	return empty;
+}
+
+template <class pixeltype>
 char* PixelArray<pixeltype>::pack_pixel_array()
 {
 	if (!pixel_array_is_packed)

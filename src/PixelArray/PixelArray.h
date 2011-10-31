@@ -93,6 +93,13 @@ public:
 	void setEmpty(pixeltype);
 
 	/*!
+	 * Get the empty pixel data.
+	 *
+	 * @return The empty pixel data.
+	 */
+	pixeltype getEmpty();
+
+	/*!
 	 * Pack and return the Pixel Array data
 	 *
 	 * @return The packed pixel array
