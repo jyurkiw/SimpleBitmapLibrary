@@ -21,7 +21,8 @@ PixelArray<pixeltype>::PixelArray()
 
 	row_padding = 0;
 	packed_pixel_array = 0;
-	packed_array_length = 0;
+//	packed_array_length = 0;
+	set_packed_array_length();
 	pixel_array_is_packed = false;
 }
 
@@ -39,13 +40,14 @@ void PixelArray<pixeltype>::Resize_PixelArray(int height, int width)
 	rows = height;
 	columns = width;
 
-	row_padding = columns % 4;
+	row_padding = 4-(columns % 4 == 0 ? 4 : columns % 4);
 	if (packed_pixel_array != 0)
 	{
 		delete[] packed_pixel_array;
 	}
 
-	packed_array_length = 0;
+//	packed_array_length = 0;
+	set_packed_array_length();
 	packed_pixel_array = 0;
 	pixel_array_is_packed = false;
 
@@ -93,7 +95,7 @@ void PixelArray<pixeltype>::setEmpty(pixeltype new_empty)
 }
 
 template <class pixeltype>
-void PixelArray<pixeltype>::getEmpty()
+pixeltype PixelArray<pixeltype>::getEmpty()
 {
 	return empty;
 }
@@ -106,7 +108,8 @@ char* PixelArray<pixeltype>::pack_pixel_array()
 		int pixel_len = empty.write_length;
 		char *packed_pixel = 0;
 
-		packed_array_length = (columns + row_padding) * rows * pixel_len;
+//		packed_array_length = (columns + row_padding) * rows * pixel_len;
+//		set_packed_array_length();
 		packed_pixel_array = new char[packed_array_length];
 
 		std::pair<int,int> coords;
@@ -136,6 +139,20 @@ PixelArray<pixeltype>::~PixelArray()
 }
 
 /* PRIVATE */
+template <class pixeltype>
+void PixelArray<pixeltype>::set_packed_array_length()
+{
+	if (rows > 0 && columns > 0)
+	{
+		int pixel_len = empty.write_length;
+		packed_array_length = (columns + row_padding) * rows * pixel_len;
+	}
+	else
+	{
+		packed_array_length = 0;
+	}
+}
+
 template <class pixeltype>
 std::pair<int,int> PixelArray<pixeltype>::calc_pixel_coords_by_packed_index(int pack_i)
 {
