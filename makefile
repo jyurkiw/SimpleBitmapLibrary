@@ -16,7 +16,7 @@ Pixel_24.o: src/Pixel_24/Pixel_24.cpp
 #PixelArray.o: src/PixelArray/PixelArray.cpp
 #	g++ -c -Isrc src/PixelArray/PixelArray.cpp -o build/PixelArray.o
 PixelArray.o: src/PixelArray/PixelArray.cpp Pixel_24.o
-	g++ -g -O0 -fno-inline -c -Isrc -Isrc/Pixel_24 src/PixelArray/PixelArray.cpp -o build/PixelArray.o
+	g++ -DUNITTEST -g -O0 -fno-inline -c -Isrc -Isrc/Pixel_24 src/PixelArray/PixelArray.cpp -o build/PixelArray.o
 
 #MAKE Pixel24Test.o
 Pixel24Test.o: src/unit/Pixel24Test.cpp
@@ -24,7 +24,7 @@ Pixel24Test.o: src/unit/Pixel24Test.cpp
 
 #MAKE PixelArrayTest.o
 PixelArrayTest.o:  src/unit/PixelArrayTest.cpp
-	g++ -g -O0 -fno-inline -c -Isrc -Isrc/PixelArray -Isrc/Pixel_24 -lcppunit src/unit/PixelArrayTest.cpp -o build/PixelArrayTest.o
+	g++ -DUNITTEST -g -O0 -fno-inline -c -Isrc -Isrc/PixelArray -Isrc/Pixel_24 -lcppunit src/unit/PixelArrayTest.cpp -o build/PixelArrayTest.o
 
 #MAKE RunUnitTests.o
 RunUnitTests.o: src/unit/RunUnitTests.cpp

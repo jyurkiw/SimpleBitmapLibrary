@@ -111,7 +111,9 @@ public:
 	 */
 	~PixelArray();
 
+#ifndef UNITTEST
 private:
+#endif
 	/*
 	 * Number of pixel rows in the bitmap
 	 */
@@ -142,6 +144,9 @@ private:
 
 	//pixel data array
 	std::vector<pixeltype> pixel_data_array;
+
+	//sets this object's packed_array_length property
+	void set_packed_array_length();
 
 	/*
 	 * calculate the pixel_data_array row and column position
