@@ -43,3 +43,9 @@ DEBUGGING:
 	the command is "make valgrind". That will build a .valgrind
 	executable and a series of .valgrind object files in the build
 	directory that are compiled with full debugging flags enabled.
+	
+	There are some unit tests defined for a number of private class
+	members. This is done via the UNITTEST precompiler flag.
+	Currently this flag is used with the MAKE ALL command and valgrind.
+	Will be removed in non-valgrind builds when the make file gets
+	rewritten.
