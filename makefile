@@ -49,11 +49,11 @@ Pixel_24.o.valgrind: src/Pixel_24/Pixel_24.cpp
 
 #MAKE PixelArray.o.valgrind
 PixelArray.o.valgrind: src/PixelArray/PixelArray.cpp
-	g++ -g -O0 -fno-inline -c -Isrc -Isrc/Pixel_24 src/PixelArray/PixelArray.cpp -o build/PixelArray.o.valgrind
+	g++ -DUNITTEST -g -O0 -fno-inline -c -Isrc -Isrc/Pixel_24 src/PixelArray/PixelArray.cpp -o build/PixelArray.o.valgrind
 
 #MAKE Pixel24Test.o.valgrind
 Pixel24Test.o.valgrind: src/unit/Pixel24Test.cpp
-	g++ -g -O0 -fno-inline -c -Isrc -Isrc/Pixel_24 -lcppunit src/unit/Pixel24Test.cpp -o build/Pixel24Test.o.valgrind
+	g++ -DUNITTEST -g -O0 -fno-inline -c -Isrc -Isrc/Pixel_24 -lcppunit src/unit/Pixel24Test.cpp -o build/Pixel24Test.o.valgrind
 
 #MAKE PixelArrayTest.o.valgrind
 PixelArrayTest.o.valgrind:  src/unit/PixelArrayTest.cpp
