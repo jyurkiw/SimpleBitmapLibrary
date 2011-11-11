@@ -341,15 +341,23 @@ void Pixel_Array_Test::PackPixelArrayTest(void)
 			if ((r * cols) + c % 2 == 0) t_pa->set(r, c, black);
 			else t_pa->set(r, c, white);
 
-//	char *pixel_pack_array = t_pa->pack_pixel_array();
-//
-//	for (int x = 0, mx = t_pa->Packed_Array_Length(); x < mx; x++)
-//		CPPUNIT_ASSERT(phony_pixel_pack_array[x] == pixel_pack_array[x]);
-//
-//	phony_pixel_pack_array = 0;
-//	pixel_data = 0;
-//	empty_data = 0;
-//	pixel_pack_array = 0;
+	char *pixel_pack_array = t_pa->pack_pixel_array();
+	char err_buff[10240];
+
+	for (int x = 0, mx = t_pa->Packed_Array_Length(); x < mx; x++)
+	{
+		if (phony_pixel_pack_array[x] != pixel_pack_array[x])
+			sprintf(err_buff, "Expected: \n'%s'\nFound: \n'%s'\n",
+					phony_pixel_pack_array, pixel_pack_array);
+
+		CPPUNIT_ASSERT_MESSAGE(err_buff, phony_pixel_pack_array[x] == pixel_pack_array[x]);
+	}
+
+	delete phony_pixel_pack_array;
+	phony_pixel_pack_array = 0;
+	pixel_data = 0;
+	empty_data = 0;
+	pixel_pack_array = 0;
 }
 
 #ifdef UNITTEST
@@ -408,9 +416,99 @@ void Pixel_Array_Test::Set_packed_array_length_test(void)
 
 void Pixel_Array_Test::Calc_pixel_coords_by_packed_index_test(void)
 {
-	std::pair<int,int> loc;
+	std::pair<int,int> loc, expected;
 	t_pa = new pixel_array24(rows, cols, white);
+	int index = 0;
 
-	CPPUNIT_ASSERT(true);
+	char err_buff_row[255];
+	char err_buff_col[255];
+
+	expected.first = 0;
+	expected.second = 0;
+
+	loc = t_pa->calc_pixel_coords_by_packed_index(index);
+
+	sprintf(err_buff_row, "Row: Got %d. Was expecting %d.", loc.first, expected.first);
+	CPPUNIT_ASSERT_MESSAGE(err_buff_row, loc.first == expected.first);
+
+	sprintf(err_buff_col, "Col: Got %d. Was expecting %d.", loc.second, expected.second);
+	CPPUNIT_ASSERT_MESSAGE(err_buff_col, loc.second == expected.second);
+	for (int x = 0; x < 255; x++)
+	{
+		err_buff_row[x] = '\0';
+		err_buff_col[x] = '\0';
+	}
+
+	expected.first = 0;
+	expected.second = 1;
+	index += white.write_length;
+
+	loc = t_pa->calc_pixel_coords_by_packed_index(index);
+
+	sprintf(err_buff_row, "Row: Got %d. Was expecting %d. info: index = %d", loc.first, expected.first, index);
+	CPPUNIT_ASSERT_MESSAGE(err_buff_row, loc.first == expected.first);
+
+	sprintf(err_buff_col, "Col: Got %d. Was expecting %d. info: index = %d", loc.second, expected.second, index);
+	CPPUNIT_ASSERT_MESSAGE(err_buff_col, loc.second == expected.second);
+	for (int x = 0; x < 255; x++)
+	{
+		err_buff_row[x] = '\0';
+		err_buff_col[x] = '\0';
+	}
+
+	expected.first = 1;
+	expected.second = 2;
+	index += (white.write_length * cols) + white.write_length;
+
+	loc = t_pa->calc_pixel_coords_by_packed_index(index);
+
+	sprintf(err_buff_row, "Row: Got %d. Was expecting %d. info: index = %d", loc.first, expected.first, index);
+	CPPUNIT_ASSERT_MESSAGE(err_buff_row, loc.first == expected.first);
+
+	sprintf(err_buff_col, "Col: Got %d. Was expecting %d. info: index = %d", loc.second, expected.second, index);
+	CPPUNIT_ASSERT_MESSAGE(err_buff_col, loc.second == expected.second);
+	for (int x = 0; x < 255; x++)
+	{
+		err_buff_row[x] = '\0';
+		err_buff_col[x] = '\0';
+	}
+
+	expected.first = 0;
+	expected.second = 0;
+	index = 0;
+	bool notDone = true;
+
+	while(notDone)
+	{
+		expected.second++;
+		if (expected.second >= t_pa->columns)
+		{
+			expected.first++;
+			expected.second = 0;
+		}
+
+		index += t_pa->empty.write_length;
+
+		loc = t_pa->calc_pixel_coords_by_packed_index(index);
+
+		sprintf(err_buff_row, "Row: Got %d (col %d). Was expecting %d (col %d). info: index = %d; pack_i = %d; colSize = %d",
+				loc.first, loc.second, expected.first, expected.second,
+				index, index / t_pa->empty.write_length,
+				t_pa->columns + t_pa->row_padding);
+		CPPUNIT_ASSERT_MESSAGE(err_buff_row, loc.first == expected.first);
+
+		sprintf(err_buff_col, "Col: Got %d (row %d). Was expecting %d (row %d). info: index = %d; pack_i = %d; colSize = %d",
+				loc.second, loc.first, expected.second, expected.first,
+				index, index / t_pa->empty.write_length,
+				t_pa->columns + t_pa->row_padding);
+		CPPUNIT_ASSERT_MESSAGE(err_buff_col, loc.second == expected.second);
+		for (int x = 0; x < 255; x++)
+		{
+			err_buff_row[x] = '\0';
+			err_buff_col[x] = '\0';
+		}
+
+		if (expected.first == 4) notDone = false;
+	}
 }
 #endif
