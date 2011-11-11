@@ -108,8 +108,6 @@ char* PixelArray<pixeltype>::pack_pixel_array()
 		int pixel_len = empty.write_length;
 		char *packed_pixel = 0;
 
-//		packed_array_length = (columns + row_padding) * rows * pixel_len;
-//		set_packed_array_length();
 		packed_pixel_array = new char[packed_array_length];
 
 		std::pair<int,int> coords;
@@ -156,8 +154,17 @@ void PixelArray<pixeltype>::set_packed_array_length()
 template <class pixeltype>
 std::pair<int,int> PixelArray<pixeltype>::calc_pixel_coords_by_packed_index(int pack_i)
 {
-	std::pair<int,int> coords(pack_i / (columns + row_padding),
-			pack_i % (columns + row_padding));
+	pack_i /= empty.write_length;
+	int colSize = columns + row_padding;
+
+	int row;
+
+	if (pack_i < colSize) row = 0;
+	else row = pack_i / colSize;
+
+	int col = pack_i % colSize;
+
+	std::pair<int,int> coords(row, col);
 
 	return coords;
 }
