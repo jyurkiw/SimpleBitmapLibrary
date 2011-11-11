@@ -46,7 +46,6 @@ void PixelArray<pixeltype>::Resize_PixelArray(int height, int width)
 		delete[] packed_pixel_array;
 	}
 
-//	packed_array_length = 0;
 	set_packed_array_length();
 	packed_pixel_array = 0;
 	pixel_array_is_packed = false;
