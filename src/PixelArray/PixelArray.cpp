@@ -10,6 +10,7 @@
 #include <vector>
 
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 /* PUBLIC */
@@ -112,6 +113,8 @@ char* PixelArray<pixeltype>::pack_pixel_array()
 		std::pair<int,int> coords;
 		int row, col;
 
+//		char err_buff[200];
+
 		for (int packed_i = 0; packed_i < packed_array_length; packed_i += pixel_len)
 		{
 			coords = calc_pixel_coords_by_packed_index(packed_i);
@@ -119,6 +122,13 @@ char* PixelArray<pixeltype>::pack_pixel_array()
 			col = coords.second;
 
 			packed_pixel = col < columns ? get(row, col).pack_pixel() : empty.pack_pixel();
+
+//			for (int x = 0; x < 200; x++) err_buff[x] = 0;
+//			for (int x = 0; x < empty.write_length; x++)
+//			{
+//				sprintf(err_buff, "Pixel %d: %s", packed_i, packed_pixel);
+//				cout << err_buff << endl;
+//			}
 
 			move_data_into_packed_array(packed_pixel, packed_i, pixel_len);
 		}
