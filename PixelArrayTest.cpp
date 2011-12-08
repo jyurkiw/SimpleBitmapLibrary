@@ -293,71 +293,29 @@ void Pixel_Array_Test::PixelSetEmptyTest(void)
 	CPPUNIT_ASSERT(t_pa->getEmpty() == black);
 }
 
-void Pixel_Array_Test::PackPixelArrayTest(void)
+void BuildSingleColorArray(pixel24 color)
 {
-	rows = 7;
-	cols = 7;
 
-	int phony_padding_len = cols % 4;
-	if (cols < 4) phony_padding_len = 4 % cols;
-	int padded_row_len = cols + phony_padding_len;
+}
 
-	int phony_packed_array_len = rows * padded_row_len * white.write_length;
-	pixel24 pix_dat = black;
-
-	char *phony_pixel_pack_array = new char[phony_packed_array_len];
-	char *pixel_data = pix_dat.pack_pixel();
-	char *empty_data = white.pack_pixel();
-
-	int c_t = 0;
-	int p_t = 0;
-
-	while(c_t < phony_packed_array_len)
-	{
-		p_t++;
-		if (p_t >= pix_dat.write_length)
-		{
-			if (((c_t / pix_dat.write_length) % padded_row_len) < cols)
-			{
-				if (pix_dat == white) pix_dat = black;
-				else pix_dat = white;
-			}
-			else
-			{
-				pix_dat = white;
-			}
-			p_t = 0;
-			pixel_data = pix_dat.pack_pixel();
-		}
-
-		phony_pixel_pack_array[c_t] = pixel_data[p_t];
-		c_t++;
-	}
-
+void Pixel_Array_Test::PackWhitePixelArrayTest(void)
+{
+	//create 4x4 grid of white pixels
 	t_pa = new pixel_array24(rows, cols, white);
 
-	for (int r = 0; r < rows; r++)
-		for (int c = 0; c < cols; c++)
-			if ((r * cols) + c % 2 == 0) t_pa->set(r, c, black);
-			else t_pa->set(r, c, white);
+	//white-out the pixel_array
+	for (int x = 0; x < 4; x++)
+		for (int y = 0; y < 4; y++)
+			t_pa->set(x, y, white);
 
-	char *pixel_pack_array = t_pa->pack_pixel_array();
-	char err_buff[10240];
+	char *packed_pixel_array = t_pa->pack_pixel_array();
+	char express[1024];
 
-	for (int x = 0, mx = t_pa->Packed_Array_Length(); x < mx; x++)
-	{
-		if (phony_pixel_pack_array[x] != pixel_pack_array[x])
-			sprintf(err_buff, "Expected: \n'%s'\nFound: \n'%s'\n",
-					phony_pixel_pack_array, pixel_pack_array);
+	sprintf(express, "\n%s", packed_pixel_array);
 
-		CPPUNIT_ASSERT_MESSAGE(err_buff, phony_pixel_pack_array[x] == pixel_pack_array[x]);
-	}
 
-	delete phony_pixel_pack_array;
-	phony_pixel_pack_array = 0;
-	pixel_data = 0;
-	empty_data = 0;
-	pixel_pack_array = 0;
+	packed_pixel_array = 0;
+
 }
 
 #ifdef UNITTEST
