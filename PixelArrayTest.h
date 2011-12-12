@@ -21,16 +21,16 @@ typedef PixelArray<pixel24> pixel_array24;
 class Pixel_Array_Test : public TestFixture
 {
 	CPPUNIT_TEST_SUITE( Pixel_Array_Test );
-//	CPPUNIT_TEST( EmptyConstructorTest );
-//	CPPUNIT_TEST( IntIntPixelPointer_ConstructorTest );
-//	CPPUNIT_TEST( RowsTest );
-//	CPPUNIT_TEST( ColumnsTest );
-//	CPPUNIT_TEST( PackedArrayLengthTest );
-//	CPPUNIT_TEST( IntIntResize_PixelArrayTest );
-//	CPPUNIT_TEST( IntIntGet_WhileEmpty_Test );
-//	CPPUNIT_TEST( IntIntSetTest );
-//	CPPUNIT_TEST( IntIntGet_WhileNotEmpty_Test );
-//	CPPUNIT_TEST( PixelSetEmptyTest );
+	CPPUNIT_TEST( EmptyConstructorTest );
+	CPPUNIT_TEST( IntIntPixelPointer_ConstructorTest );
+	CPPUNIT_TEST( RowsTest );
+	CPPUNIT_TEST( ColumnsTest );
+	CPPUNIT_TEST( PackedArrayLengthTest );
+	CPPUNIT_TEST( IntIntResize_PixelArrayTest );
+	CPPUNIT_TEST( IntIntGet_WhileEmpty_Test );
+	CPPUNIT_TEST( IntIntSetTest );
+	CPPUNIT_TEST( IntIntGet_WhileNotEmpty_Test );
+	CPPUNIT_TEST( PixelSetEmptyTest );
 	CPPUNIT_TEST( PackWhitePixelArrayTest );
 	CPPUNIT_TEST( PackBlackPixelArrayTest );
 	CPPUNIT_TEST( PackWhiteBlackCheckerPixelArrayTest );

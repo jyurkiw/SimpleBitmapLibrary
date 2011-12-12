@@ -92,7 +92,8 @@ void Pixel_Array_Test::PackedArrayLengthTest(void)
 {
 	char err_buff[255];
 
-	int packed_length = 0;
+	int packed_length = 4 * 4 * black.write_length;
+
 	t_pa = new pixel_array24(rows, cols, black);
 
 	sprintf(err_buff,
@@ -108,7 +109,7 @@ void Pixel_Array_Test::PackedArrayLengthTest(void)
 
 	rows = 256;
 	cols = 256;
-	packed_length = 0;
+	packed_length = rows * cols * black.write_length;
 	t_pa = new pixel_array24(rows, cols , black);
 
 	sprintf(err_buff,
@@ -123,7 +124,7 @@ void Pixel_Array_Test::IntIntResize_PixelArrayTest(void)
 {
 	char err_buff[255];
 
-	int packed_length = 0;
+	int packed_length = rows * cols * black.write_length;
 	t_pa = new pixel_array24(rows, cols, black);
 
 	sprintf(err_buff,
@@ -136,7 +137,7 @@ void Pixel_Array_Test::IntIntResize_PixelArrayTest(void)
 
 	rows = 256;
 	cols = 256;
-	packed_length = 0;
+	packed_length = rows * cols * black.write_length;
 
 	t_pa->Resize_PixelArray(rows, cols);
 
