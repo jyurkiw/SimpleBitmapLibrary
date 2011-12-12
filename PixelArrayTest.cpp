@@ -293,9 +293,59 @@ void Pixel_Array_Test::PixelSetEmptyTest(void)
 	CPPUNIT_ASSERT(t_pa->getEmpty() == black);
 }
 
-void BuildSingleColorArray(pixel24 color)
+void BuildSingleColorArray(char *char_arr, int array_len, pixel24 color)
 {
+	char *color_array = color.pack_pixel();
 
+	for (int x = 0, subx = 0; x < array_len; x++, subx++)
+	{
+		if (subx == color.write_length) subx = 0;
+
+		char_arr[x] = color_array[subx];
+	}
+}
+
+void BuildCheckerArray(char *char_arr, int array_len, int rows, int cols, pixel24 color1, pixel24 color2)
+{
+	pixel24 color = color1;
+	char *color_array = color.pack_pixel();
+
+	for (int i = 0, row = 0; row < rows; row++)
+	{
+		if (color == color1) color = color2;
+		else color = color1;
+		char *color_array = color.pack_pixel();
+
+		for (int col = 0; col < cols; col++)
+		{
+			if (color == color1) color = color2;
+			else color = color1;
+			char *color_array = color.pack_pixel();
+
+			for (int subi = 0; subi < color.write_length; subi++, i++)
+				char_arr[i] = color_array[subi];
+		}
+	}
+}
+
+void Pixel_Array_Test::ComparePixelArrays(char *arr2)
+{
+	char err_msg[1024];
+	char *arr1 = t_pa->pack_pixel_array();
+
+	sprintf(err_msg, "\nExpected:\n%s\nGot:\n%s", arr2, arr1);
+
+	for (int x = 0; x < t_pa->packed_array_length; x++)
+	{
+		CPPUNIT_ASSERT_MESSAGE(err_msg, arr1[x] == arr2[x]);
+	}
+}
+
+void printPixelArrayToConsole(char *p_arr)
+{
+	char outarr[1024];
+	sprintf(outarr, "Pixel Array:\n%s", p_arr);
+	std::cout << outarr << std::endl;
 }
 
 void Pixel_Array_Test::PackWhitePixelArrayTest(void)
@@ -303,19 +353,47 @@ void Pixel_Array_Test::PackWhitePixelArrayTest(void)
 	//create 4x4 grid of white pixels
 	t_pa = new pixel_array24(rows, cols, white);
 
-	//white-out the pixel_array
-	for (int x = 0; x < 4; x++)
-		for (int y = 0; y < 4; y++)
-			t_pa->set(x, y, white);
+	char *faux_pixel_array = new char[1024];
 
-	char *packed_pixel_array = t_pa->pack_pixel_array();
-	char express[1024];
+	BuildSingleColorArray(faux_pixel_array, t_pa->packed_array_length, white);
 
-	sprintf(express, "\n%s", packed_pixel_array);
+	ComparePixelArrays(faux_pixel_array);
 
+	delete[] faux_pixel_array;
+}
 
-	packed_pixel_array = 0;
+void Pixel_Array_Test::PackBlackPixelArrayTest(void)
+{
+	//create 4x4 grid of black pixels
+	t_pa = new pixel_array24(rows, cols, black);
 
+	char *faux_pixel_array = new char[1024];
+
+	BuildSingleColorArray(faux_pixel_array, t_pa->packed_array_length, black);
+
+	ComparePixelArrays(faux_pixel_array);
+
+	delete[] faux_pixel_array;
+}
+
+void Pixel_Array_Test::PackWhiteBlackCheckerPixelArrayTest(void)
+{
+	//create 4x4 checker grid, white then black
+	t_pa = new pixel_array24(rows, cols, white);
+
+	bool checker_black = false;
+
+	for (int row = 0; row < rows; row++, checker_black = !checker_black)
+		for (int col = 0; col < cols; col++, checker_black = !checker_black)
+			if (checker_black) t_pa->set(row, col, black);
+
+	char *faux_pixel_array = new char[1024];
+
+	BuildCheckerArray(faux_pixel_array, t_pa->packed_array_length, rows, cols, white, black);
+
+	ComparePixelArrays(faux_pixel_array);
+
+	delete[] faux_pixel_array;
 }
 
 #ifdef UNITTEST

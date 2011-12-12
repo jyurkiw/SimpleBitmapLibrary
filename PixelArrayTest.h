@@ -32,6 +32,8 @@ class Pixel_Array_Test : public TestFixture
 //	CPPUNIT_TEST( IntIntGet_WhileNotEmpty_Test );
 //	CPPUNIT_TEST( PixelSetEmptyTest );
 	CPPUNIT_TEST( PackWhitePixelArrayTest );
+	CPPUNIT_TEST( PackBlackPixelArrayTest );
+	CPPUNIT_TEST( PackWhiteBlackCheckerPixelArrayTest );
 
 #ifdef UNITTEST
 	CPPUNIT_TEST( Set_packed_array_length_test );
@@ -55,6 +57,8 @@ public:
 	void IntIntGet_WhileNotEmpty_Test(void);
 	void PixelSetEmptyTest(void);
 	void PackWhitePixelArrayTest(void);
+	void PackBlackPixelArrayTest(void);
+	void PackWhiteBlackCheckerPixelArrayTest(void);
 
 #ifdef UNITTEST
 	void Set_packed_array_length_test(void);
@@ -67,6 +71,8 @@ private:
 	pixel_array24 *t_pa;
 
 	int rows, cols;
+
+	void ComparePixelArrays(char*);
 };
 
 #endif /* PIXELARRAYTEST_H_ */
